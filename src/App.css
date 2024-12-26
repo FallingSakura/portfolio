@@ -27,7 +27,7 @@
   align-items: center;
 }
 .container {
-  width: 1000px;
+  width: 880px;
   height: 500px;
 }
 .img-container {
@@ -42,5 +42,24 @@
   object-fit: cover;
 }
 .name {
-  color: #ee9ca7;
+  color: var(--color--primary);
+}
+.title {
+  flex: 1;
+  align-items: center;
+}
+.title h1 {
+  margin-left: 140px;
+}
+.social {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.links {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
