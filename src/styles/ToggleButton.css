@@ -20,7 +20,7 @@
   height: 3px;
   width: 1.5rem;
   border-radius: 0.125rem;
-  background-color: black;
+  background-color: var(--text-color);
   transition: all 0.3s;
 }
 
