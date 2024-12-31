@@ -1,0 +1,42 @@
+.toggle-button-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+}
+
+.toggle-button {
+  position: relative;
+  display: flex;
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-bar {
+  position: absolute;
+  height: 3px;
+  width: 1.5rem;
+  border-radius: 0.125rem;
+  background-color: black;
+  transition: all 0.3s;
+}
+
+.bar-hidden {
+  opacity: 0;
+}
+
+.bar-rotate-45 {
+  transform: rotate(45deg);
+}
+.bar2 {
+  transform: translateY(-0.5rem);
+}
+.bar-rotate--45 {
+  transform: rotate(-45deg);
+}
+.bar3 {
+  transform: translateY(0.5rem);
+}

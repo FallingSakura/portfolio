@@ -1,0 +1,22 @@
+.social {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 50px;
+  justify-content: center;
+}
+
+.links {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.links a {
+  transition: all ease 0.3s;
+}
+
+@media (max-width: 768px) {
+  .social {
+    margin-top: 10px;
+  }
+}
