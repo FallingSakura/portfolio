@@ -1,9 +1,9 @@
-import avatar from '/avatar.jpg'
 import './App.css'
 import { useState, useEffect } from 'react'
 import ToggleButton from './components/ToggleButton'
-import SocialLinks from './components/SocialLinks'
 import ToggleTheme from './components/ToggleTheme'
+import HomePage from './components/HomePage'
+import SecPage from './components/SecPage'
 
 function App() {
   const [togglNav, setTogglNav] = useState(false)
@@ -19,6 +19,7 @@ function App() {
 
     if (prefersDarkScheme.matches) {
       setTheme(true)
+      /* true-dark false-light */
     } else {
       setTheme(false)
     }
@@ -33,6 +34,7 @@ function App() {
   }, [])
   useEffect(() => {
     if (theme) {
+      /* documentElement = <html><html/> */
       document.documentElement.setAttribute('data-theme', 'dark')
     } else {
       document.documentElement.setAttribute('data-theme', 'light')
@@ -42,30 +44,9 @@ function App() {
     <>
       <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
       <ToggleButton togglNav={togglNav} toggle={toggle} />
-      <div className="home flex">
-        <div className="container">
-          <div className="about flex">
-            <div className="img-container">
-              <div className="img">
-                <img src={avatar} alt="avatar" />
-              </div>
-            </div>
-            <div className="title flex">
-              <h1>
-                <span>Hi, I'm </span>
-                <span id="name">FallingSakura</span>
-              </h1>
-            </div>
-          </div>
-          <SocialLinks />
-        </div>
-        {/* <div className="test">
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-          <div className="box"></div>
-        </div> */}
+      <div className="page-container">
+        <HomePage />
+        <SecPage />
       </div>
     </>
   )

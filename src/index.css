@@ -21,6 +21,11 @@
   --background-color: #242424; 
 }
 
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
 a {
   color: var(--text-color);
   font-weight: 500;
