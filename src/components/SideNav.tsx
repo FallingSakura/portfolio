@@ -1,7 +1,7 @@
 import '../styles/SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
-function SideNav({ currentPage}: { currentPage: number}) {
+function SideNav({ currentPage, togglNav }: { currentPage: number, togglNav: boolean }) {
   const links = [
     {
       id: 'home',
@@ -28,7 +28,8 @@ function SideNav({ currentPage}: { currentPage: number}) {
           </li>
         ))}
         <div className="backdrop" style={{
-          transform: `translateY(${currentPage * 100}%)`,
+          transform: `translate(${togglNav ? '-50%' : '-200px'}, ${currentPage * 100}%)`,
+          transitionDelay: `${currentPage * 0.05}s`
         }}></div>
       </ul>
     </nav>
