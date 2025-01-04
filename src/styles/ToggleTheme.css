@@ -1,4 +1,5 @@
 .toggle-theme {
+  -webkit-tap-highlight-color: transparent;
   position: fixed;
   display: flex;
   justify-content: center;
