@@ -4,6 +4,7 @@ import ToggleButton from './components/ToggleButton'
 import ToggleTheme from './components/ToggleTheme'
 import HomePage from './components/HomePage'
 import SecPage from './components/SecPage'
+import SideNav from './components/SideNav'
 
 function App() {
   const [togglNav, setTogglNav] = useState(false)
@@ -12,18 +13,23 @@ function App() {
     setTogglNav(!togglNav)
   }
   const toggleTheme = () => {
-    setTheme(!theme)
+    const newTheme = !theme
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light')
   }
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
-
-    if (prefersDarkScheme.matches) {
-      setTheme(true)
-      /* true-dark false-light */
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme === 'dark')
     } else {
-      setTheme(false)
+      if (prefersDarkScheme.matches) {
+        setTheme(true)
+        /* true-dark false-light */
+      } else {
+        setTheme(false)
+      }
     }
-
     prefersDarkScheme.addEventListener('change', (e) => {
       if (e.matches) {
         setTheme(true)
@@ -44,11 +50,12 @@ function App() {
     <>
       <div className={`background ${togglNav ? 'nav-open' : ''}`}>
         <ToggleButton togglNav={togglNav} toggle={toggle} />
-        <div className={`page-container ${togglNav ? 'nav-open' : ''}`}>
+        <div className="page-container">
           <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
           <HomePage />
           <SecPage />
         </div>
+        <SideNav />
       </div>
     </>
   )

@@ -1,0 +1,32 @@
+.side-nav {
+  width: 0;
+  height: 80%;
+  transition: width 0.5s;
+}
+.nav-open .side-nav {
+  width: 15%;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.side-nav li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+.side-nav a {
+  position: relative;
+  transition: transform 0.5s;
+  transform: translateX(-100px);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.nav-open .side-nav a {
+  transform: translateX(0);
+}
