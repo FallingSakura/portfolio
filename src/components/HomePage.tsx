@@ -3,7 +3,7 @@ import SocialLinks from './SocialLinks'
 import '../styles/HomePage.css'
 function HomePage () {
   return (
-      <div className="home flex">
+      <div className="home flex" id="home">
         <div className="container">
           <div className="about flex">
             <div className="img-container">

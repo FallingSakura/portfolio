@@ -1,21 +1,23 @@
-import '../styles/ToggleButton.css';
+import '../styles/ToggleButton.css'
 
 function ToggleButton({
   togglNav,
-  toggle,
+  toggle
 }: {
-  togglNav: boolean;
-  toggle: () => void;
+  togglNav: boolean
+  toggle: () => void
 }) {
   return (
-    <div className={"toggle-button-container"}>
-      <div className="toggle-button" onClick={toggle}>
-        <span className={`toggle-bar ${togglNav ? "bar-hidden" : "bar1"}`}></span>
-        <span className={`toggle-bar ${togglNav ? "bar-rotate-45" : "bar2"}`}></span>
-        <span className={`toggle-bar ${togglNav ? "bar-rotate--45" : "bar3"}`}></span>
-      </div>
+    <div className="toggle-button" onClick={toggle}>
+      <span className={`toggle-bar ${togglNav ? 'bar-hidden' : 'bar1'}`}></span>
+      <span
+        className={`toggle-bar ${togglNav ? 'bar-rotate-45' : 'bar2'}`}
+      ></span>
+      <span
+        className={`toggle-bar ${togglNav ? 'bar-rotate--45' : 'bar3'}`}
+      ></span>
     </div>
-  );
+  )
 }
 
-export default ToggleButton;
+export default ToggleButton

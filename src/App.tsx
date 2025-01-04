@@ -42,11 +42,13 @@ function App() {
   }, [theme])
   return (
     <>
-      <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
-      <ToggleButton togglNav={togglNav} toggle={toggle} />
-      <div className="page-container">
-        <HomePage />
-        <SecPage />
+      <div className={`background ${togglNav ? 'nav-open' : ''}`}>
+        <ToggleButton togglNav={togglNav} toggle={toggle} />
+        <div className={`page-container ${togglNav ? 'nav-open' : ''}`}>
+          <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
+          <HomePage />
+          <SecPage />
+        </div>
       </div>
     </>
   )
