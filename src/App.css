@@ -24,6 +24,7 @@
   -ms-overflow-style: none;
   transition: all 0.5s;
   scroll-behavior: smooth;
+  box-shadow: 0px 0px 15px var(--shadow-color);
 }
 .nav-open .page-container {
   width: 88%;

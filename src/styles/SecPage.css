@@ -1,5 +1,7 @@
 .sec {
   width: 100%;
   height: 60%;
+  display: flex;
+  justify-content: center;
   background-color: var(--background-color);
 }
