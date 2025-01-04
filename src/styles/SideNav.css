@@ -35,7 +35,7 @@
   transform: translateX(0);
 }
 .backdrop {
-  width: 110px;
+  width: 75%;
   height: 40px;
   background-color: var(--background-color);
   position: absolute;
