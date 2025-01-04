@@ -25,7 +25,7 @@
 }
 .nav-open .page-container {
   width: 88%;
-  overflow: hidden;
+  /* overflow: hidden; */
   transform: scale(98%);
   border-radius: 20px;
 }

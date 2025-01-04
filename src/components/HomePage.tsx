@@ -8,7 +8,9 @@ function HomePage() {
         <div className="about">
           <div className="img-container">
             <div className="img">
-              <img src={avatar} alt="avatar" />
+              <a href="/">
+                <img src={avatar} alt="avatar" />
+              </a>
             </div>
           </div>
           <div className="title">

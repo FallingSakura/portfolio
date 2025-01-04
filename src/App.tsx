@@ -1,5 +1,7 @@
 import './App.css'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useTheme } from './hooks/useTheme'
+import { usePageObserver } from './hooks/usePageObserver'
 import ToggleButton from './components/ToggleButton'
 import ToggleTheme from './components/ToggleTheme'
 import HomePage from './components/HomePage'
@@ -9,6 +11,8 @@ import SideNav from './components/SideNav'
 function App() {
   const [togglNav, setTogglNav] = useState(false)
   const [theme, setTheme] = useState(false)
+  const containerRef = useRef<HTMLElement>(null)
+  const [currentPage, setCurrentPage] = useState(0)
   const toggle = () => {
     setTogglNav(!togglNav)
   }
@@ -17,27 +21,8 @@ function App() {
     setTheme(newTheme)
     localStorage.setItem('theme', newTheme ? 'dark' : 'light')
   }
-  useEffect(() => {
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setTheme(savedTheme === 'dark')
-    } else {
-      if (prefersDarkScheme.matches) {
-        setTheme(true)
-        /* true-dark false-light */
-      } else {
-        setTheme(false)
-      }
-    }
-    prefersDarkScheme.addEventListener('change', (e) => {
-      if (e.matches) {
-        setTheme(true)
-      } else {
-        setTheme(false)
-      }
-    })
-  }, [])
+  useTheme(setTheme)
+  usePageObserver(containerRef, setCurrentPage)
   useEffect(() => {
     if (theme) {
       /* documentElement = <html><html/> */
@@ -51,11 +36,11 @@ function App() {
       <div className={`background ${togglNav ? 'nav-open' : ''}`}>
         <ToggleButton togglNav={togglNav} toggle={toggle} />
         <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
-        <section className="page-container">
+        <section ref={containerRef} className="page-container">
           <HomePage />
           <SecPage />
         </section>
-        <SideNav />
+        <SideNav currentPage={currentPage} />
       </div>
     </>
   )

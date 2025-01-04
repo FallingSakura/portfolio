@@ -1,7 +1,7 @@
 import '../styles/SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faStar, faCloud, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
-function SideNav() {
+import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+function SideNav({ currentPage}: { currentPage: number}) {
   const links = [
     {
       id: 'home',
@@ -13,16 +13,6 @@ function SideNav() {
       title: 'Projects',
       icon: faLaptopCode
     },
-    {
-      id: 'third',
-      title: 'Third',
-      icon: faStar
-    },
-    {
-      id: 'fourth',
-      title: 'Fourth',
-      icon: faCloud
-    }
   ]
   return (
     <nav className="side-nav">
@@ -37,6 +27,9 @@ function SideNav() {
             </a>
           </li>
         ))}
+        <div className="backdrop" style={{
+          transform: `translateY(${currentPage * 100}%)`,
+        }}></div>
       </ul>
     </nav>
   )
