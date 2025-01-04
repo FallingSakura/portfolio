@@ -1,6 +1,6 @@
 import '../styles/SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faPenNib, faStar, faCloud } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faStar, faCloud, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
 function SideNav() {
   const links = [
     {
@@ -9,9 +9,9 @@ function SideNav() {
       icon: faHouse
     },
     {
-      id: 'sec',
-      title: 'Sec',
-      icon: faPenNib
+      id: 'projects',
+      title: 'Projects',
+      icon: faLaptopCode
     },
     {
       id: 'third',

@@ -7,7 +7,8 @@ function ToggleTheme({ theme, toggleTheme } : {
 }) {
   return (
     <div className="toggle-theme" onClick={toggleTheme}>
-      <FontAwesomeIcon icon={theme ? faSun : faMoon} size="lg" />
+      <FontAwesomeIcon className={`icon ${theme ? 'visible' : 'hidden'}`} icon={faSun} size="lg" />
+      <FontAwesomeIcon className={`icon ${theme ? 'hidden' : 'visible' }`} icon={faMoon} size="lg" />
     </div>
   )
 }

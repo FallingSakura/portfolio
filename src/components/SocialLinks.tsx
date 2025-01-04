@@ -10,8 +10,8 @@ import {
 
 function SocialLinks() {
   return (
-    <div className="social flex">
-      <div className="links flex">
+    <div className="social">
+      <div className="links">
         <a href="https://space.bilibili.com/1722315602">
           <FontAwesomeIcon icon={faBilibili} size="xl" />
         </a>
