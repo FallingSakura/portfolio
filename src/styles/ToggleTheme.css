@@ -1,12 +1,19 @@
 .toggle-theme {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 75px;
   height: 75px;
   font-size: 1.25rem;
-  right: 0;
-  top: 0;
+  left: 0;
+  bottom: 0;
   z-index: 20;
+}
+.toggle-theme > * {
+  transition: 0.3s;
+  cursor: pointer;
+}
+.toggle-theme > *:hover {
+  color: var(--color--primary);
 }

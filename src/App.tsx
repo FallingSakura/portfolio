@@ -50,11 +50,11 @@ function App() {
     <>
       <div className={`background ${togglNav ? 'nav-open' : ''}`}>
         <ToggleButton togglNav={togglNav} toggle={toggle} />
-        <div className="page-container">
-          <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
+        <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
+        <section className="page-container">
           <HomePage />
           <SecPage />
-        </div>
+        </section>
         <SideNav />
       </div>
     </>

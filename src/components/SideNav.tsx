@@ -25,7 +25,7 @@ function SideNav() {
     }
   ]
   return (
-    <div className="side-nav">
+    <nav className="side-nav">
       <ul>
         {links.map((link, index) => (
           <li key={link.id}>
@@ -38,7 +38,7 @@ function SideNav() {
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   )
 }
 

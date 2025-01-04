@@ -38,8 +38,8 @@
   filter: blur(30px);
   z-index: -1;
   border-radius: 100%;
-  opacity: .4;
-  background-color: var(--text-color);
+  opacity: .6;
+  background-color: var(--color--primary);
 }
 .title #name {
   color: var(--color--primary);
