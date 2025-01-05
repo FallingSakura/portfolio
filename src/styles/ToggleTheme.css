@@ -7,8 +7,6 @@
   width: 75px;
   height: 75px;
   font-size: 1.25rem;
-  left: 0;
-  bottom: 0;
   cursor: pointer;
   z-index: 20;
 }

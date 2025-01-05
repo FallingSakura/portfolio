@@ -13,6 +13,7 @@ function App() {
   const [theme, setTheme] = useState(false)
   const containerRef = useRef<HTMLElement>(null)
   const [currentPage, setCurrentPage] = useState(0)
+  const isMobileView = window.innerWidth > 768
   const toggle = () => {
     setTogglNav(!togglNav)
   }
@@ -40,7 +41,7 @@ function App() {
           <HomePage />
           <SecPage />
         </section>
-        <SideNav currentPage={currentPage} togglNav={togglNav} />
+        {isMobileView && <SideNav currentPage={currentPage} togglNav={togglNav} />}{' '}
       </div>
     </>
   )
