@@ -40,11 +40,3 @@
     width: 88%;
   }
 }
-@media (max-width: 768px) {
-  .background {
-    flex-direction: column-reverse;
-  }
-  .nav-open .page-container {
-    height: 80%;
-  }
-}
