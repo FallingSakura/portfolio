@@ -36,7 +36,7 @@
   height: 100%;
 }
 .img-container::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: -20px;
   filter: blur(30px);

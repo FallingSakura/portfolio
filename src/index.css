@@ -23,9 +23,9 @@
   --shadow-color: #ee9ca755;
   --transparency-color: rgba(239, 239, 239, 0.9);
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
   --text-color: #f9f9f9;
-  --background-color: #242424; 
+  --background-color: #242424;
   --transparency-color: rgba(30, 30, 30, 0.9);
   --shadow-color: #704147c2;
 }

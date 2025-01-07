@@ -18,9 +18,12 @@ function MobileNav({ toggle }: { toggle: () => void }) {
     <nav className="mobile-nav">
       <ul>
         {links.map((link, index) => (
-          <li key={link.id} style={{
+          <li
+            key={link.id}
+            style={{
               transitionDelay: `${index * 0.1}s`
-            }}>
+            }}
+          >
             <a href={`#${link.id}`} onClick={toggle}>
               {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
               <span>{link.title}</span>

@@ -14,14 +14,19 @@
   gap: 20px;
 }
 .links::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 230px;
   height: 2px;
   bottom: 0;
   background-color: var(--primary-color);
-  background-image: linear-gradient(90deg, var(--background-color) 0%, var(--primary-color) 10% 90%, var(--background-color) 100%);
+  background-image: linear-gradient(
+    90deg,
+    var(--background-color) 0%,
+    var(--primary-color) 10% 90%,
+    var(--background-color) 100%
+  );
   border-radius: 2px;
 }
 .links a {
