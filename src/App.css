@@ -37,6 +37,7 @@
   border: 1px solid var(--shadow-color);
 }
 
+
 @media (min-width: 768px) {
   .nav-open .page-container {
     width: 88%;
