@@ -44,7 +44,7 @@
   position: absolute;
   width: 3px;
   height: 90%;
-  left: -30px;
+  left: -50px;
   border-radius: 5px;
   background-color: var(--primary-color);
 }
@@ -52,16 +52,14 @@
   transform: translateY(0);
 }
 .mobile-nav a {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 10px;
   width: 100%;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-weight: bold;
 }
 .mobile-nav span {
   font-size: 1.25rem;
+  margin-left: 40px;
 }
 
 @media (min-width: 768px) {

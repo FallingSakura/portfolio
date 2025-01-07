@@ -1,7 +1,6 @@
 import '../styles/MobileNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
-import { useEffect, useRef } from 'react'
 function MobileNav({
   toggle,
   currentPage

@@ -36,16 +36,17 @@ function SideNav({
             </a>
           </li>
         ))}
-        <div
-          className="backdrop"
-          style={{
-            transform: `translate(${togglNav ? '-50%' : '-200px'}, ${
-              currentPage * 100
-            }%)`,
-            transitionDelay: `${currentPage * 0.05}s`
-          }}
-        ></div>
       </ul>
+
+      <div
+        className="backdrop"
+        style={{
+          transform: `translate(${togglNav ? '-50%' : '-200px'}, ${
+            currentPage * 100
+          }%)`,
+          transitionDelay: `${currentPage * 0.05}s`
+        }}
+      ></div>
     </nav>
   )
 }
