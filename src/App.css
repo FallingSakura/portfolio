@@ -8,6 +8,7 @@
   background-color: var(--transparency-color);
   overflow: hidden;
   align-items: center;
+  transition: background 0.3s;
 }
 .page-container {
   position: relative;

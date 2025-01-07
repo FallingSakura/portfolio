@@ -5,3 +5,31 @@
   justify-content: center;
   background-color: var(--background-color);
 }
+.card-container {
+  height: 700px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+.project-card {
+  position: relative;
+  width: 280px;
+  height: 150px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--shadow-color);
+  border: 1px solid var(--primary-color);
+}
+.project-card h3 {
+  padding: 15px 25px;
+}
+.project-card::after {
+  content: '';
+  height: 20px;
+  width: 3px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 18px;
+  left: 15px;  
+  border-radius: 2px;
+}

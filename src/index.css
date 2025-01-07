@@ -26,7 +26,7 @@
 [data-theme='dark'] {
   --text-color: #f9f9f9;
   --background-color: #242424;
-  --transparency-color: rgba(30, 30, 30, 0.9);
+  --transparency-color: rgba(20, 20, 20, 0.9);
   --shadow-color: #704147c2;
 }
 
