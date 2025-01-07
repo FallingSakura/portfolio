@@ -42,7 +42,7 @@ function App() {
           <SecPage />
         </section>
         <SideNav currentPage={currentPage} togglNav={togglNav} />
-        <MobileNav toggle={toggle} />
+        <MobileNav currentPage={currentPage} toggle={toggle} />
       </div>
     </>
   )
