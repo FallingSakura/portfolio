@@ -32,9 +32,30 @@
 .links a {
   transition: all ease 0.3s;
 }
+.wechat, .qq {
+  position: relative;
+}
+.wechat img, .qq img {
+  width: 180px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+}
+.wechat:hover img, .qq:hover img {
+  opacity: 1;
+}
 
 @media (max-width: 768px) {
   .social {
     margin-top: 80px;
+  }
+  .wechat, .qq {
+    -webkit-tap-highlight-color: transparent;
   }
 }

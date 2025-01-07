@@ -21,11 +21,13 @@ function SocialLinks() {
         <a href="https://x.com/SakuraFalling1">
           <FontAwesomeIcon icon={faTwitter} size="xl" />
         </a>
-        <a href="#">
+        <a className="wechat" href="#">
           <FontAwesomeIcon icon={faWeixin} size="xl" />
+          <img src="/Wechat-QR.png" alt="Wechat QRCode" />
         </a>
-        <a href="#">
+        <a className="qq" href="#">
           <FontAwesomeIcon icon={faQq} size="xl" />
+          <img src="/QQ-QR.png" alt="QQ QRCode" />
         </a>
       </div>
     </div>
