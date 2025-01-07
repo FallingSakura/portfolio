@@ -18,10 +18,10 @@ function SideNav({ currentPage, togglNav }: { currentPage: number, togglNav: boo
     <nav className="side-nav">
       <ul>
         {links.map((link, index) => (
-          <li key={link.id}>
-            <a href={`#${link.id}`} style={{
+          <li key={link.id} style={{
               transitionDelay: `${index * 0.05}s`
             }}>
+            <a href={`#${link.id}`}>
               {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
               <span>{link.title}</span>
             </a>

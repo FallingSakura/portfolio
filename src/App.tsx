@@ -2,6 +2,7 @@ import './App.css'
 import { useState, useEffect, useRef } from 'react'
 import { useTheme } from './hooks/useTheme'
 import { usePageObserver } from './hooks/usePageObserver'
+import MobileNav from './components/MobileNav'
 import ToggleButton from './components/ToggleButton'
 import ToggleTheme from './components/ToggleTheme'
 import HomePage from './components/HomePage'
@@ -13,7 +14,6 @@ function App() {
   const [theme, setTheme] = useState(false)
   const containerRef = useRef<HTMLElement>(null)
   const [currentPage, setCurrentPage] = useState(0)
-  const isMobileView = window.innerWidth > 768
   const toggle = () => {
     setTogglNav(!togglNav)
   }
@@ -41,7 +41,8 @@ function App() {
           <HomePage />
           <SecPage />
         </section>
-        {isMobileView && <SideNav currentPage={currentPage} togglNav={togglNav} />}{' '}
+        <SideNav currentPage={currentPage} togglNav={togglNav} />
+        <MobileNav toggle={toggle} />
       </div>
     </>
   )

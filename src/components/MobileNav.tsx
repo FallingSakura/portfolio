@@ -1,6 +1,7 @@
+import '../styles/MobileNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
-function MobileNav() {
+function MobileNav({ toggle }: { toggle: () => void }) {
   const links = [
     {
       id: 'home',
@@ -17,10 +18,10 @@ function MobileNav() {
     <nav className="mobile-nav">
       <ul>
         {links.map((link, index) => (
-          <li key={link.id}>
-            <a href={`#${link.id}`} style={{
-              transitionDelay: `${index * 0.05}s`
+          <li key={link.id} style={{
+              transitionDelay: `${index * 0.1}s`
             }}>
+            <a href={`#${link.id}`} onClick={toggle}>
               {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
               <span>{link.title}</span>
             </a>
