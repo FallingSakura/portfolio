@@ -14,8 +14,8 @@
 .project-card {
   position: relative;
   z-index: 0;
-  width: 180px;
-  height: 60px;
+  width: 250px;
+  height: 150px;
   background-color: transparent;
   border-radius: 10px;
   border: 2px solid var(--primary-color);
