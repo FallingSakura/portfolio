@@ -1,4 +1,4 @@
-import './App.css'
+import './styles/App.css'
 import { useState, useEffect, useRef } from 'react'
 import { useTheme } from './hooks/useTheme'
 import { usePageObserver } from './hooks/usePageObserver'
@@ -10,9 +10,9 @@ import SecPage from './components/SecPage'
 import SideNav from './components/SideNav'
 
 function App() {
+  const containerRef = useRef<HTMLElement>(null)
   const [togglNav, setTogglNav] = useState(false)
   const [theme, setTheme] = useState(false)
-  const containerRef = useRef<HTMLElement>(null)
   const [currentPage, setCurrentPage] = useState(0)
   const toggle = () => {
     setTogglNav(!togglNav)

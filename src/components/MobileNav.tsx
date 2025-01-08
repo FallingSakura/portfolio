@@ -1,6 +1,6 @@
 import '../styles/MobileNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { links } from '../data/links'
 function MobileNav({
   toggle,
   currentPage
@@ -8,18 +8,6 @@ function MobileNav({
   toggle: () => void
   currentPage: number
 }) {
-  const links = [
-    {
-      id: 'home',
-      title: 'Home',
-      icon: faHouse
-    },
-    {
-      id: 'projects',
-      title: 'Projects',
-      icon: faLaptopCode
-    }
-  ]
   return (
     <nav className="mobile-nav">
       <ul>

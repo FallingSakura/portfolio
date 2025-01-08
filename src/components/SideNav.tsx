@@ -1,19 +1,7 @@
 import '../styles/SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { links } from '../data/links'
 function SideNav({ currentPage }: { currentPage: number }) {
-  const links = [
-    {
-      id: 'home',
-      title: 'Home',
-      icon: faHouse
-    },
-    {
-      id: 'projects',
-      title: 'Projects',
-      icon: faLaptopCode
-    }
-  ]
   return (
     <nav className="side-nav">
       <div className="nav-container">
