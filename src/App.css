@@ -39,7 +39,7 @@
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .nav-open .page-container {
     width: 88%;
   }

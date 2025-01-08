@@ -41,7 +41,7 @@ function App() {
           <HomePage />
           <SecPage />
         </section>
-        <SideNav currentPage={currentPage} togglNav={togglNav} />
+        <SideNav currentPage={currentPage} />
         <MobileNav currentPage={currentPage} toggle={toggle} />
       </div>
     </>

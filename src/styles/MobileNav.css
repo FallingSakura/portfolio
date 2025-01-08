@@ -70,7 +70,7 @@
   flex-shrink: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .mobile-nav {
     display: none;
   }

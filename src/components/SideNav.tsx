@@ -1,13 +1,7 @@
 import '../styles/SideNav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
-function SideNav({
-  currentPage,
-  togglNav
-}: {
-  currentPage: number
-  togglNav: boolean
-}) {
+function SideNav({ currentPage }: { currentPage: number }) {
   const links = [
     {
       id: 'home',
@@ -22,31 +16,30 @@ function SideNav({
   ]
   return (
     <nav className="side-nav">
-      <ul>
-        {links.map((link, index) => (
-          <li
-            key={link.id}
-            style={{
-              transitionDelay: `${index * 0.05}s`
-            }}
-          >
-            <a href={`#${link.id}`}>
-              {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
-              <span>{link.title}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="nav-container">
+        <ul>
+          {links.map((link, index) => (
+            <li
+              key={link.id}
+              style={{
+                transitionDelay: `${index * 0.05}s`
+              }}
+            >
+              <a href={`#${link.id}`}>
+                {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
+                <span>{link.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      <div
-        className="backdrop"
-        style={{
-          transform: `translate(${togglNav ? '-50%' : '-200px'}, ${
-            currentPage * 100
-          }%)`,
-          transitionDelay: `${currentPage * 0.05}s`
-        }}
-      ></div>
+        <div
+          className="backdrop"
+          style={{
+            transform: `translate(-50%, ${currentPage * 100}%)`
+          }}
+        ></div>
+      </div>
     </nav>
   )
 }
