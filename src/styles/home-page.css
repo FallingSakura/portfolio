@@ -60,7 +60,6 @@
 .title h1 > span:not(#name) {
   font-size: 2rem;
   margin-right: 10px;
-  font-style: italic;
   font-weight: 600;
 }
 @media (max-width: 768px) {
