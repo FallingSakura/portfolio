@@ -11,7 +11,7 @@ export const projects: Project[] = [
   },
   {
     title: "Hexo Blog",
-    descr: "My Blog using hexo redefine theme.",
+    descr: "My blog using hexo redefine theme.",
     url: "https://vercel.fallingsakura.top",
     languages: ["html", "css", "javascript"]
   }
