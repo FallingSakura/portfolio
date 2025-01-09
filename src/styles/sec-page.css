@@ -7,7 +7,9 @@
   background-color: var(--background-color);
 }
 .card-container {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 550px;
   gap: 20px;
 }
