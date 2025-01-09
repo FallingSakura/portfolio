@@ -1,4 +1,4 @@
-import '../styles/social-inks.css'
+import '@/styles/social-links.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBilibili,

@@ -1,4 +1,4 @@
-import '../styles/SideNav.css'
+import '../styles/side-nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { links } from '../data/links'
 function SideNav({ currentPage }: { currentPage: number }) {

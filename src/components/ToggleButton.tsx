@@ -1,4 +1,4 @@
-import '../styles/ToggleButton.css'
+import '@/styles/toggle-button.css'
 
 function ToggleButton({
   togglNav,

@@ -1,4 +1,4 @@
-import '../styles/MobileNav.css'
+import '@/styles/mobile-nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { links } from '../data/links'
 function MobileNav({

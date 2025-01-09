@@ -1,6 +1,6 @@
 import avatar from '/avatar.jpg'
 import SocialLinks from './SocialLinks'
-import '../styles/HomePage.css'
+import '../styles/home-page.css'
 function HomePage() {
   return (
     <div className="home" id="home">
