@@ -8,9 +8,21 @@
 }
 .card-container {
   display: grid;
-  width: 80%;
+  padding: 25px;
+  /* width: 60%; */
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   height: 550px;
-  gap: 15px;
+  gap: 25px;
+  border: 1px dotted rgb(235, 235, 235);
+  border-radius: 15px;
+  background: rgba(240, 240, 240, 0.3);
+  /* backdrop-filter: blur(50px); */
+  box-shadow: 0 0 5px rgba(240, 240, 240, 1);
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
 }

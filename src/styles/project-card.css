@@ -50,6 +50,7 @@
   z-index: -10;
 }
 .descr {
+  padding-top: 5px;
   padding-left: 20px;
   display: flex;
   align-items: center;
@@ -61,7 +62,7 @@
   font-size: 1rem;
 }
 .footer {
-  padding: 5px 3px;
+  padding: 0 5px;
   display: flex;
   gap: 10px;
 }

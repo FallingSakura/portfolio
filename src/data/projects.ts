@@ -8,6 +8,12 @@ export const projects: Project[] = [
     stars: 0,
     forks: 0,
     languages: ["react", "python"],
+  },
+  {
+    title: "Hexo Blog",
+    descr: "My Blog using hexo redefine theme.",
+    url: "https://vercel.fallingsakura.top",
+    languages: ["html", "css", "javascript"]
   }
   /* idea: gird draggable */
 ]
