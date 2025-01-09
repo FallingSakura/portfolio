@@ -17,14 +17,15 @@
   height: 100%;
 }
 .project-card h3 {
-  padding: 5px 20px;
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
+  padding: 5px 20px;
   width: fit-content;
   font-size: 1.5rem;
   font-weight: 600;
   transition: 0.3s;
+  z-index: 0;
 }
 .project-card h3::after {
   content: '';
@@ -34,7 +35,8 @@
   position: absolute;
   left: 3px;  
   border-radius: 3px;
-  transition: 0.3s;
+  transition: background 0.3s, filter 0.5s;
+  z-index: 10;
 }
 .project-card h3::before {
   content: '';
@@ -44,7 +46,8 @@
   position: absolute;
   left: 3px;  
   border-radius: 3px;
-  transition: 0.5s;
+  transition: height 0.3s 0.1s, transform 0.3s 0.1s;
+  z-index: -10;
 }
 .descr {
   padding-left: 20px;
@@ -86,16 +89,29 @@
 }
 .project-card:hover h3::after {
   width: 100%;
-  background: linear-gradient(to right, transparent, var(--shadow-color), transparent);
-  filter: blur(20px);
+  height: 10px;
+  background: linear-gradient(to right, transparent, var(--primary-color) 21% 80%, transparent);
+  filter: blur(15px);
+  transition: width 0.4s;
 }
 .project-card:hover h3::before {
   height: 100px;
-  left: 0;
-  top: 0;
+  transform: translateY(32px);
+  animation: slide 0.5s ease-out;
 }
 
 .project-card:hover {
   box-shadow: 0 0 15px var(--shadow-color);
-  transform: translateY(-10px);
+  transform: scale(1.01);
+}
+
+@keyframes slide {
+  60% {
+    left: 100%;
+    opacity: 0.5;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
 }

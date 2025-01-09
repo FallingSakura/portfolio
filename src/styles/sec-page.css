@@ -8,8 +8,9 @@
 }
 .card-container {
   display: grid;
+  width: 80%;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   height: 550px;
-  gap: 20px;
+  gap: 15px;
 }
