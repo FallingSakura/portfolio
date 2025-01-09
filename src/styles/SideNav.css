@@ -20,7 +20,7 @@
 .side-nav ul {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: max-content;
   height: fit-content;
   align-items: flex-start;
   list-style: none;
