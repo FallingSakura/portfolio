@@ -11,7 +11,7 @@ export const projects = [
   },
   {
     title: "Tech News",
-    descr: "A website for the latest tech news.",
+    descr: "Tech News, a website from our project team using next.js and flask api. I'm in charge of the front end.",
     url: "https://technews.fallingsakura.top",
     commits: 0,
     stars: "",

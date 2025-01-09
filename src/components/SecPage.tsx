@@ -6,8 +6,16 @@ function SecPage() {
       <div className="card-container">
         {projects.map((project) => (
           <div className="project-card" key={project.title}>
-            <h3>{project.title}</h3>
-            <p>{project.descr}</p>
+            <div className="content-container">
+              <div className="title">
+                <h3>{project.title}</h3>
+              </div>
+              <div className="descr">
+                <p>{project.descr}</p>
+              </div>
+              <div className="footer">
+              </div>
+            </div>
           </div>
         ))}
       </div>
