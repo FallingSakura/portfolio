@@ -19,14 +19,13 @@ function SideNav({ currentPage }: { currentPage: number }) {
               </a>
             </li>
           ))}
+          <div
+            className="backdrop"
+            style={{
+              transform: `translate(-50%, ${currentPage * 100}%)`
+            }}
+          ></div>
         </ul>
-
-        <div
-          className="backdrop"
-          style={{
-            transform: `translate(-50%, ${currentPage * 100}%)`
-          }}
-        ></div>
       </div>
     </nav>
   )

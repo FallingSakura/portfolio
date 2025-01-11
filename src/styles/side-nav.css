@@ -19,6 +19,7 @@
 }
 .side-nav ul {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: max-content;
   height: fit-content;
@@ -48,22 +49,25 @@
   font-weight: 600;
 }
 .backdrop {
-  width: 92%;
+  width: 150%;
   height: 40px;
   background-color: var(--background-color);
   position: absolute;
   top: 0;
   left: 54%;
   z-index: 0;
+  transition: opacity 0.3s;
   border-radius: 10px;
-  transition: opacity 0.5s, transform 0.5s;
-  transition-delay: 0.3s;
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.4);
   opacity: 0;
 }
 .nav-open .backdrop {
   opacity: 1;
 }
+.nav-open .backdrop::after {
+  opacity: 1;
+}
+
 
 .backdrop::after {
   content: '';
@@ -75,6 +79,8 @@
   background-color: var(--primary-color);
   border-radius: 3px;
   transform: translateY(-50%);
+  transition: opacity 0.3s;
+  opacity: 0;
 }
 
 [data-theme='light'] .backdrop {
