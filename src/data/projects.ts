@@ -1,8 +1,15 @@
 import { Project } from "../types/project"
+
 export const projects: Project[] = [
   {
+    title: "My portfolio",
+    descr: "About me. \nJust for fun.",
+    url: "https://fallingsakura.top",
+    languages: ["react"]
+  },
+  {
     title: "Tech News",
-    descr: "Tech News, a website from our project team using next.js and flask api. I'm in charge of the front end.",
+    descr: "Tech News, a website from our project team using next.js and flask api.",
     url: "https://technews.fallingsakura.top",
     commits: 0,
     stars: 0,
@@ -14,6 +21,12 @@ export const projects: Project[] = [
     descr: "My blog using hexo redefine theme.",
     url: "https://vercel.fallingsakura.top",
     languages: ["html", "css", "javascript"]
-  }
+  },
+  {
+    title: "Record Calendar",
+    descr: "A Calendar that can record your everyday's feeling.",
+    url: "https://calendar.fallingsakura.top",
+    languages: ["vue", "node.js"]
+  },
   /* idea: gird draggable */
 ]

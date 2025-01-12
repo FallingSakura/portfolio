@@ -14,7 +14,7 @@ function ProjectCard({ title, descr, url, languages }: Project) {
           </div>
           <div className="footer">
             {languages.map((language) => (
-              <LanguageLabel language={language} />
+              <LanguageLabel language={language} key={language} />
             ))}
           </div>
         </div>

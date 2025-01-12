@@ -4,5 +4,7 @@ export const languages: Record<string, string> = {
   "typescript": "4476c0",
   "html": "d25735",
   "css": "5f3694",
-  "javascript": "eee170"
+  "javascript": "eee170",
+  "vue": "64B687",
+  "node.js": "507d40"
 }
