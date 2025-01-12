@@ -13,7 +13,7 @@ function SideNav({ currentPage }: { currentPage: number }) {
                 transitionDelay: `${index * 0.05}s`
               }}
             >
-              <a href={`#${link.id}`}>
+              <a href={`#${link.id}`} tabIndex={-1}>
                 {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
                 <span>{link.title}</span>
               </a>

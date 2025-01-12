@@ -4,7 +4,7 @@ import LanguageLabel from './LanguageLabel'
 function ProjectCard({ title, descr, url, languages }: Project) {
   return (
     <div className="project-card">
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" tabIndex={-1}>
         <div className="content-container">
           <div className="title">
             <h3>{title}</h3>

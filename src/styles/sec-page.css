@@ -14,11 +14,11 @@
   grid-template-columns: 1fr 1fr;
   height: 550px;
   gap: 25px;
-  border: 1px solid rgb(235, 235, 235);
+  /* border: 1px solid rgb(235, 235, 235); */
   border-radius: 15px;
-  background: rgba(240, 240, 240, 0.3);
+  /* background: rgba(240, 240, 240, 0.3); */
   backdrop-filter: blur(50px);
-  box-shadow: 0 0 5px rgba(240, 240, 240, 1);
+  /* box-shadow: 0 0 5px rgba(240, 240, 240, 1); */
 }
 
 @media (max-width: 768px) {

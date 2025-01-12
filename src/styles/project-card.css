@@ -4,9 +4,11 @@
   width: 350px;
   height: 180px;
   padding: 20px 25px;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+  background: rgba(235, 235, 235, 0.3);
   border-radius: 15px;
-  border: 2px solid var(--primary-color);
+  border: 1px solid rgb(235, 235, 235);
+  box-shadow: 0 0 5px rgba(240, 240, 240, 1);
   transition: 0.3s;
   cursor: pointer;
 }
@@ -98,12 +100,13 @@
 .project-card:hover h3::before {
   height: 100px;
   transform: translateY(32px);
-  animation: slide 0.5s ease-out;
+  /* animation: slide 0.5s ease-out; */
 }
 
 .project-card:hover {
   box-shadow: 0 0 15px var(--shadow-color);
   transform: scale(1.01);
+  border: 1px solid var(--primary-color);
 }
 
 @keyframes slide {
