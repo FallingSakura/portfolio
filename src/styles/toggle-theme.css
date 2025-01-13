@@ -2,6 +2,8 @@
   -webkit-tap-highlight-color: transparent;
   position: fixed;
   display: flex;
+  bottom: 0;
+  left: 0;
   justify-content: center;
   align-items: center;
   width: 75px;
@@ -24,4 +26,13 @@
 .hidden {
   opacity: 0;
   transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .toggle-theme {
+    bottom: unset;
+    left: unset;
+    right: 0;
+    top: 0;
+  }
 }
