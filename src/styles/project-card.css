@@ -1,5 +1,6 @@
 .project-card {
   --card-color: rgba(235, 235, 235, 0.2); 
+  --card-border-color: rgb(235, 235, 235); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,24 +8,22 @@
   z-index: 0;
   width: 350px;
   height: fit-content;
-  /* height: 180px; */
   padding: 15px 25px;
-  /* background-color: var(--background-color); */
   background: var(--card-color);
   border-radius: 15px;
-  border: 1px solid rgb(235, 235, 235);
+  border: 1px solid var(--card-border-color);
   box-shadow: 0 0 5px rgba(240, 240, 240, 1);
   transition: 0.3s;
   cursor: pointer;
 }
 [data-theme="dark"] .project-card {
   --card-color: rgba(58, 58, 58, 0.3);
-  border: 1px solid rgb(58, 58, 58);
+  --card-border-color: rgb(58, 58, 58);
   box-shadow: 0 0 5px rgba(58, 58, 58, 1);
 }
 .showcase {
   position: relative;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   width: 320px;
   height: 220px;
@@ -34,9 +33,10 @@
 .showcase::before {
   content: '';
   position: absolute;
+  bottom: -10px;
   width: 100%;
-  height: 100px;
-  /* background-image: linear-gradient(to top, ) */
+  height: 150px;
+  background-image: linear-gradient(to top, var(--card-border-color), transparent);
 }
 .project-card a {
   display: inline-block;
@@ -136,10 +136,15 @@
   /* animation: slide 0.5s ease-out; */
 }
 
-.project-card:hover {
+.project-card:hover { 
   box-shadow: 0 0 15px var(--shadow-color);
-  transform: scale(1.01);
+  transform: scale(1.02);
   border: 1px solid var(--primary-color);
+}
+
+.project-card:hover .showcase {
+  height: 220px;
+  transform: rotate(-3deg);
 }
 
 @keyframes slide {
@@ -156,7 +161,5 @@
 @media (max-width: 768px) {
   .project-card {
     padding: 10px 15px;
-    width: 320px;
-    height: 150px;
   }
 }

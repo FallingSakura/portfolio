@@ -7,15 +7,16 @@
   background-color: var(--background-color);
 }
 .card-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 770px;
+  max-height: 70%;
   position: relative;
-  margin-top: 55px;
   padding: 25px;
-  grid-template-columns: 1fr 1fr;
   gap: 25px;
   backdrop-filter: blur(50px);
-  overflow-x: visible;
-  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: none;
 }
 
