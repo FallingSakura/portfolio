@@ -1,9 +1,17 @@
 import '@/styles/project-card.css'
 import { Project } from '../../types/project'
 import LanguageLabel from './LanguageLabel'
-function ProjectCard({ title, descr, url, languages }: Project) {
+function ProjectCard({ title, descr, url, languages, img }: Project) {
   return (
     <div className="project-card">
+      {img && (
+        <div
+          className="showcase"
+          style={{
+            backgroundImage: `url('${img}')`
+          }}
+        ></div>
+      )}
       <a href={url} target="_blank" tabIndex={-1}>
         <div className="content-container">
           <div className="title">

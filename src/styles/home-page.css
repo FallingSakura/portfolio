@@ -7,9 +7,9 @@
   align-items: center;
 }
 .home .container {
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
   width: 880px;
-  height: 500px;
+  height: 380px;
 }
 .about {
   display: flex;

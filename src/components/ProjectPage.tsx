@@ -1,9 +1,9 @@
-import '../styles/sec-page.css'
+import '../styles/project-page.css'
 import { projects } from '../data/projects'
 import ProjectCard from './project-card/ProjectCard'
-function SecPage() {
+function ProjectPage() {
   return (
-    <div className="sec" id="projects">
+    <div className="project" id="projects">
       <div className="card-container">
         {projects.map((project) => (
           <ProjectCard {...project} key={project.title} />
@@ -12,4 +12,4 @@ function SecPage() {
     </div>
   )
 }
-export default SecPage
+export default ProjectPage

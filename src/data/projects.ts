@@ -5,12 +5,14 @@ export const projects: Project[] = [
     title: "My portfolio",
     descr: "About me. \nJust for fun.",
     url: "https://fallingsakura.top",
-    languages: ["react"]
+    languages: ["react"],
+    img: "/project-images/portfolio.jpeg",
   },
   {
     title: "Tech News",
     descr: "Tech News, a website from our project team using next.js and flask api.",
     url: "https://technews.fallingsakura.top",
+    img: "/avatar.jpg",
     commits: 0,
     stars: 0,
     forks: 0,

@@ -6,7 +6,7 @@ import MobileNav from './components/MobileNav'
 import ToggleButton from './components/ToggleButton'
 import ToggleTheme from './components/ToggleTheme'
 import HomePage from './components/HomePage'
-import SecPage from './components/SecPage'
+import ProjectPage from './components/ProjectPage'
 import SideNav from './components/SideNav'
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
         <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
         <section ref={containerRef} className="page-container">
           <HomePage />
-          <SecPage />
+          <ProjectPage />
         </section>
         <SideNav currentPage={currentPage} />
         <MobileNav currentPage={currentPage} toggle={toggle} />

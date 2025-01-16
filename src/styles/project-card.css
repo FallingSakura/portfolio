@@ -1,11 +1,15 @@
 .project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   z-index: 0;
   width: 350px;
-  height: 180px;
-  padding: 20px 25px;
+  height: fit-content;
+  /* height: 180px; */
+  padding: 15px 25px;
   /* background-color: var(--background-color); */
-  background: rgba(235, 235, 235, 0.3);
+  background: rgba(235, 235, 235, 0.2);
   border-radius: 15px;
   border: 1px solid rgb(235, 235, 235);
   box-shadow: 0 0 5px rgba(240, 240, 240, 1);
@@ -17,6 +21,19 @@
   border: 1px solid rgb(58, 58, 58);
   box-shadow: 0 0 5px rgba(58, 58, 58, 1);
 }
+.showcase {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  width: 320px;
+  height: 220px;
+  background: no-repeat center / cover;
+  transition: 0.3s;
+}
+.project-card a {
+  display: inline-block;
+  width: 100%;
+}
 .project-card .content-container {
   display: flex;
   flex-direction: column;
@@ -27,6 +44,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: 10px;
   padding: 5px 20px;
   width: fit-content;
   font-size: 1.5rem;
@@ -69,6 +87,8 @@
   white-space: pre-wrap;
 }
 .footer {
+  margin-top: 25px;
+  margin-bottom: 5px;
   padding: 0 5px;
   display: flex;
   gap: 10px;
