@@ -1,4 +1,5 @@
 .project-card {
+  --card-color: rgba(235, 235, 235, 0.2); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +10,7 @@
   /* height: 180px; */
   padding: 15px 25px;
   /* background-color: var(--background-color); */
-  background: rgba(235, 235, 235, 0.2);
+  background: var(--card-color);
   border-radius: 15px;
   border: 1px solid rgb(235, 235, 235);
   box-shadow: 0 0 5px rgba(240, 240, 240, 1);
@@ -17,18 +18,25 @@
   cursor: pointer;
 }
 [data-theme="dark"] .project-card {
-  background: rgba(58, 58, 58, 0.3);
+  --card-color: rgba(58, 58, 58, 0.3);
   border: 1px solid rgb(58, 58, 58);
   box-shadow: 0 0 5px rgba(58, 58, 58, 1);
 }
 .showcase {
+  position: relative;
   border-radius: 15px;
   overflow: hidden;
-  position: relative;
   width: 320px;
   height: 220px;
   background: no-repeat center / cover;
   transition: 0.3s;
+}
+.showcase::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  /* background-image: linear-gradient(to top, ) */
 }
 .project-card a {
   display: inline-block;
