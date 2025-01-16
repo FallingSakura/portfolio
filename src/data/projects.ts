@@ -22,13 +22,15 @@ export const projects: Project[] = [
     title: "Hexo Blog",
     descr: "My blog using hexo redefine theme.",
     url: "https://vercel.fallingsakura.top",
-    languages: ["html", "css", "javascript"]
+    languages: ["html", "css", "javascript"],
+    img: "/project-images/hexoblog.jpeg"
   },
   {
     title: "Record Calendar",
     descr: "A Calendar that can record your everyday's feeling.",
     url: "https://calendar.fallingsakura.top",
-    languages: ["vue", "node.js"]
+    languages: ["vue", "node.js"],
+    img: "/project-images/calendar.jpeg"
   },
   /* idea: gird draggable */
 ]

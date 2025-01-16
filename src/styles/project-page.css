@@ -1,4 +1,5 @@
 .project {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -8,25 +9,46 @@
 }
 .card-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 770px;
-  max-height: 70%;
+  align-items: center;
+  /* max-width: 80%;  */
   position: relative;
-  padding: 25px;
   gap: 25px;
-  backdrop-filter: blur(50px);
-  overflow-x: hidden;
+  padding: 25px;
+  overflow: auto;
+  border-radius: 15px;
+  /* min-width: calc(100% - 225px); */
   scrollbar-width: none;
+  /* transform: translateX(100px); */
+}
+.project .mask::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  left: 0;
+  /* background: white; */
+}
+.left-btn, .right-btn {
+  position: absolute;
+  top: 50%;
+  font-size: 2rem;
+}
+.left-btn {
+  left: 20px;
+}
+.right-btn {
+  right: 0;
 }
 
 @media (max-width: 768px) {
+  .project {
+    align-items: end;
+  }
   .card-container {
-    max-height: calc(100vh - 75px);
-    height: fit-content;
-    /* height: 700px; */
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 1fr;
-    /* padding: 0; */
+    flex-direction: column; 
+    overflow: auto;
+    height: calc(100% - 75px);
+    padding: 10px;
+    margin-bottom: 15px;
   }
 }
