@@ -12,6 +12,7 @@
   align-items: center;
   /* max-width: 80%;  */
   position: relative;
+  height: 100%;
   gap: 25px;
   padding: 25px;
   overflow: auto;
@@ -19,14 +20,6 @@
   /* min-width: calc(100% - 225px); */
   scrollbar-width: none;
   /* transform: translateX(100px); */
-}
-.project .mask::before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 50px;
-  left: 0;
-  /* background: white; */
 }
 .left-btn, .right-btn {
   position: absolute;
@@ -44,11 +37,16 @@
   .project {
     align-items: end;
   }
+  .card {
+    transform: unset !important;
+  }
   .card-container {
+    box-sizing: content-box;
+    width: 100%;
     flex-direction: column; 
     overflow: auto;
-    height: calc(100% - 75px);
-    padding: 10px;
+    height: calc(100% - 115px);
+    padding: 15px 25px;
     margin-bottom: 15px;
   }
 }

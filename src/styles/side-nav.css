@@ -49,7 +49,7 @@
   font-weight: 600;
 }
 .backdrop {
-  width: calc(100% + 40px);
+  width: calc(99% - 10px);
   /* width: 150%; */
   height: 40px;
   background-color: var(--background-color);

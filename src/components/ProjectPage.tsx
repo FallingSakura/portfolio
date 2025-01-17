@@ -10,8 +10,12 @@ function ProjectPage() {
         {/* <span className="left-btn">
           <FontAwesomeIcon icon={faAngleLeft} />
         </span> */}
-        {projects.map((project) => (
-          <ProjectCard {...project} key={project.title} />
+        {projects.map((project, index) => (
+          <div className="card" style={{
+            transform: `translateY(${(index & 1) ? "100px" : "-100px"})`
+          }}>
+            <ProjectCard {...project} key={project.title} />
+          </div>
         ))}
         {/* <span className="right-btn">
           <FontAwesomeIcon icon={faAngleRight} />
