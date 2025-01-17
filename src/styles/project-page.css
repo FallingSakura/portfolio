@@ -10,16 +10,13 @@
 .card-container {
   display: flex;
   align-items: center;
-  /* max-width: 80%;  */
   position: relative;
   height: 100%;
   gap: 25px;
   padding: 25px;
   overflow: auto;
   border-radius: 15px;
-  /* min-width: calc(100% - 225px); */
   scrollbar-width: none;
-  /* transform: translateX(100px); */
 }
 .left-btn, .right-btn {
   position: absolute;
@@ -36,9 +33,6 @@
 @media (max-width: 768px) {
   .project {
     align-items: end;
-  }
-  .card {
-    transform: unset !important;
   }
   .card-container {
     box-sizing: content-box;

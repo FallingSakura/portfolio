@@ -43,4 +43,7 @@
   .nav-open .page-container {
     width: 88%;
   }
+  .page-container {
+    scroll-snap-type: y proximity;
+  }
 }
