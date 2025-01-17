@@ -10,6 +10,7 @@ let init = 0
 function ProjectPage() {
   const [pos, setPos] = useState(0)
   const card_container = useRef<HTMLDivElement>(null)
+  const isMobile = window.innerWidth <= 768
   useEffect(() => {
     if (card_container.current) {
       container_width = card_container.current.offsetWidth
@@ -37,7 +38,7 @@ function ProjectPage() {
         className="card-container"
         ref={card_container}
         style={{
-          transform: `translateX(${pos}px)`
+          transform: `translateX(${isMobile ? 0 : pos}px)`
         }}
       >
         {projects.map((project, index) => (
