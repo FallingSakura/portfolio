@@ -38,7 +38,7 @@
   overflow: hidden;
   border-radius: 15px;
   scrollbar-width: none;
-  transition: 0.3s;
+  transition: 0.5s;
   /* transform: translateX(calc(50% - 200px)); */
 }
 .controller {

@@ -48,10 +48,10 @@ function ProjectPage() {
         ))}
       </div>
       <div className="controller">
-        <span className="left-btn" onClick={scrollBack}>
+        <span title="Back" className="left-btn" onClick={scrollBack}>
           <FontAwesomeIcon icon={faAngleLeft} />
         </span>
-        <span className="right-btn" onClick={scrollForward}>
+        <span title="Forward" className="right-btn" onClick={scrollForward}>
           <FontAwesomeIcon icon={faAngleRight} />
         </span>
       </div>
