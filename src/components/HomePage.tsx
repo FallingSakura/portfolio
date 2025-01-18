@@ -1,6 +1,7 @@
 import avatar from '/avatar.jpg'
 import SocialLinks from './SocialLinks'
 import '../styles/home-page.css'
+import ScrollToBottom from './ScrollToBottom'
 function HomePage() {
   return (
     <div className="home" id="home">
@@ -22,6 +23,7 @@ function HomePage() {
         </div>
         <SocialLinks />
       </div>
+      <ScrollToBottom />
     </div>
   )
 }
