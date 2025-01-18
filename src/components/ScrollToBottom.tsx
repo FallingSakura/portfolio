@@ -11,7 +11,7 @@ function ScrollToBottom() {
     })
   }
   return (
-    <div className="scroll-to-bottom" onClick={scrollToBottom}>
+    <div className="scroll-to-bottom" title="Go ahead" onClick={scrollToBottom}>
       <FontAwesomeIcon icon={faAngleDown} />
     </div>
   )
