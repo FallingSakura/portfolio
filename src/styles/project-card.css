@@ -17,9 +17,9 @@
   cursor: pointer;
 }
 [data-theme="dark"] .project-card {
-  --card-color: rgba(58, 58, 58, 0.3);
-  --card-border-color: rgb(58, 58, 58);
-  box-shadow: 0 0 5px rgba(58, 58, 58, 1);
+  --card-color: rgba(50, 50, 50, 0.2);
+  --card-border-color: rgb(50, 50, 50);
+  box-shadow: 0 0 5px rgba(50, 50, 50, 0.9);
 }
 .showcase {
   position: relative;
