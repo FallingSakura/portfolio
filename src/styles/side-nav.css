@@ -52,7 +52,7 @@
   width: calc(99% - 10px);
   /* width: 150%; */
   height: 40px;
-  background-color: var(--background-color);
+  background-color: var(--color-background);
   position: absolute;
   top: 0;
   left: 54%;
@@ -76,7 +76,7 @@
   left: 7px;
   width: 5px;
   height: 70%;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   border-radius: 3px;
   transform: translateY(-50%);
   transition: opacity 0.3s;

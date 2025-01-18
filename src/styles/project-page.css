@@ -12,7 +12,7 @@
   content: '';
   height: 100%;
   width: calc((100% - 350px) / 2);
-  background: linear-gradient(to right, var(--background-color), transparent);
+  background: linear-gradient(to right, var(--color-background), transparent);
   position: absolute;
   left: 0;
   z-index: 10;
@@ -21,7 +21,7 @@
   content: '';
   height: 100%;
   width: calc((100% - 350px) / 2);
-  background: linear-gradient(to left, var(--background-color), transparent);
+  background: linear-gradient(to left, var(--color-background), transparent);
   position: absolute;
   right: 0;
   z-index: 10;
@@ -44,6 +44,7 @@
   position: relative;
   display: flex;
   gap: 50px;
+  margin-top: 25px;
 }
 .left-btn, .right-btn {
   /* position: absolute; */
@@ -58,7 +59,7 @@
   transition: background 0.3s;
 }
 .left-btn:hover, .right-btn:hover {
-  background: var(--transparency-color);
+  background: var(--color-transparent);
 }
 
 @media (max-width: 768px) {

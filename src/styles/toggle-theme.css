@@ -17,7 +17,7 @@
   transition: all 0.5s;
 }
 .icon:hover {
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 .visible {
   opacity: 1;

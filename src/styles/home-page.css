@@ -42,11 +42,11 @@
   filter: blur(30px);
   z-index: -1;
   border-radius: 100%;
-  background-color: var(--shadow-color);
+  background-color: var(--color-shadow);
 }
 .title #name {
-  color: var(--primary-color);
-  text-shadow: 0 0 50px var(--primary-color);
+  color: var(--color-primary);
+  text-shadow: 0 0 50px var(--color-primary);
 }
 .title {
   display: flex;
