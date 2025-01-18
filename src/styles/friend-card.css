@@ -40,8 +40,10 @@
   position: absolute;
   border-radius: 10000px;
   border: 2px solid var(--color-border);
-  box-shadow: 0 0 5px 3px var(--color-shadow);
-  background: url('/avatar.jpg') no-repeat left / cover;
+  box-shadow: 0 0 5px 1px var(--color-shadow);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
   opacity: 0;
   animation: moveoff 0.5s ease forwards;
 }

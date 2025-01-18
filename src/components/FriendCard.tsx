@@ -1,11 +1,16 @@
 import '@/styles/friend-card.css'
-function FriendCard() {
+import { Friend } from '../types/friend' 
+function FriendCard({ name, avatar, link, index }: (Friend & {index:number})) {
+  const prop = index
+  console.log(prop)
   return (
     <div className="friend-card">
-      <div className="card-container">
-        <div className="avatar"></div>
-        <h3>FallingSakura</h3>
-      </div>
+      <a className="card-container" href={link}>
+        <div className="avatar" style={{
+          backgroundImage: `url(${avatar})`
+        }}></div>
+        <h3>{name}</h3>
+      </a>
     </div>
   )
 }
