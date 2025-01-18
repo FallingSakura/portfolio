@@ -12,7 +12,8 @@ function FriendCard({
   const text = useRef<HTMLParagraphElement>(null)
   const card_container = useRef<HTMLAnchorElement>(null)
   const [hover, setHover] = useState(false)
-  const prop = index
+  const param = index
+  console.log(param)
   useEffect(() => {
     if (title.current && text.current) {
       const title_width = `${title.current.offsetWidth.toString()}px`
