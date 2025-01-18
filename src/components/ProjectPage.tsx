@@ -41,9 +41,9 @@ function ProjectPage() {
           transform: `translateX(${isMobile ? 0 : pos}px)`
         }}
       >
-        {projects.map((project, index) => (
-          <div className="card" key={index}>
-            <ProjectCard {...project} key={project.title} />
+        {projects.map((project) => (
+          <div className="card" key={project.title}>
+            <ProjectCard {...project}  />
           </div>
         ))}
       </div>

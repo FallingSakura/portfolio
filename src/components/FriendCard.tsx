@@ -3,7 +3,7 @@ function FriendCard() {
   return (
     <div className="friend-card">
       <div className="card-container">
-      <div className="avatar"></div>
+        <div className="avatar"></div>
         <h3>FallingSakura</h3>
       </div>
     </div>
