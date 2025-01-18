@@ -28,7 +28,7 @@
   border-radius: 100%;
   overflow: hidden;
   z-index: 10;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid var(--color-border);
   -webkit-tap-highlight-color: transparent;
 }
 .img img {

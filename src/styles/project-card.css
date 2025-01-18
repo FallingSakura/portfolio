@@ -14,9 +14,6 @@
   transition: 0.3s;
   cursor: pointer;
 }
-[data-theme="dark"] .project-card {
-  box-shadow: 0 0 5px var(--color-card-shadow);
-}
 .showcase {
   position: relative;
   border-radius: 10px;

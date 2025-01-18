@@ -18,24 +18,27 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Custom properties */
+  --color-primary: #ee9ca7;
+
   --color-text: #1a1a1a;
   --color-background: #ffffff;
-  --color-primary: #ee9ca7;
   --color-shadow: #ee9ca755;
   --color-transparent: rgba(239, 239, 239, 0.9);
+  --color-border: #fafafa;
 
-  --color-card: rgba(235, 235, 235, 0.2); 
-  --color-card-border: rgb(235, 235, 235); 
-  --color-card-shadow: rgba(240, 240, 240, 1);
+  --color-card: #fbfbfb; 
+  --color-card-border: #ebebeb; 
+  --color-card-shadow: #f0f0f0;
 }
 [data-theme='dark'] {
   --color-text: #f9f9f9;
   --color-background: #242424;
-  --color-transparent: rgba(20, 20, 20, 0.9);
   --color-shadow: #704147c2;
+  --color-transparent: rgba(20, 20, 20, 0.9);
+  --color-border: #3e3e3e;
 
-  --color-card: rgba(50, 50, 50, 0.2);
-  --color-card-border: rgb(50, 50, 50);
+  --color-card: #272727;
+  --color-card-border: #323232;
   --color-card-shadow: rgba(50, 50, 50, 0.9);
 }
 
