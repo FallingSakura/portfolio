@@ -44,6 +44,6 @@
     width: 88%;
   }
   .page-container {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: unset;
   }
 }

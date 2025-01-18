@@ -73,7 +73,7 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 7px;
   width: 5px;
   height: 70%;
   background-color: var(--primary-color);
