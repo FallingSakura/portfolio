@@ -1,18 +1,25 @@
 .friend-card {
   position: absolute;
-  left: 150px;
-  top: 257px;
   display: flex;
-  width: fit-content;
-  height: fit-content;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  left: 350px;
+  top: 257px;
   z-index: 1;
   transition: 0.5s;
   border-radius: 50px;
   background: var(--color-background);
   box-shadow: inset 0 0 5px 3px var(--color-card-shadow);
   overflow: hidden;
+}
+.friend-card span {
+  position: absolute;
+  transition: 0.3s;
+  opacity: 0;
+  bottom: 25px;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  /* left: 0; */
 }
 .friend-card::after {
   content: '';
@@ -28,11 +35,15 @@
 }
 .friend-card .card-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 25px;
+  align-items: center;
   cursor: pointer;
   transition-duration: 0.5s;
+}
+.card-container h3 {
+  transition: 0.3s;
 }
 .friend-card .avatar {
   width: 100px;
@@ -50,11 +61,18 @@
 .friend-card:hover {
   border-radius: 25px;
 }
+.friend-card:hover h3 {
+  color: var(--color-primary);
+}
+.friend-card:hover span {
+  opacity: 1;
+}
 .friend-card:hover::after {
   transform: translateY(-100%);
 }
 .friend-card:hover .card-container {
   padding-top: 135px;
+  padding-bottom: var(--leng-pb);
 }
 .friend-card:hover .avatar {
   animation-name: moveon;

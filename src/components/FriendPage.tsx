@@ -6,7 +6,7 @@ function FriendPage() {
     <div className="friend" id="friend">
       <div className="container">
         {friends.map((friend, index) => (
-          <FriendCard {...friend} index={index} />
+          <FriendCard {...friend} index={index} key={friend.name} />
         ))}
       </div>
     </div>
