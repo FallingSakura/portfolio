@@ -5,9 +5,11 @@ import { usePageObserver } from './hooks/usePageObserver'
 import MobileNav from './components/MobileNav'
 import ToggleButton from './components/ToggleButton'
 import ToggleTheme from './components/ToggleTheme'
+import ScrollToBottom from './components/ScrollToBottom'
 import HomePage from './components/HomePage'
 import ProjectPage from './components/ProjectPage'
 import SideNav from './components/SideNav'
+import FriendPage from './components/FriendPage'
 
 function App() {
   const containerRef = useRef<HTMLElement>(null)
@@ -38,8 +40,10 @@ function App() {
         <ToggleButton togglNav={togglNav} toggle={toggle} />
         <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
         <section ref={containerRef} className="page-container">
+          <ScrollToBottom />
           <HomePage />
           <ProjectPage />
+          <FriendPage />
         </section>
         <SideNav currentPage={currentPage} />
         <MobileNav currentPage={currentPage} toggle={toggle} />

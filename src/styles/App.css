@@ -15,7 +15,7 @@
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: var(--background-color);
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
@@ -44,6 +44,6 @@
     width: 88%;
   }
   .page-container {
-    scroll-snap-type: unset;
+    scroll-snap-type: y proximity;
   }
 }

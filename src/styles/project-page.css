@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
   z-index: 1;
 }
 .project::before {

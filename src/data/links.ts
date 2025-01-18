@@ -1,4 +1,4 @@
-import { faHouse, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faLaptopCode, faHands } from '@fortawesome/free-solid-svg-icons'
 export const links = [
     {
       id: 'home',
@@ -9,5 +9,10 @@ export const links = [
       id: 'projects',
       title: 'Projects',
       icon: faLaptopCode
+    },
+    {
+      id: 'friend',
+      title: 'Friends',
+      icon: faHands
     }
   ]
