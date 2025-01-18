@@ -29,8 +29,14 @@ export const usePageObserver = (
     const observer = new IntersectionObserver(observerCallback, observerOptions)
 
     const pageElements = Array.from(container.children) as HTMLElement[]
+    let minus = 0
     pageElements.forEach((page, index) => {
-      page.dataset.index = index.toString()
+      // if (page.style.position === 'absolute') return
+      if (window.getComputedStyle(page).position === 'absolute') {
+        minus++
+        return
+      }
+      page.dataset.index = (index - minus).toString()
       observer.observe(page)
     })
 
