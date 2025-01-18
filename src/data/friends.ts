@@ -3,6 +3,7 @@ export const friends: Friend[] = [
   {
     name: "FallingSakura",
     avatar: "/avatar.jpg",
-    link: "https://fallingsakura.top"
+    link: "https://fallingsakura.top",
+    said: "Hi, this is a test text."
   }
 ]

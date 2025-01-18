@@ -52,9 +52,6 @@ a {
   font-weight: 500;
   text-decoration: inherit;
 }
-a:hover {
-  color: var(--color-primary);
-}
 
 body {
   margin: 0;

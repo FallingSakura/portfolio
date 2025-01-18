@@ -1,6 +1,6 @@
 import '@/styles/friend-card.css'
 import { Friend } from '../types/friend' 
-function FriendCard({ name, avatar, link, index }: (Friend & {index:number})) {
+function FriendCard({ name, avatar, link, said, index }: (Friend & {index:number})) {
   const prop = index
   console.log(prop)
   return (
@@ -10,6 +10,7 @@ function FriendCard({ name, avatar, link, index }: (Friend & {index:number})) {
           backgroundImage: `url(${avatar})`
         }}></div>
         <h3>{name}</h3>
+        <p>{said}</p>
       </a>
     </div>
   )

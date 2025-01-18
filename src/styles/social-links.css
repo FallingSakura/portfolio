@@ -32,6 +32,10 @@
 .links a {
   transition: all ease 0.3s;
 }
+.links a:hover {
+  color: var(--color-primary);
+}
+
 .wechat, .qq {
   position: relative;
 }
