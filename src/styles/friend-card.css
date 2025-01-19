@@ -4,13 +4,14 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transition-property: box-shadow, border-radius, border-width;
+  transition-property: border-radius, border-width;
   transition-duration: 0.5s;
   transition-delay: 0.4s;
   transition-timing-function: ease-out;
   border-radius: 50px;
   background: var(--color-background);
   overflow: hidden;
+  cursor: grabbing;
 }
 .friend-card h3 {
   font-size: 1.25rem;
@@ -24,6 +25,7 @@
   font-style: italic;
   word-break: break-word;
   color: var(--color-text);
+  user-select: none;
   /* left: 0; */
 }
 .friend-card::after {
@@ -68,6 +70,7 @@
   box-shadow: inset 0 0 5px 3px var(--color-card-shadow);
   border-radius: 25px;
   border-top: 3px solid var(--color-primary);
+  z-index: 10;
 }
 .friend-card:hover h3 {
   color: var(--color-primary);
