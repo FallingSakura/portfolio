@@ -3,8 +3,8 @@ import { useRef } from 'react'
 import FriendCard from './FriendCard'
 import { friends } from '../data/friends'
 function FriendPage() {
-  const refs = useRef<HTMLDivElement[]>([])
-  const setRef = (index: number, element: HTMLDivElement | null) => {
+  const refs = useRef<Object[]>([])
+  const setRef = (index: number, element: Object | null) => {
     if (element) {
       refs.current[index] = element
     }
