@@ -42,7 +42,7 @@
   cursor: pointer;
   transition-duration: 0.5s;
 }
-.card-container h3 {
+.friend-card .card-container h3 {
   transition: 0.3s;
 }
 .friend-card .avatar {

@@ -67,7 +67,7 @@
   .controller {
     display: none;
   }
-  .card-container {
+  .project .card-container {
     box-sizing: content-box;
     width: 100%;
     flex-direction: column; 
