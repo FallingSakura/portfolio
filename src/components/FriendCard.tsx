@@ -27,7 +27,7 @@ function FriendCard({
     <>
       <div className="friend-card">
         <a
-          className="card-container"
+          className="friend-card-container"
           href={link}
           target="_blank"
           ref={card_container}

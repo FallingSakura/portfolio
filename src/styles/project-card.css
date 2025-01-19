@@ -35,7 +35,7 @@
   display: inline-block;
   width: 100%;
 }
-.project-card .content-container {
+.project-container {
   display: flex;
   flex-direction: column;
   width: 100%;

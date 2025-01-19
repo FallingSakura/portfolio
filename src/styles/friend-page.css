@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
 }
-.friend .container {
+.friend .friend-cards-container {
   display: flex;
   position: relative;
   justify-content: center;

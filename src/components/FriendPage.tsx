@@ -4,7 +4,7 @@ import { friends } from '../data/friends'
 function FriendPage() {
   return (
     <div className="friend" id="friend">
-      <div className="container">
+      <div className="friend-cards-container">
         {friends.map((friend, index) => (
           <FriendCard {...friend} index={index} key={friend.name} />
         ))}

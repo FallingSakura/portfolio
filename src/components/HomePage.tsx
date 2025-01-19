@@ -5,7 +5,7 @@ import ScrollToBottom from './ScrollToBottom'
 function HomePage() {
   return (
     <div className="home" id="home">
-      <div className="container">
+      <div className="home-container">
         <div className="about">
           <div className="img-container">
             <div className="img">

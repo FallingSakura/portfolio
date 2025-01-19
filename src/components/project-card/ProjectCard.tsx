@@ -13,7 +13,7 @@ function ProjectCard({ title, descr, url, languages, img }: Project) {
         ></div>
       )}
       <a href={url} target="_blank" tabIndex={-1}>
-        <div className="content-container">
+        <div className="project-container">
           <div className="title">
             <h3>{title}</h3>
           </div>
