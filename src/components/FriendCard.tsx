@@ -6,21 +6,18 @@ function FriendCard({
   avatar,
   link,
   said,
-  index
-}: Friend & { index: number }) {
+}: Friend) {
   const title = useRef<HTMLHeadingElement>(null)
   const text = useRef<HTMLParagraphElement>(null)
   const card_container = useRef<HTMLAnchorElement>(null)
-  const param = index
-  console.log(param)
   useEffect(() => {
     if (title.current && text.current) {
-      const title_width = `${title.current.offsetWidth.toString()}px`
+      const title_width = `${(title.current.offsetWidth - 5).toString()}px`
       text.current.style.maxWidth = title_width
     }
     if (card_container.current && text.current) {
       const pH = text.current.offsetHeight
-      card_container.current.style.setProperty('--leng-pb', `${pH + 25}px`)
+      card_container.current.style.setProperty('--leng-pb', `${pH + 26}px`)
     }
   }, [])
   return (
