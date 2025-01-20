@@ -38,6 +38,9 @@
   transition: transform 0.5s, color 0.3s;
   transform: translateX(-150px);
 }
+.side-nav li:hover a {
+  color: var(--color-primary);
+}
 .nav-open .side-nav li {
   transform: translateX(0);
 }

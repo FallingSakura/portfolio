@@ -51,6 +51,7 @@ a {
   color: var(--color-text);
   font-weight: 500;
   text-decoration: inherit;
+  transition: 0.3s;
 }
 
 body {
