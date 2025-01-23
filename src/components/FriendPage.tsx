@@ -16,7 +16,6 @@ function FriendPage() {
     const max_width = window.innerWidth
     refs.current.forEach((ref: HTMLDivElement) => {
       if (posL + ref.offsetWidth > max_width) {
-        
         posT += 80
         posL = PAD
       }

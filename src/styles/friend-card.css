@@ -51,6 +51,8 @@
   cursor: grab;
 }
 .friend-card .friend-card-container h3 {
+  width: 120px;
+  text-align: center;
   transition: 0.3s;
 }
 .friend-card .avatar {

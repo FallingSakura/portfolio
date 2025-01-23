@@ -6,7 +6,6 @@ import {
   useState,
   forwardRef,
 } from 'react'
-import Draggable from 'react-draggable'
 function FriendCard(
   { name, avatar, link, said }: Friend,
   card_ref: React.ForwardedRef<HTMLDivElement>
@@ -34,7 +33,6 @@ function FriendCard(
     setIsActive(false)
   }
   return (
-    <Draggable disabled={!isActive}>
       <div
         className={`friend-card ${isActive ? 'active' : ''}`}
         ref={card_ref}
@@ -55,7 +53,6 @@ function FriendCard(
         </div>
         <span ref={text}>{said}</span>
       </div>
-    </Draggable>
   )
 }
 
