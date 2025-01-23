@@ -10,12 +10,19 @@ function FriendPage() {
     }
   }
   useEffect(() => {
-    let posL = 25;
-    let posT = 25;
-    refs.current.forEach((ref: HTMLDivElement, index: number) => {
+    const PAD = window.innerWidth < 768 ? 5 : 25
+    let posL = PAD;
+    let posT = PAD;
+    const max_width = window.innerWidth
+    refs.current.forEach((ref: HTMLDivElement) => {
+      if (posL + ref.offsetWidth > max_width) {
+        
+        posT += 80
+        posL = PAD
+      }
       ref.style.top = posT.toString() + 'px'
       ref.style.left = posL.toString() + 'px'
-      posL += ref.offsetWidth + 15
+      posL += ref.offsetWidth + PAD * 3 / 5
     })
   })
   return (

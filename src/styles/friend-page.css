@@ -18,3 +18,10 @@
   box-shadow: 0 0 5px 1px var(--color-card-shadow);
   border-radius: 25px;  
 }
+
+@media (max-width: 1024px) {
+  .friend .friend-cards-container {
+    width: 95%;
+    height: 85%;
+  }
+}
