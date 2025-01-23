@@ -7,7 +7,7 @@ export const friends: Friend[] = [
     said: "Hi, here is a test text."
   },
   {
-    name: "evannotfound",
+    name: "Evannotfound",
     avatar: "https://avatars.githubusercontent.com/u/68590232?v=4",
     link: "https://evannotfound.com/",
     said: "I believe in creating projects where every detail matters, and I am open to new opportunities."

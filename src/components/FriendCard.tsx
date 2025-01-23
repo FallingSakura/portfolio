@@ -16,12 +16,12 @@ function FriendCard(
   const [isActive, setIsActive] = useState(false)
   useEffect(() => {
     if (title.current && text.current) {
-      const title_width = `${(title.current.offsetWidth - 5).toString()}px`
+      const title_width = `${(title.current.offsetWidth - 3).toString()}px`
       text.current.style.maxWidth = title_width
     }
     if (card_container.current && text.current) {
-      const pH = text.current.offsetHeight
-      card_container.current.style.setProperty('--leng-pb', `${pH + 26}px`)
+      const pB = text.current.offsetHeight
+      card_container.current.style.setProperty('--leng-pb', `${pB + 30}px`)
     }
   }, [])
   const activate = () => {
