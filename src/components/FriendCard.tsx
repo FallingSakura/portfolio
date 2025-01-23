@@ -5,14 +5,12 @@ import {
   useEffect,
   useState,
   forwardRef,
-  useImperativeHandle
 } from 'react'
 import Draggable from 'react-draggable'
 function FriendCard(
   { name, avatar, link, said }: Friend,
-  card_ref: React.ForwardedRef<Object>
+  card_ref: React.ForwardedRef<HTMLDivElement>
 ) {
-  const local_ref = useRef<HTMLDivElement>(null)
   const title = useRef<HTMLHeadingElement>(null)
   const text = useRef<HTMLParagraphElement>(null)
   const card_container = useRef<HTMLDivElement>(null)
@@ -27,13 +25,6 @@ function FriendCard(
       card_container.current.style.setProperty('--leng-pb', `${pH + 26}px`)
     }
   }, [])
-  useImperativeHandle(card_ref, () => ({
-    focus: () => {
-      if (local_ref.current) {
-        local_ref.current.style.border = '2px solid black'
-      }
-    }
-  }))
   const activate = () => {
     if (isActive) return
     setIsActive(true)
@@ -46,7 +37,7 @@ function FriendCard(
     <Draggable disabled={!isActive}>
       <div
         className={`friend-card ${isActive ? 'active' : ''}`}
-        ref={local_ref}
+        ref={card_ref}
         onClick={activate}
         onMouseOver={activate}
         onMouseLeave={deactivate}
@@ -68,4 +59,4 @@ function FriendCard(
   )
 }
 
-export default forwardRef<Object, Friend>(FriendCard)
+export default forwardRef<HTMLDivElement, Friend>(FriendCard)
