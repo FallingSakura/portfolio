@@ -26,9 +26,9 @@
   --color-transparent: rgba(239, 239, 239, 0.9);
   --color-border: #fafafa;
 
-  --color-card: #fbfbfb; 
+  --color-card: #fbfbfb9a;
   --color-card-border: #ebebeb; 
-  --color-card-shadow: #f0f0f0;
+  --color-card-shadow: #d1d1d1;
 }
 [data-theme='dark'] {
   --color-text: #f9f9f9;
@@ -37,9 +37,9 @@
   --color-transparent: rgba(20, 20, 20, 0.9);
   --color-border: #3e3e3e;
 
-  --color-card: #272727;
+  --color-card: #272727b0;
   --color-card-border: #323232;
-  --color-card-shadow: rgba(50, 50, 50, 0.9);
+  --color-card-shadow: rgba(45, 45, 45, 0.89);
 }
 
 #root {
