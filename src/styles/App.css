@@ -41,7 +41,7 @@
 
 @media (min-width: 1024.1px) {
   .nav-open .page-container {
-    width: 88%;
+    width: calc(100% - 200px);
   }
   .page-container {
     scroll-snap-type: y proximity;

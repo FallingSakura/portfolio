@@ -15,7 +15,7 @@
   justify-content: center;
 }
 .nav-open .side-nav {
-  width: 15%;
+  width: 200px;
 }
 .side-nav ul {
   display: flex;
