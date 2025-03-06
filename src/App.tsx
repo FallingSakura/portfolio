@@ -9,6 +9,7 @@ import HomePage from './components/HomePage'
 import ProjectPage from './components/ProjectPage'
 import SideNav from './components/SideNav'
 import FriendPage from './components/FriendPage'
+import Background from './components/Background'
 
 function App() {
   const containerRef = useRef<HTMLElement>(null)
@@ -38,6 +39,7 @@ function App() {
       <div className={`background ${togglNav ? 'nav-open' : ''}`}>
         <ToggleButton togglNav={togglNav} toggle={toggle} />
         <ToggleTheme theme={theme} toggleTheme={toggleTheme} />
+        <Background />
         <section ref={containerRef} className="page-container">
           <HomePage />
           <ProjectPage />

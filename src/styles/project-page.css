@@ -44,7 +44,8 @@
   gap: 50px;
   margin-top: 25px;
 }
-.left-btn, .right-btn {
+.left-btn,
+.right-btn {
   /* position: absolute; */
   /* top: 50%; */
   display: flex;
@@ -56,12 +57,14 @@
   font-size: 2rem;
   transition: background 0.3s;
 }
-.left-btn:hover, .right-btn:hover {
+.left-btn:hover,
+.right-btn:hover {
   background: var(--color-transparent);
 }
 
 @media (max-width: 768px) {
-  .project::before, .project::after {
+  .project::before,
+  .project::after {
     display: none;
   }
   .controller {
@@ -70,7 +73,7 @@
   .project .card-container {
     box-sizing: content-box;
     width: 100%;
-    flex-direction: column; 
+    flex-direction: column;
     padding: 15px 0;
     scrollbar-width: none;
     overflow-y: scroll !important;

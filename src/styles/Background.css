@@ -1,0 +1,95 @@
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.gradient-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gradients-container {
+  filter: blur(80px); /* 控制模糊强度 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.g1,
+.g2,
+.g3 {
+  position: absolute;
+  border-radius: 50%;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.g1 {
+  background: #764bebaa; /* 紫色 */
+  width: 30vmax;
+  height: 30vmax;
+  animation-name: move-1;
+}
+
+.g2 {
+  background: #4be8beaa; /* 青色 */
+  width: 25vmax;
+  height: 25vmax;
+  animation-name: move-2;
+}
+
+.g3 {
+  background: #eeaaaaea; /* 粉色 */
+  width: 40vmax;
+  height: 40vmax;
+  animation-name: move-3;
+}
+
+@keyframes move-1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100%, 50%);
+  }
+}
+
+@keyframes move-2 {
+  0%,
+  100% {
+    transform: translate(0, 50%);
+  }
+  50% {
+    transform: translate(100%, 0);
+  }
+}
+
+@keyframes move-3 {
+  0%,
+  100% {
+    transform: translate(50%, 0);
+  }
+  50% {
+    transform: translate(0, 100%);
+  }
+}
+
+.blur-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(80px); /* 增强模糊效果 */
+  -webkit-backdrop-filter: blur(80px);
+}
