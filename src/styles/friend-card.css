@@ -6,7 +6,7 @@
   z-index: 1;
   transition: border-radius 0.3s ease, border-width 0.5s ease 0.4s;
   border-radius: 100px;
-  background: var(--color-background);
+  /* background: var(--color-background); */
   overflow: hidden;
 }
 .friend-card h3 {
@@ -32,8 +32,8 @@
   left: 0;
   top: 0;
   border-bottom: 3px solid var(--color-primary);
-  background: var(--color-card);
-  transition-property: transform, border; 
+  /* background: var(--color-card); */
+  transition-property: transform, border;
   transition-duration: 0.5s;
   pointer-events: none;
   z-index: 1;
@@ -94,7 +94,7 @@
   from {
     opacity: 0;
     transform: translateY(0);
-  } 
+  }
   to {
     transform: translateY(-75px);
     opacity: 1;

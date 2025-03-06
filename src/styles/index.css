@@ -21,7 +21,7 @@
   --color-primary: #ee9ca7;
 
   --color-text: #1a1a1a;
-  --color-background: #ffffff;
+  --color-background: #ffffff66;
   --color-shadow: #ee9ca755;
   --color-transparent: rgba(239, 239, 239, 1);
   --color-border: #fafafa;
@@ -32,7 +32,7 @@
 }
 [data-theme='dark'] {
   --color-text: #f9f9f9;
-  --color-background: #242424;
+  --color-background: #24242466;
   --color-shadow: #704147c2;
   --color-transparent: rgba(20, 20, 20, 0.9);
   --color-border: #3e3e3e;
