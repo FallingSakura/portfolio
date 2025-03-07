@@ -23,9 +23,9 @@
   background-color: var(--color-primary);
   background-image: linear-gradient(
     90deg,
-    var(--color-background) 0%,
+    var(--color-background-translucent) 0%,
     var(--color-primary) 10% 90%,
-    var(--color-background) 100%
+    var(--color-background-translucent) 100%
   );
   border-radius: 2px;
 }
@@ -36,10 +36,12 @@
   color: var(--color-primary);
 }
 
-.wechat, .qq {
+.wechat,
+.qq {
   position: relative;
 }
-.wechat img, .qq img {
+.wechat img,
+.qq img {
   width: 180px;
   position: absolute;
   top: 50px;
@@ -51,7 +53,8 @@
   border: 2px solid var(--color-primary);
   border-radius: 10px;
 }
-.wechat:hover img, .qq:hover img {
+.wechat:hover img,
+.qq:hover img {
   opacity: 1;
 }
 
@@ -59,7 +62,8 @@
   .social {
     margin-top: 80px;
   }
-  .wechat, .qq {
+  .wechat,
+  .qq {
     -webkit-tap-highlight-color: transparent;
   }
 }

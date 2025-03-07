@@ -42,8 +42,8 @@
   filter: blur(30px);
   z-index: -1;
   border-radius: 100%;
-  background-color: var(--color-shadow);
-  animation: breathe 3s ease infinite;
+  background-color: var(--color-primary);
+  animation: breathe 5s ease infinite;
 }
 .title #name {
   color: var(--color-primary);
@@ -91,13 +91,12 @@
 }
 @keyframes breathe {
   from {
-    transform: scale(0.8)
+    transform: scale(0.8);
   }
   50% {
-    
-    transform: scale(1.05)
+    transform: scale(0.9);
   }
   to {
-    transform: scale(0.8)
+    transform: scale(0.8);
   }
 }

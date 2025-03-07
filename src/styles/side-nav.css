@@ -55,7 +55,7 @@
   width: calc(99% - 10px);
   /* width: 150%; */
   height: 40px;
-  background-color: var(--color-background);
+  background-color: var(--color-background-translucent);
   position: absolute;
   top: 0;
   left: 54%;

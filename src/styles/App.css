@@ -15,7 +15,7 @@
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  background-color: var(--color-background) + '66';
+  background-color: var(--color-background-translucent);
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
