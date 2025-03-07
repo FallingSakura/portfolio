@@ -51,15 +51,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
-  font-size: 2rem;
-  transition: background 0.3s;
+  font-size: 1.875rem;
+  transition: 0.3s;
 }
 .left-btn:hover,
 .right-btn:hover {
-  background: var(--color-transparent);
+  background: var(--color-backgrond-translucent);
+  box-shadow: 0 0 10px 5px var(--color-shadow);
 }
 
 @media (max-width: 768px) {
