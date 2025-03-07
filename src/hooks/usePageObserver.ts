@@ -2,7 +2,8 @@ import { useEffect } from 'react'
 
 export const usePageObserver = (
   containerRef: React.RefObject<HTMLElement>,
-  setCurrentPage: (pageIndex: number) => void
+  setCurrentPage: (pageIndex: number) => void,
+  scrollFreeze: React.MutableRefObject<boolean>
 ) => {
   useEffect(() => {
     const container = containerRef.current
@@ -18,7 +19,7 @@ export const usePageObserver = (
     // 回调函数在交叉比例超过 threshold 和初始化时触发，所以需要判断 isIntersecting
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !scrollFreeze.current) {
           const target = entry.target as HTMLElement
           const pageIndex = Number(target.dataset.index)
           setCurrentPage(pageIndex)

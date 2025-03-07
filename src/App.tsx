@@ -16,6 +16,7 @@ function App() {
   const [togglNav, setTogglNav] = useState(false)
   const [theme, setTheme] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
+  const scrollFreeze = useRef(false)
   const toggle = () => {
     setTogglNav(!togglNav)
   }
@@ -25,7 +26,7 @@ function App() {
     localStorage.setItem('theme', newTheme ? 'dark' : 'light')
   }
   useTheme(setTheme)
-  usePageObserver(containerRef, setCurrentPage)
+  usePageObserver(containerRef, setCurrentPage, scrollFreeze)
   useEffect(() => {
     if (theme) {
       /* documentElement = <html><html/> */
@@ -45,7 +46,11 @@ function App() {
           <ProjectPage />
           <FriendPage />
         </section>
-        <SideNav currentPage={currentPage} />
+        <SideNav
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          scrollFreeze={scrollFreeze}
+        />
         <MobileNav currentPage={currentPage} toggle={toggle} />
       </div>
     </>

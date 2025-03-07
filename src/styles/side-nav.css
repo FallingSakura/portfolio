@@ -44,12 +44,13 @@
 .nav-open .side-nav li {
   transform: translateX(0);
 }
-.side-nav a {
+.side-nav .item {
   position: relative;
   display: flex;
   align-items: center;
   gap: 15px;
   font-weight: 600;
+  cursor: pointer;
 }
 .backdrop {
   width: calc(99% - 10px);
