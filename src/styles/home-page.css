@@ -42,7 +42,7 @@
   filter: blur(30px);
   z-index: -1;
   border-radius: 100%;
-  background-color: var(--color-primary);
+  background-color: var(--color-background-translucent);
   animation: breathe 5s ease infinite;
 }
 .title #name {

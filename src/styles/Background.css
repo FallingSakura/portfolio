@@ -35,61 +35,61 @@
 
 .g1 {
   background: #764bebbf; /* 紫色 */
-  width: 35vmax;
-  height: 35vmax;
+  width: 43vmax;
+  height: 43vmax;
   animation-name: move-1;
 }
 
 .g2 {
   background: #4be8beaa; /* 青色 */
-  width: 25vmax;
-  height: 25vmax;
+  width: 40vmax;
+  height: 40vmax;
   animation-name: move-2;
 }
 
 .g3 {
-  background: #eeaaaaaa; /* 粉色 */
-  width: 45vmax;
-  height: 45vmax;
+  background: #fc79b2aa; /* 粉色 */
+  width: 46vmax;
+  height: 46vmax;
   animation-name: move-3;
 }
 
 @keyframes move-1 {
   0%,
   100% {
-    transform: translate(0, 0);
+    transform: translate(-5vw, -2vh);
   }
-  40% {
-    transform: translate(180%, 80%);
+  45% {
+    transform: translate(80vw, 60vh);
   }
-  70% {
-    transform: translate(80%, 80%);
+  75% {
+    transform: translate(20vw, 45vh);
   }
 }
 
 @keyframes move-2 {
   0%,
   100% {
-    transform: translate(0, 150%);
+    transform: translate(0, 80vh);
   }
   45% {
-    transform: translate(200%, 0);
+    transform: translate(60vw, -15vh);
   }
   65% {
-    transform: translate(180%, 100%);
+    transform: translate(70vw, 50vh);
   }
 }
 
 @keyframes move-3 {
   0%,
   100% {
-    transform: translate(120%, 0);
+    transform: translate(60vw, 5vh);
   }
-  35% {
-    transform: translate(-10%, -30%);
+  45% {
+    transform: translate(-20vw, -25vh);
   }
-  65% {
-    transform: translate(0, 80%);
+  70% {
+    transform: translate(0, 45vh);
   }
 }
 
