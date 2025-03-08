@@ -1,5 +1,5 @@
 import '@/styles/friend-page.css'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState, useCallback } from 'react'
 import FriendCard from './FriendCard'
 import { friends } from '../data/friends'
 function FriendPage() {
@@ -7,9 +7,9 @@ function FriendPage() {
   const container_ref = useRef<HTMLDivElement>(null)
   const [currentZIndex, setCurrentZIndex] = useState(10)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  const handleChildActivate = () => {
+  const handleChildActivate = useCallback(() => {
     setCurrentZIndex((prev) => prev + 1)
-  }
+  }, [])
   const setRef = (index: number, element: HTMLDivElement | null) => {
     if (element) {
       refs.current[index] = element

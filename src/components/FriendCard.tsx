@@ -1,10 +1,12 @@
 import '@/styles/friend-card.css'
 import { Friend } from '../types/friend'
 import { useRef, useEffect, useState, forwardRef } from 'react'
+import React from 'react'
 function FriendCard(
   props: Friend & { currentZIndex: number; onActivate: () => void },
   ref: React.ForwardedRef<HTMLDivElement>
 ) {
+  console.log('FriendCard')
   const { name, avatar, link, said, currentZIndex, onActivate } = props
   const title = useRef<HTMLHeadingElement>(null)
   const text = useRef<HTMLParagraphElement>(null)
@@ -69,8 +71,11 @@ function FriendCard(
     </div>
   )
 }
-
-export default forwardRef<
-  HTMLDivElement,
-  Friend & { currentZIndex: number; onActivate: () => void }
->(FriendCard)
+// const MemoizedFriendCard = React.memo(FriendCard)
+const MemoizedFriendCard = React.memo(
+  forwardRef<
+    HTMLDivElement,
+    Friend & { currentZIndex: number; onActivate: () => void }
+  >(FriendCard)
+)
+export default MemoizedFriendCard
