@@ -1,18 +1,28 @@
 import '@/styles/friend-page.css'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import FriendCard from './FriendCard'
 import { friends } from '../data/friends'
 function FriendPage() {
   const refs = useRef<HTMLDivElement[]>([])
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const setRef = (index: number, element: HTMLDivElement | null) => {
     if (element) {
       refs.current[index] = element
     }
   }
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+  useEffect(() => {
     const PAD = window.innerWidth < 768 ? 5 : 25
-    let posL = PAD;
-    let posT = PAD;
+    let posL = PAD
+    let posT = PAD
     const max_width = window.innerWidth
     refs.current.forEach((ref: HTMLDivElement) => {
       if (posL + ref.offsetWidth > max_width) {
@@ -21,14 +31,18 @@ function FriendPage() {
       }
       ref.style.top = posT.toString() + 'px'
       ref.style.left = posL.toString() + 'px'
-      posL += ref.offsetWidth + PAD * 3 / 5
+      posL += ref.offsetWidth + (PAD * 3) / 5
     })
-  })
+  }, [windowWidth])
   return (
     <div className="friend" id="friend">
       <div className="friend-cards-container">
         {friends.map((friend, index) => (
-          <FriendCard {...friend} ref={(el) => setRef(index, el)} key={friend.name} />
+          <FriendCard
+            {...friend}
+            ref={(el) => setRef(index, el)}
+            key={friend.name}
+          />
         ))}
       </div>
     </div>
