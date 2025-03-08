@@ -23,6 +23,9 @@
 @media (max-width: 1024px) {
   .friend .friend-cards-container {
     width: 95%;
-    height: 85%;
+    height: 90%;
+    margin-top: 7vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }

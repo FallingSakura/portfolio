@@ -1,8 +1,11 @@
 import '@/styles/friend-card.css'
 import { Friend } from '../types/friend'
 import { useRef, useEffect, useState, forwardRef } from 'react'
-function FriendCard(props: Friend, ref: React.ForwardedRef<HTMLDivElement>) {
-  const { name, avatar, link, said } = props
+function FriendCard(
+  props: Friend & { currentZIndex: number; onActivate: () => void },
+  ref: React.ForwardedRef<HTMLDivElement>
+) {
+  const { name, avatar, link, said, currentZIndex, onActivate } = props
   const title = useRef<HTMLHeadingElement>(null)
   const text = useRef<HTMLParagraphElement>(null)
   const card_container = useRef<HTMLDivElement>(null)
@@ -28,8 +31,9 @@ function FriendCard(props: Friend, ref: React.ForwardedRef<HTMLDivElement>) {
   }, [])
   const activate = () => {
     if (isActive) return
+    onActivate()
     if (cardRef.current) {
-      cardRef.current.style.zIndex = '10'
+      cardRef.current.style.zIndex = currentZIndex.toString()
     }
     setIsActive(true)
   }
@@ -66,4 +70,7 @@ function FriendCard(props: Friend, ref: React.ForwardedRef<HTMLDivElement>) {
   )
 }
 
-export default forwardRef<HTMLDivElement, Friend>(FriendCard)
+export default forwardRef<
+  HTMLDivElement,
+  Friend & { currentZIndex: number; onActivate: () => void }
+>(FriendCard)
