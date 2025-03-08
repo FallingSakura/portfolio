@@ -1,4 +1,4 @@
-import '@/styles/background.css' // 创建对应的 CSS 文件
+import '@/styles/background.css'
 
 const Background = () => {
   return (
