@@ -1,17 +1,24 @@
 import '../styles/side-nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { links } from '../data/links'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 function SideNav({
   currentPage,
   setCurrentPage,
   scrollFreeze
 }: {
   currentPage: number
-  setCurrentPage: Function
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>
   scrollFreeze: React.MutableRefObject<boolean>
 }) {
   const timeRef = useRef<NodeJS.Timeout | null>(null)
+  useEffect(() => {
+    return () => {
+      if (timeRef.current) {
+        clearTimeout(timeRef.current)
+      }
+    }
+  }, [])
   function scroll(index: number) {
     const pageContainer = document.querySelector(
       '.page-container'

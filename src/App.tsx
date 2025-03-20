@@ -1,10 +1,10 @@
 import './styles/App.css'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTheme } from './hooks/useTheme'
 import { usePageObserver } from './hooks/usePageObserver'
 import MobileNav from './components/MobileNav'
-import ToggleButton from './components/ToggleButton'
-import ToggleTheme from './components/ToggleTheme'
+import ToggleButton from './components/toggle/ToggleButton'
+import ToggleTheme from './components/toggle/ToggleTheme'
 import HomePage from './components/HomePage'
 import ProjectPage from './components/ProjectPage'
 import SideNav from './components/SideNav'
@@ -16,17 +16,23 @@ function App() {
   const [togglNav, setTogglNav] = useState(false)
   const [theme, setTheme] = useState(false)
   const [currentPage, setCurrentPage] = useState(0)
+
+  /* scrollFreeze to freeze the observer */
   const scrollFreeze = useRef(false)
-  const toggle = () => {
+  usePageObserver(containerRef, setCurrentPage, scrollFreeze)
+
+  // toggle the nav
+  const toggle = useCallback(() => {
     setTogglNav(!togglNav)
-  }
-  const toggleTheme = () => {
+  }, [togglNav])
+
+  // toggle the theme
+  const toggleTheme = useCallback(() => {
     const newTheme = !theme
     setTheme(newTheme)
     localStorage.setItem('theme', newTheme ? 'dark' : 'light')
-  }
+  }, [theme])
   useTheme(setTheme)
-  usePageObserver(containerRef, setCurrentPage, scrollFreeze)
   useEffect(() => {
     if (theme) {
       /* documentElement = <html><html/> */

@@ -1,8 +1,10 @@
 import avatar from '/avatar.jpg'
 import SocialLinks from './SocialLinks'
+import React from 'react'
 import '../styles/home-page.css'
 import ScrollToBottom from './ScrollToBottom'
-function HomePage() {
+const HomePage = React.memo(() => {
+  console.log('HOME')
   return (
     <div className="home" id="home">
       <div className="home-container">
@@ -26,6 +28,6 @@ function HomePage() {
       <ScrollToBottom />
     </div>
   )
-}
+})
 
 export default HomePage

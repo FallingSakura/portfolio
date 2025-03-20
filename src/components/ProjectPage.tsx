@@ -1,25 +1,25 @@
 import '../styles/project-page.css'
 import { projects } from '../data/projects'
 import ProjectCard from './project-card/ProjectCard'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { useState, useRef, useEffect } from 'react'
 
 let container_width = 0
 let init = 0
-function ProjectPage() {
+const ProjectPage = React.memo(() => {
+  console.log('ProjectPage')
   const [pos, setPos] = useState(0)
   const card_container = useRef<HTMLDivElement>(null)
   const isMobile = window.innerWidth <= 768
   useEffect(() => {
     if (card_container.current) {
       container_width = card_container.current.offsetWidth
+      init = container_width / 2 - 200
+      setPos(init)
     }
   }, [])
-  useEffect(() => {
-    init = container_width / 2 - 200
-    setPos(init)
-  }, [container_width])
   function scrollForward() {
     if (pos === init - (projects.length - 1) * 375) {
       return
@@ -43,7 +43,7 @@ function ProjectPage() {
       >
         {projects.map((project) => (
           <div className="card" key={project.title}>
-            <ProjectCard {...project}  />
+            <ProjectCard {...project} />
           </div>
         ))}
       </div>
@@ -57,5 +57,5 @@ function ProjectPage() {
       </div>
     </div>
   )
-}
+})
 export default ProjectPage
