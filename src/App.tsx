@@ -12,6 +12,7 @@ import FriendPage from './components/FriendPage'
 import Background from './components/Background'
 
 function App() {
+  const isMobile = window.innerWidth < 768
   const containerRef = useRef<HTMLElement>(null)
   const [togglNav, setTogglNav] = useState(false)
   const [theme, setTheme] = useState(false)
@@ -57,7 +58,7 @@ function App() {
           setCurrentPage={setCurrentPage}
           scrollFreeze={scrollFreeze}
         />
-        <MobileNav currentPage={currentPage} toggle={toggle} />
+        {isMobile && <MobileNav currentPage={currentPage} toggle={toggle} />}
       </div>
     </>
   )

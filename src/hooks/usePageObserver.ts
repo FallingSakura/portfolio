@@ -13,10 +13,12 @@ export const usePageObserver = (
     const observerOptions = {
       root: container,
       rootMargin: '0px',
-      threshold: 0.5 // 页面至少有 50% 可见时触发
+      threshold: 0.5
+      // trigger when at least 50% of the page is visible
     }
 
     // 回调函数在交叉比例超过 threshold 和初始化时触发，所以需要判断 isIntersecting
+    // callback function will be triggered when the intersection ratio exceeds the threshold and when it is initialized, so we need to check isIntersecting
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !scrollFreeze.current) {
@@ -32,7 +34,7 @@ export const usePageObserver = (
     const pageElements = Array.from(container.children) as HTMLElement[]
     let minus = 0
     pageElements.forEach((page, index) => {
-      // if (page.style.position === 'absolute') return
+      // if page is absolute, it's not a page
       if (window.getComputedStyle(page).position === 'absolute') {
         minus++
         return
@@ -45,5 +47,5 @@ export const usePageObserver = (
       pageElements.forEach((page) => observer.unobserve(page))
       observer.disconnect()
     }
-  }, [containerRef, setCurrentPage])
+  }, [containerRef, setCurrentPage, scrollFreeze])
 }
