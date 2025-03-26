@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import App from './App.tsx'
-import { StrictMode, Profiler } from 'react'
+import { Profiler } from 'react'
 
 function onRenderCallback(
   id: string,

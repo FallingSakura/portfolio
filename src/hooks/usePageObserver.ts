@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 export const usePageObserver = (
-  containerRef: React.RefObject<HTMLElement>,
+  containerRef: React.RefObject<HTMLDivElement>,
   setCurrentPage: (pageIndex: number) => void,
   scrollFreeze: React.MutableRefObject<boolean>
 ) => {

@@ -8,7 +8,11 @@ const FriendPage = React.memo(() => {
   const container_ref = useRef<HTMLDivElement>(null)
   return (
     <div className="friend" id="friend">
-      <div className="friend-cards-container" ref={container_ref}></div>
+      <div className="friend-cards-container" ref={container_ref}>
+        {friends.map((friend, index) => (
+          <FriendCard {...friend} key={`${friend.name}${index}`} />
+        ))}
+      </div>
     </div>
   )
 })

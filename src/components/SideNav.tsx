@@ -1,16 +1,13 @@
-import '../styles/side-nav.css'
+import '@/styles/side-nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { links } from '../data/links'
-import { useRef, useEffect } from 'react'
-function SideNav({
-  currentPage,
-  setCurrentPage,
-  scrollFreeze
+import { useRef, useEffect, useState } from 'react'
+import { usePageObserver } from '../hooks/usePageObserver'
+const SideNav = ({
+  containerRef
 }: {
-  currentPage: number
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>
-  scrollFreeze: React.MutableRefObject<boolean>
-}) {
+  containerRef: React.RefObject<HTMLDivElement>
+}) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null)
   useEffect(() => {
     return () => {
@@ -19,6 +16,12 @@ function SideNav({
       }
     }
   }, [])
+  const isMobile = window.innerWidth < 768
+  const [currentPage, setCurrentPage] = useState(0)
+
+  /* scrollFreeze to freeze the observer */
+  const scrollFreeze = useRef(false)
+  usePageObserver(containerRef, setCurrentPage, scrollFreeze)
   function scroll(index: number) {
     const pageContainer = document.querySelector(
       '.page-container'
@@ -38,32 +41,57 @@ function SideNav({
     })
   }
   return (
-    <nav className="side-nav">
-      <div className="nav-container">
-        <ul>
-          {links.map((link, index) => (
-            <li
-              key={link.id}
-              style={{
-                transitionDelay: `${index * 0.05}s`
-              }}
-              onClick={() => scroll(index)}
-            >
-              <div className="item">
-                {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
-                <span>{link.title}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-        <div
-          className="backdrop"
-          style={{
-            transform: `translate(-50%, ${currentPage * 100}%)`
-          }}
-        ></div>
-      </div>
-    </nav>
+    <>
+      <nav className="side-nav">
+        <div className="nav-container">
+          <ul>
+            {links.map((link, index) => (
+              <li
+                key={link.id}
+                style={{
+                  transitionDelay: `${index * 0.05}s`
+                }}
+                onClick={() => scroll(index)}
+              >
+                <div className="item">
+                  {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
+                  <span>{link.title}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div
+            className="backdrop"
+            style={{
+              transform: `translate(-50%, ${currentPage * 100}%)`
+            }}
+          ></div>
+        </div>
+      </nav>
+
+      {isMobile && (
+        <nav className="mobile-nav">
+          <ul>
+            {links.map((link, index) => (
+              <li
+                className={`${currentPage === index ? 'active' : ''}`}
+                key={link.id}
+                style={{
+                  transitionDelay: `${index * 0.1}s`
+                }}
+              >
+                <a href={`#${link.id}`} onClick={toggle}>
+                  <span>{link.title}</span>
+                </a>
+                <div className="icon-container">
+                  {link.icon && <FontAwesomeIcon icon={link.icon} size="lg" />}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </>
   )
 }
 
