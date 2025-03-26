@@ -4,11 +4,19 @@ import { links } from '../data/links'
 import { useRef, useEffect, useState } from 'react'
 import { usePageObserver } from '../hooks/usePageObserver'
 const SideNav = ({
-  containerRef
+  containerRef,
+  toggle
 }: {
   containerRef: React.RefObject<HTMLDivElement>
+  toggle: () => void
 }) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null)
+  const isMobile = window.innerWidth < 768
+  const [currentPage, setCurrentPage] = useState(0)
+
+  /* scrollFreeze to freeze the observer */
+  const scrollFreeze = useRef(false)
+  usePageObserver(containerRef, setCurrentPage, scrollFreeze)
   useEffect(() => {
     return () => {
       if (timeRef.current) {
@@ -16,12 +24,6 @@ const SideNav = ({
       }
     }
   }, [])
-  const isMobile = window.innerWidth < 768
-  const [currentPage, setCurrentPage] = useState(0)
-
-  /* scrollFreeze to freeze the observer */
-  const scrollFreeze = useRef(false)
-  usePageObserver(containerRef, setCurrentPage, scrollFreeze)
   function scroll(index: number) {
     const pageContainer = document.querySelector(
       '.page-container'
@@ -32,6 +34,7 @@ const SideNav = ({
     }
     setCurrentPage(index)
     scrollFreeze.current = true
+    // freeze observer 0.5s
     timeRef.current = setTimeout(() => {
       scrollFreeze.current = false
     }, 500)
