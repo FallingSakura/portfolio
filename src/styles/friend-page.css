@@ -10,13 +10,10 @@
 .friend .friend-cards-container {
   display: flex;
   position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 1000px;
+  align-items: start;
+  width: 80%;
   height: 720px;
-  /* background: var(--color-card); */
-  border: var(--color-border);
-  box-shadow: 0 0 5px 1px var(--color-card-shadow);
+  gap: 15px;
   border-radius: 25px;
 }
 

@@ -6,9 +6,11 @@ const FriendCard = React.memo<Friend>((props) => {
   return (
     <div className="friend-card">
       <a href={url} target="_blank" tabIndex={-1}>
-        <img src={avatar} alt={`${name}'s avatar`} width="50" height="50" />
+        <div className="friend-avatar">
+          <img src={avatar} alt={`${name}'s avatar`} />
+        </div>
         <h2 className="friend-name">{name}</h2>
-        <p>{descr}</p>
+        <p className="friend-descr">{descr}</p>
       </a>
     </div>
   )

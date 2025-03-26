@@ -1,10 +1,41 @@
 .friend-card {
-  width: 150px;
-  height: 200px;
+  width: 200px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 0 5px var(--color-card-shadow);
+  transition: 0.3s;
+}
+.friend-card:hover {
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 15px var(--color-shadow);
 }
 
 .friend-name {
   font-size: 1.2rem;
+  text-align: center;
   font-weight: 600;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.friend-avatar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.friend-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.friend-descr {
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
