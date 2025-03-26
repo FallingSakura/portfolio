@@ -4,7 +4,6 @@ import { useTheme } from '../../hooks/useTheme'
 import React from 'react'
 import '@/styles/toggle-theme.css'
 const ToggleTheme = React.memo(() => {
-  console.log('ToggleTheme')
   const [theme, toggleTheme] = useTheme()
   return (
     <div className="toggle-theme" onClick={toggleTheme}>

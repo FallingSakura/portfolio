@@ -1,0 +1,10 @@
+.friend-card {
+  width: 150px;
+  height: 200px;
+}
+
+.friend-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}

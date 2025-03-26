@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 // if the theme is saved and the system theme is changed, use the system theme
 // if the theme is not saved and the system theme is changed, use the system theme
 // true-dark false-light
-export const useTheme = (): [boolean, () => void] => {
+export const useTheme = () => {
   const [theme, setTheme] = useState(false)
   const toggleTheme = () => {
     const newTheme = !theme
@@ -41,5 +41,5 @@ export const useTheme = (): [boolean, () => void] => {
       document.documentElement.setAttribute('data-theme', 'light')
     }
   }, [theme])
-  return [theme, toggleTheme]
+  return [theme, toggleTheme] as const
 }

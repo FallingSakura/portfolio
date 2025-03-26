@@ -9,7 +9,6 @@ import { useState, useRef, useEffect } from 'react'
 let container_width = 0
 let init = 0
 const ProjectPage = React.memo(() => {
-  console.log('ProjectPage')
   const [pos, setPos] = useState(0)
   const card_container = useRef<HTMLDivElement>(null)
   const isMobile = window.innerWidth <= 768

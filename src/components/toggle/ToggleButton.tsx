@@ -3,7 +3,6 @@ import React from 'react'
 
 const ToggleButton = React.memo(
   ({ togglNav, toggle }: { togglNav: boolean; toggle: () => void }) => {
-    console.log('ToggleButton')
     return (
       <div className="toggle-button" onClick={toggle}>
         <span

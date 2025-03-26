@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 .home {
   display: flex;
   width: 100%;
@@ -6,7 +7,6 @@
   align-items: center;
 }
 .home-container {
-  /* margin-top: 10vh; */
   width: 880px;
   height: 380px;
 }
@@ -54,8 +54,10 @@
   align-items: center;
 }
 .title h1 {
-  font-size: 3rem;
+  font-size: 5rem;
+  font-weight: 700;
   margin-left: 125px;
+  font-family: 'Dancing Script';
 }
 .title h1 > span:not(#name) {
   font-size: 2rem;
@@ -76,10 +78,10 @@
     flex-direction: column;
   }
   .title h1 #name {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
   .title h1 > span:not(#name) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .img-container {
     width: 100px;

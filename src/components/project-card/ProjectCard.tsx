@@ -4,7 +4,6 @@ import LanguageLabel from './LanguageLabel'
 import React from 'react'
 const ProjectCard = React.memo(
   ({ title, descr, url, languages, img }: Project) => {
-    console.log('ProjectCard')
     return (
       <div className="project-card">
         {img && (
