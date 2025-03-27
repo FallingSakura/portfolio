@@ -18,89 +18,89 @@ export const friends: Friend[] = [
     avatar: 'https://avatars.githubusercontent.com/u/52880665?v=4',
     url: 'https://rene.wang/',
     descr: 'Remember to stay engaged with your life and enjoy every moment.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
   }
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // }
 ]

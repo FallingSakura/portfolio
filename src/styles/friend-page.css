@@ -8,12 +8,9 @@
   align-items: center;
 }
 .friend .friend-cards-container {
-  display: flex;
   position: relative;
-  align-items: start;
+  margin-top: 100px;
   width: 80%;
-  height: 720px;
-  gap: 15px;
   border-radius: 25px;
 }
 

@@ -1,10 +1,11 @@
 import '@/styles/friend-card.css'
 import { Friend } from '../types/friend'
 import React from 'react'
-const FriendCard = React.memo<Friend>((props) => {
+import { forwardRef } from 'react'
+const FriendCard = forwardRef<HTMLDivElement, Friend>((props, ref) => {
   const { name, avatar, descr, url } = props
   return (
-    <div className="friend-card">
+    <div ref={ref} className="friend-card">
       <a href={url} target="_blank" tabIndex={-1}>
         <div className="friend-avatar">
           <img src={avatar} alt={`${name}'s avatar`} />
@@ -15,4 +16,5 @@ const FriendCard = React.memo<Friend>((props) => {
     </div>
   )
 })
-export default FriendCard
+
+export default React.memo(FriendCard)
