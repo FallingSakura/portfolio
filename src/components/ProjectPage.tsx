@@ -11,12 +11,20 @@ let init = 0
 const ProjectPage = React.memo(() => {
   const [pos, setPos] = useState(0)
   const card_container = useRef<HTMLDivElement>(null)
-  const isMobile = window.innerWidth <= 768
+  const isMobile = useRef(window.innerWidth <= 768)
   useEffect(() => {
     if (!isMobile && card_container.current) {
       container_width = card_container.current.offsetWidth
       init = container_width / 2 - 200
       setPos(init)
+    }
+    window.addEventListener('resize', () => {
+      isMobile.current = window.innerWidth <= 768
+    })
+    return () => {
+      window.removeEventListener('resize', () => {
+        isMobile.current = window.innerWidth <= 768
+      })
     }
   }, [isMobile])
   function scrollForward() {
