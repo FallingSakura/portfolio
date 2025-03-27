@@ -13,12 +13,12 @@ const ProjectPage = React.memo(() => {
   const card_container = useRef<HTMLDivElement>(null)
   const isMobile = window.innerWidth <= 768
   useEffect(() => {
-    if (card_container.current) {
+    if (!isMobile && card_container.current) {
       container_width = card_container.current.offsetWidth
       init = container_width / 2 - 200
       setPos(init)
     }
-  }, [])
+  }, [isMobile])
   function scrollForward() {
     if (pos === init - (projects.length - 1) * 375) {
       return
@@ -41,9 +41,7 @@ const ProjectPage = React.memo(() => {
         }}
       >
         {projects.map((project) => (
-          <div className="card" key={project.title}>
-            <ProjectCard {...project} />
-          </div>
+          <ProjectCard key={project.title} {...project} />
         ))}
       </div>
       <div className="controller">

@@ -4,6 +4,7 @@ import ToggleButton from './components/toggle/ToggleButton'
 import ToggleTheme from './components/toggle/ToggleTheme'
 import HomePage from './components/HomePage'
 import ProjectPage from './components/ProjectPage'
+import Essay from './components/Essay'
 import SideNav from './components/SideNav'
 import FriendPage from './components/FriendPage'
 import Background from './components/Background'
@@ -20,6 +21,7 @@ function App() {
       <section ref={containerRef} className="page-container">
         <HomePage />
         <ProjectPage />
+        <Essay />
         <FriendPage />
       </section>
       <SideNav containerRef={containerRef} toggle={toggle} />

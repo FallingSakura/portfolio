@@ -8,10 +8,15 @@
   align-items: center;
 }
 .friend .friend-cards-container {
+  overflow-y: scroll;
   position: relative;
   margin-top: 100px;
   width: 80%;
   border-radius: 25px;
+  scrollbar-width: none;
+}
+.friend-cards-container::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 1024px) {
