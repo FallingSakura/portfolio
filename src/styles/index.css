@@ -59,7 +59,6 @@ a {
 body {
   margin: 0;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  min-height: 100%;
   overflow-x: hidden;
 }

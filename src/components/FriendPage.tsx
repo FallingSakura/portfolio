@@ -6,6 +6,7 @@ import { friends } from '../data/friends'
 
 let column_width = 200
 let gap = 16
+const PADDING = 75
 const FriendPage = React.memo(() => {
   const container_ref = useRef<HTMLDivElement>(null)
   const page_ref = useRef<HTMLDivElement>(null)
@@ -27,7 +28,7 @@ const FriendPage = React.memo(() => {
         Math.floor((width * factor + gap) / (column_width + gap)),
         Math.floor((width * (factor + 0.1) + gap) / (column_width + gap))
       )
-      setColumns(Array(columnCount).fill(0))
+      setColumns(Array(columnCount).fill(PADDING))
     }
   }, [])
 
@@ -37,16 +38,21 @@ const FriendPage = React.memo(() => {
     })
     if (page_ref.current) {
       observer.observe(page_ref.current)
-      calculateColumns()
-    }
-    return () => {
-      observer.disconnect()
+      const id = setTimeout(() => {
+        calculateColumns()
+      }, 500)
+      return () => {
+        observer.disconnect()
+        clearTimeout(id)
+      }
     }
   }, [calculateColumns])
   useEffect(() => {
+    if (columns.length === 0) return
     const columnHeights = [...columns]
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
+        console.log(cardRef.offsetHeight)
         const { offsetHeight } = cardRef
         const column = columnHeights.indexOf(Math.min(...columnHeights))
         const left = column * (column_width + gap)
@@ -59,7 +65,7 @@ const FriendPage = React.memo(() => {
         cardRef.style.top = `${top}px`
       }
     })
-    const containerHeight = Math.max(Math.max(...columnHeights) - gap, 720)
+    const containerHeight = Math.max(Math.max(...columnHeights), 720)
     if (container_ref.current) {
       container_ref.current.style.height = `${containerHeight}px`
       container_ref.current.style.width = `${
