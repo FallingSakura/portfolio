@@ -38,4 +38,5 @@
   font-size: 0.8rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-display: optional;
 }

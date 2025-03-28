@@ -33,26 +33,26 @@ const FriendPage = React.memo(() => {
   }, [])
 
   useEffect(() => {
+    document.fonts.ready.then(() => {
+      calculateColumns()
+    })
     const observer = new ResizeObserver(() => {
       calculateColumns()
     })
     if (page_ref.current) {
       observer.observe(page_ref.current)
-      const id = setTimeout(() => {
-        calculateColumns()
-      }, 500)
       return () => {
         observer.disconnect()
-        clearTimeout(id)
       }
     }
   }, [calculateColumns])
   useEffect(() => {
     if (columns.length === 0) return
     const columnHeights = [...columns]
+    console.log(cardRefs.current, columns.length)
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
-        console.log(cardRef.offsetHeight)
+        console.log(cardRef.offsetHeight, cardRef.offsetWidth)
         const { offsetHeight } = cardRef
         const column = columnHeights.indexOf(Math.min(...columnHeights))
         const left = column * (column_width + gap)
