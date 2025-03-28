@@ -28,9 +28,9 @@ const FriendPage = React.memo(() => {
   // reset the columns to trigger the useEffect and calculate the layout
   const calculateColumns = useCallback((offset?: number) => {
     if (container_ref.current && page_ref.current) {
-      let factor = 0.8
       gap = 16
       column_width = 200
+      let factor = 0.8
       let width = page_ref.current.offsetWidth
       if (offset) {
         width += offset
@@ -80,7 +80,7 @@ const FriendPage = React.memo(() => {
    */
   useDebouncedResizeObserver(calculateColumns, {
     ref: page_ref,
-    delay: 500,
+    delay: 300,
     freeze: resizeFreeze
   })
   useEffect(() => {
@@ -96,7 +96,6 @@ const FriendPage = React.memo(() => {
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
         // The change in width will affect the height.
-        cardRef.style.width = `${column_width}px`
         cardRef.style.position = 'absolute'
 
         const { offsetHeight } = cardRef
@@ -113,7 +112,7 @@ const FriendPage = React.memo(() => {
     if (container_ref.current) {
       container_ref.current.style.height = `${containerHeight}px`
       container_ref.current.style.width = `${
-        (column_width + gap) * columns.length - gap
+        (200 + gap) * columns.length - gap
       }px`
     }
   }, [columns])

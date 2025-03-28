@@ -40,3 +40,9 @@
   text-overflow: ellipsis;
   font-display: optional;
 }
+
+@media (max-width: 768px) {
+  .friend-card {
+    width: 175px;
+  }
+}
