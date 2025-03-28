@@ -7,5 +7,5 @@ type IsMobileStore = {
 
 export const useIsMobileStore = create<IsMobileStore>((set) => ({
   isMobile: false,
-  setIsMobile: (arg: boolean) => set(() => ({ isMobile: arg }))
+  setIsMobile: (arg: boolean) => set({ isMobile: arg })
 }))

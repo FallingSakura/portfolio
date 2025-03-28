@@ -86,6 +86,7 @@ const FriendPage = React.memo(() => {
   }, [calculateColumns])
   useEffect(() => {
     if (columns.length === 0) return
+    console.log('changed')
     const columnHeights = [...columns]
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {

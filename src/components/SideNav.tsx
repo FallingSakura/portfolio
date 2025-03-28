@@ -1,9 +1,9 @@
 import '@/styles/side-nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { links } from '../data/links'
-import { useRef, useEffect, useState } from 'react'
-import { useIsMobileStore } from '../store/useIsMobileStore'
+import { useRef, useEffect } from 'react'
 import { usePageObserver } from '../hooks/usePageObserver'
+import { useCurrentPageStore } from '../store/useCurrentPageStore'
 import { useToggleStore } from '../store/useToggleStore'
 const SideNav = ({
   containerRef
@@ -11,8 +11,8 @@ const SideNav = ({
   containerRef: React.RefObject<HTMLDivElement>
 }) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null)
-  const isMobile = useIsMobileStore((state) => state.isMobile)
-  const [currentPage, setCurrentPage] = useState(0)
+  const currentPage = useCurrentPageStore((state) => state.currentPage)
+  const setCurrentPage = useCurrentPageStore((state) => state.setCurrentPage)
   const toggle = useToggleStore((state) => state.toggle)
 
   /* scrollFreeze to freeze the observer */
@@ -73,28 +73,26 @@ const SideNav = ({
         </div>
       </nav>
 
-      {isMobile && (
-        <nav className="mobile-nav">
-          <ul>
-            {links.map((link, index) => (
-              <li
-                className={`${currentPage === index ? 'active' : ''}`}
-                key={link.id}
-                style={{
-                  transitionDelay: `${index * 0.1}s`
-                }}
-              >
-                <a href={`#${link.id}`} onClick={toggle}>
-                  <span>{link.title}</span>
-                </a>
-                <div className="icon-container">
-                  {link.icon && <FontAwesomeIcon icon={link.icon} size="lg" />}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      <nav className="mobile-nav">
+        <ul>
+          {links.map((link, index) => (
+            <li
+              className={`${currentPage === index ? 'active' : ''}`}
+              key={link.id}
+              style={{
+                transitionDelay: `${index * 0.1}s`
+              }}
+            >
+              <a href={`#${link.id}`} onClick={toggle}>
+                <span>{link.title}</span>
+              </a>
+              <div className="icon-container">
+                {link.icon && <FontAwesomeIcon icon={link.icon} size="lg" />}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </>
   )
 }
