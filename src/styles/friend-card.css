@@ -5,7 +5,7 @@
   background-color: var(--color-card);
   border: 1px solid var(--color-card-border);
   box-shadow: 0 0 5px var(--color-card-shadow);
-  transition: 0.3s;
+  transition: 0.3s, left 0.5s, top 0.5s;
 }
 .friend-card:hover {
   border: 1px solid var(--color-primary);
