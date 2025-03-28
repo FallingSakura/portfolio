@@ -2,6 +2,7 @@ import '@/styles/side-nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { links } from '../data/links'
 import { useRef, useEffect, useState } from 'react'
+import { useIsMobileStore } from '../store/useIsMobileStore'
 import { usePageObserver } from '../hooks/usePageObserver'
 import { useToggleStore } from '../store/useToggleStore'
 const SideNav = ({
@@ -10,7 +11,7 @@ const SideNav = ({
   containerRef: React.RefObject<HTMLDivElement>
 }) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null)
-  const isMobile = window.innerWidth < 1024
+  const isMobile = useIsMobileStore((state) => state.isMobile)
   const [currentPage, setCurrentPage] = useState(0)
   const toggle = useToggleStore((state) => state.toggle)
 
