@@ -1,7 +1,7 @@
 import '@/styles/friend-page.css'
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { useDebouncedResizeObserver } from '../hooks/useDeboucedResizeObserver'
-import { useToggle } from '../hooks/useToggle'
+import { useToggleStore } from '../store/useToggleStore'
 import React from 'react'
 import FriendCard from './FriendCard'
 import { friends } from '../data/friends'
@@ -16,9 +16,9 @@ const FriendPage = React.memo(() => {
     Array(friends.length).fill(null)
   )
   const [columns, setColumns] = useState<number[]>([])
-  const [togglNav] = useToggle()
+  const togglNav = useToggleStore((state) => state.togglNav)
 
-  const calculateColumns = useCallback((offset?: number) => {
+  const calculateColumns = useCallback(() => {
     if (container_ref.current && page_ref.current) {
       const width = page_ref.current.offsetWidth
       let factor = 0.8
@@ -36,9 +36,9 @@ const FriendPage = React.memo(() => {
     }
   }, [])
   useDebouncedResizeObserver(calculateColumns, { ref: page_ref, delay: 500 })
-  // useEffect(() => {
-  //   calculateColumns(-200)
-  // }, [togglNav])
+  useEffect(() => {
+    console.log(togglNav)
+  }, [togglNav])
   useEffect(() => {
     document.fonts.ready.then(() => {
       calculateColumns()

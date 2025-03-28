@@ -8,14 +8,14 @@ import Essay from './components/Essay'
 import SideNav from './components/SideNav'
 import FriendPage from './components/FriendPage'
 import Background from './components/Background'
-import { useToggle } from './hooks/useToggle'
+import { useToggleStore } from './store/useToggleStore'
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [togglNav, toggle] = useToggle(false)
+  const togglNav = useToggleStore((state) => state.togglNav)
   return (
     <div className={`background ${togglNav ? 'nav-open' : ''}`}>
-      <ToggleButton togglNav={togglNav} toggle={toggle} />
+      <ToggleButton />
       <ToggleTheme />
       <Background />
       <section ref={containerRef} className="page-container">
@@ -24,7 +24,7 @@ function App() {
         <Essay />
         <FriendPage />
       </section>
-      <SideNav containerRef={containerRef} toggle={toggle} />
+      <SideNav containerRef={containerRef} />
     </div>
   )
 }

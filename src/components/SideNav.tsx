@@ -3,16 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { links } from '../data/links'
 import { useRef, useEffect, useState } from 'react'
 import { usePageObserver } from '../hooks/usePageObserver'
+import { useToggleStore } from '../store/useToggleStore'
 const SideNav = ({
-  containerRef,
-  toggle
+  containerRef
 }: {
   containerRef: React.RefObject<HTMLDivElement>
-  toggle: () => void
 }) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null)
   const isMobile = window.innerWidth < 1024
   const [currentPage, setCurrentPage] = useState(0)
+  const toggle = useToggleStore((state) => state.toggle)
 
   /* scrollFreeze to freeze the observer */
   const scrollFreeze = useRef(false)
