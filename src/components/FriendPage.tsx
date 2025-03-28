@@ -1,5 +1,7 @@
 import '@/styles/friend-page.css'
 import { useRef, useState, useEffect, useCallback } from 'react'
+import { useDebouncedResizeObserver } from '../hooks/useDeboucedResizeObserver'
+import { useToggle } from '../hooks/useToggle'
 import React from 'react'
 import FriendCard from './FriendCard'
 import { friends } from '../data/friends'
@@ -14,9 +16,11 @@ const FriendPage = React.memo(() => {
     Array(friends.length).fill(null)
   )
   const [columns, setColumns] = useState<number[]>([])
-  const calculateColumns = useCallback(() => {
-    if (container_ref.current) {
-      const width = window.innerWidth
+  const [togglNav] = useToggle()
+
+  const calculateColumns = useCallback((offset?: number) => {
+    if (container_ref.current && page_ref.current) {
+      const width = page_ref.current.offsetWidth
       let factor = 0.8
       if (width <= 768) {
         gap = 8
@@ -31,28 +35,20 @@ const FriendPage = React.memo(() => {
       setColumns(Array(columnCount).fill(PADDING))
     }
   }, [])
-
+  useDebouncedResizeObserver(calculateColumns, { ref: page_ref, delay: 500 })
+  // useEffect(() => {
+  //   calculateColumns(-200)
+  // }, [togglNav])
   useEffect(() => {
     document.fonts.ready.then(() => {
       calculateColumns()
     })
-    const observer = new ResizeObserver(() => {
-      calculateColumns()
-    })
-    if (page_ref.current) {
-      observer.observe(page_ref.current)
-      return () => {
-        observer.disconnect()
-      }
-    }
   }, [calculateColumns])
   useEffect(() => {
     if (columns.length === 0) return
     const columnHeights = [...columns]
-    console.log(cardRefs.current, columns.length)
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
-        console.log(cardRef.offsetHeight, cardRef.offsetWidth)
         const { offsetHeight } = cardRef
         const column = columnHeights.indexOf(Math.min(...columnHeights))
         const left = column * (column_width + gap)

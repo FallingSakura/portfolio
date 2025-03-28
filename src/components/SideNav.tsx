@@ -11,7 +11,7 @@ const SideNav = ({
   toggle: () => void
 }) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null)
-  const isMobile = window.innerWidth < 768
+  const isMobile = window.innerWidth < 1024
   const [currentPage, setCurrentPage] = useState(0)
 
   /* scrollFreeze to freeze the observer */
