@@ -29,6 +29,8 @@ const FriendPage = React.memo(() => {
   const calculateColumns = useCallback((offset?: number) => {
     if (container_ref.current && page_ref.current) {
       let factor = 0.8
+      gap = 16
+      column_width = 200
       let width = page_ref.current.offsetWidth
       if (offset) {
         width += offset

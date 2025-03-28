@@ -6,6 +6,6 @@ type IsMobileStore = {
 }
 
 export const useIsMobileStore = create<IsMobileStore>((set) => ({
-  isMobile: window.innerWidth <= 1024,
+  isMobile: false,
   setIsMobile: (arg: boolean) => set(() => ({ isMobile: arg }))
 }))
