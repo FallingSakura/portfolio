@@ -13,7 +13,7 @@ const ProjectPage = React.memo(() => {
   const card_container = useRef<HTMLDivElement>(null)
   const isMobile = useRef(window.innerWidth <= 768)
   useEffect(() => {
-    if (!isMobile && card_container.current) {
+    if (!isMobile.current && card_container.current) {
       container_width = card_container.current.offsetWidth
       init = container_width / 2 - 200
       setPos(init)
@@ -45,7 +45,7 @@ const ProjectPage = React.memo(() => {
         className="card-container"
         ref={card_container}
         style={{
-          transform: `translateX(${isMobile ? 0 : pos}px)`
+          transform: `translateX(${isMobile.current ? 0 : pos}px)`
         }}
       >
         {projects.map((project) => (
