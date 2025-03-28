@@ -43,31 +43,31 @@ export const friends: Friend[] = [
     avatar: '/avatar.jpg',
     url: 'https://fallingsakura.top',
     descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
+  },
+  {
+    name: 'FallingSakura',
+    avatar: '/avatar.jpg',
+    url: 'https://fallingsakura.top',
+    descr: 'Hi, here is a test text.'
   }
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
-  // {
-  //   name: 'FallingSakura',
-  //   avatar: '/avatar.jpg',
-  //   url: 'https://fallingsakura.top',
-  //   descr: 'Hi, here is a test text.'
-  // },
   // {
   //   name: 'FallingSakura',
   //   avatar: '/avatar.jpg',

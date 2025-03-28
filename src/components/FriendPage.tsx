@@ -73,20 +73,14 @@ const FriendPage = React.memo(() => {
     delay: 500,
     freeze: resizeFreeze
   })
-  // useEffect(() => {
-  //   console.log('togglNav: ', togglNav)
-  // }, [togglNav])
-  // useEffect(() => {
-  //   console.log('isMobile: ', isMobile)
-  // }, [isMobile])
   useEffect(() => {
+    // second execution
     document.fonts.ready.then(() => {
       calculateColumns()
     })
   }, [calculateColumns])
   useEffect(() => {
     if (columns.length === 0) return
-    console.log('changed')
     const columnHeights = [...columns]
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
