@@ -20,11 +20,14 @@
   /* Custom properties */
   --color-primary: #ee9ca7;
 
+  /* only for the background */
+  --color-background-transparent: rgba(239, 239, 239, 1);
+
+  /* other colors */
   --color-text: #1a1a1a;
   --color-background: #ffffff;
   --color-background-translucent: #ffffff80;
   --color-shadow: #ee9ca755;
-  --color-transparent: rgba(239, 239, 239, 1);
   --color-border: #fafafa66;
 
   --color-card: #fbfbfb9a;
@@ -32,11 +35,14 @@
   --color-card-shadow: #d1d1d1;
 }
 [data-theme='dark'] {
+  /* only for the background */
+  --color-background-transparent: rgba(20, 20, 20, 0.9);
+
+  /* other colors */
   --color-text: #f9f9f9;
   --color-background: #242424;
   --color-background-translucent: #24242480;
   --color-shadow: #824a52c2;
-  --color-transparent: rgba(20, 20, 20, 0.9);
   --color-border: #3e3e3e66;
 
   --color-card: #272727b0;

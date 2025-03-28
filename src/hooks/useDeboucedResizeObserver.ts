@@ -8,7 +8,6 @@ export const useDebouncedResizeObserver = (
   } = { delay: 100, freeze: { current: false }, ref: { current: null } }
 ) => {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const isFirstTrigger = useRef(true)
   useEffect(() => {
     const target = options.ref.current
     if (!target) return
@@ -17,10 +16,6 @@ export const useDebouncedResizeObserver = (
       if (options.freeze?.current) return
       timerRef.current = setTimeout(() => {
         if (!options.ref.current) return
-        if (isFirstTrigger.current) {
-          isFirstTrigger.current = false
-          return
-        }
         callback()
       }, options.delay)
     }

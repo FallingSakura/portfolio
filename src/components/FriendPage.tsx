@@ -25,6 +25,7 @@ const FriendPage = React.memo(() => {
   useMobile()
   const isMobile = useIsMobileStore((state) => state.isMobile)
 
+  // reset the columns to trigger the useEffect and calculate the layout
   const calculateColumns = useCallback((offset?: number) => {
     if (container_ref.current && page_ref.current) {
       let factor = 0.8
@@ -68,17 +69,25 @@ const FriendPage = React.memo(() => {
       calculateColumns(200)
     }
   }, [isMobile, togglNav, calculateColumns])
+  /**
+   * @description:
+   * 1. useDebouncedResizeObserver is a custom hook that uses the ResizeObserver API to observe the page_ref.current element.
+   * 2. The callback function is calculateColumns, which is called when the page_ref.current element is resized.
+   * 3. The delay is set to 500ms, and the freeze is set to resizeFreeze.current.
+   * 4. The freeze is set to resizeFreeze.current, which is a ref that is set to true when the page is resized.
+   */
   useDebouncedResizeObserver(calculateColumns, {
     ref: page_ref,
     delay: 500,
     freeze: resizeFreeze
   })
   useEffect(() => {
-    // second execution
+    // second execution (after the font is loaded because the font size affects the layout)
     document.fonts.ready.then(() => {
       calculateColumns()
     })
   }, [calculateColumns])
+  // calculate the layout
   useEffect(() => {
     if (columns.length === 0) return
     const columnHeights = [...columns]

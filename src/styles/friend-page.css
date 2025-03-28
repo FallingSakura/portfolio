@@ -5,13 +5,13 @@
   display: flex;
   justify-content: center;
   overflow: scroll;
+  scrollbar-width: none;
 }
 .friend .friend-cards-container {
   position: relative;
   width: 100%;
   border-radius: 25px;
-  scrollbar-width: none;
 }
-.friend-cards-container::-webkit-scrollbar {
+.friend::-webkit-scrollbar {
   display: none;
 }
