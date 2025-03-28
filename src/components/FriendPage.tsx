@@ -92,6 +92,7 @@ const FriendPage = React.memo(() => {
   // calculate the layout
   useEffect(() => {
     if (columns.length === 0) return
+    console.log('changed')
     const columnHeights = [...columns]
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
@@ -112,7 +113,7 @@ const FriendPage = React.memo(() => {
     if (container_ref.current) {
       container_ref.current.style.height = `${containerHeight}px`
       container_ref.current.style.width = `${
-        (200 + gap) * columns.length - gap
+        (column_width + gap) * columns.length - gap
       }px`
     }
   }, [columns])
