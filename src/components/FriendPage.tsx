@@ -3,6 +3,7 @@ import { useRef, useState, useEffect, useCallback } from 'react'
 import { useDebouncedResizeObserver } from '../hooks/useDeboucedResizeObserver'
 import { useToggleStore } from '../store/useToggleStore'
 import { useMobile } from '../hooks/useMobile'
+import { useIsMobileStore } from '../store/useIsMobileStore'
 import React from 'react'
 import FriendCard from './FriendCard'
 import { friends } from '../data/friends'
@@ -38,7 +39,6 @@ const FriendPage = React.memo(() => {
         column_width = 175
         factor = 0.9
       }
-      console.log(width)
       const columnCount = Math.max(
         1,
         Math.floor((width * factor + gap) / (column_width + gap)),
@@ -48,6 +48,7 @@ const FriendPage = React.memo(() => {
     }
   }, [])
   useEffect(() => {
+    if (useIsMobileStore.getState().isMobile) return
     const freeze = () => {
       if (timeRef.current) {
         clearTimeout(timeRef.current)
@@ -91,7 +92,7 @@ const FriendPage = React.memo(() => {
   // calculate the layout
   useEffect(() => {
     if (columns.length === 0) return
-    console.log('changed')
+    console.log('recalculated.')
 
     const columnHeights = [...columns]
     cardRefs.current.forEach((cardRef) => {

@@ -39,6 +39,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-display: optional;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+  hyphens: auto;
 }
 
 @media (max-width: 768px) {
