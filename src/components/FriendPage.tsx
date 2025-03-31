@@ -40,6 +40,7 @@ const FriendPage = React.memo(() => {
         column_width = 175
         factor = 0.9
       }
+      console.log(width)
       const columnCount = Math.max(
         1,
         Math.floor((width * factor + gap) / (column_width + gap)),
@@ -49,7 +50,6 @@ const FriendPage = React.memo(() => {
     }
   }, [])
   useEffect(() => {
-    if (isMobile) return
     const freeze = () => {
       if (timeRef.current) {
         clearTimeout(timeRef.current)
@@ -68,9 +68,10 @@ const FriendPage = React.memo(() => {
       return
     } else {
       freeze()
+      console.log('haha')
       calculateColumns(200)
     }
-  }, [isMobile, togglNav, calculateColumns])
+  }, [togglNav, calculateColumns])
   /**
    * @description:
    * 1. useDebouncedResizeObserver is a custom hook that uses the ResizeObserver API to observe the page_ref.current element.
@@ -93,6 +94,7 @@ const FriendPage = React.memo(() => {
   useEffect(() => {
     if (columns.length === 0) return
     console.log('changed')
+
     const columnHeights = [...columns]
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
