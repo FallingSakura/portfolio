@@ -62,9 +62,9 @@ a {
   transition: 0.3s;
 }
 
+html,
 body {
   margin: 0;
-  place-items: center;
-  min-height: 100%;
+  /* min-height: 100%; */
   overflow-x: hidden;
 }

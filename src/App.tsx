@@ -1,5 +1,5 @@
 import './styles/App.css'
-import { useRef } from 'react'
+import { useRef, useCallback, useEffect } from 'react'
 import ToggleButton from './components/toggle/ToggleButton'
 import ToggleTheme from './components/toggle/ToggleTheme'
 import HomePage from './components/HomePage'
@@ -13,6 +13,17 @@ import { useToggleStore } from './store/useToggleStore'
 function App() {
   const containerRef = useRef<HTMLDivElement>(null)
   const togglNav = useToggleStore((state) => state.togglNav)
+  const handleDocumentHeight = useCallback(() => {
+    const doc = document.documentElement
+    doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
+  }, [])
+  useEffect(() => {
+    window.addEventListener('resize', handleDocumentHeight)
+    handleDocumentHeight()
+    return () => {
+      window.removeEventListener('resize', handleDocumentHeight)
+    }
+  }, [handleDocumentHeight])
   return (
     <div className={`background ${togglNav ? 'nav-open' : ''}`}>
       <ToggleButton />
