@@ -3,7 +3,6 @@ import { useRef, useState, useEffect, useCallback } from 'react'
 import { useDebouncedResizeObserver } from '../hooks/useDeboucedResizeObserver'
 import { useToggleStore } from '../store/useToggleStore'
 import { useMobile } from '../hooks/useMobile'
-import { useIsMobileStore } from '../store/useIsMobileStore'
 import React from 'react'
 import FriendCard from './FriendCard'
 import { friends } from '../data/friends'
@@ -23,7 +22,6 @@ const FriendPage = React.memo(() => {
   const [columns, setColumns] = useState<number[]>([])
   const togglNav = useToggleStore((state) => state.togglNav)
   useMobile()
-  const isMobile = useIsMobileStore((state) => state.isMobile)
 
   // reset the columns to trigger the useEffect and calculate the layout
   const calculateColumns = useCallback((offset?: number) => {
