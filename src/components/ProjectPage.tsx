@@ -12,10 +12,21 @@ let container_width = 0
 let init = 0
 const ProjectPage = React.memo(() => {
   const [pos, setPos] = useState(0)
+  const project_ref = useRef<HTMLDivElement>(null)
   const card_container = useRef<HTMLDivElement>(null)
   const isMobile = useIsMobileStore((state) => state.isMobile)
   const currentPage = useCurrentPageStore((state) => state.currentPage)
-  useEffect(() => {}, [currentPage])
+  useEffect(() => {
+    console.log('currentPage', currentPage)
+    if (!isMobile && project_ref.current) {
+      if (currentPage === 1) {
+        project_ref.current.classList.add('active')
+      } else {
+        project_ref.current.classList.remove('active')
+      }
+    }
+  }, [currentPage, isMobile])
+
   useEffect(() => {
     if (!isMobile && card_container.current) {
       container_width = card_container.current.offsetWidth
@@ -36,7 +47,7 @@ const ProjectPage = React.memo(() => {
     setPos(pos + 375)
   }
   return (
-    <div className="project" id="projects">
+    <div className="project" ref={project_ref} id="projects">
       <div
         className="card-container"
         ref={card_container}

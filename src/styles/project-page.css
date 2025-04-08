@@ -7,23 +7,27 @@
   justify-content: center;
   align-items: center;
 }
-.project::before {
-  content: '';
-  height: 100%;
-  width: calc((100% - 350px) / 2);
-  background: linear-gradient(to right, var(--color-background), transparent);
-  position: absolute;
-  left: 0;
-  z-index: 10;
-}
+.project::before,
 .project::after {
   content: '';
   height: 100%;
   width: calc((100% - 350px) / 2);
-  background: linear-gradient(to left, var(--color-background), transparent);
   position: absolute;
-  right: 0;
   z-index: 10;
+  opacity: 0;
+  transition: 1s;
+}
+.project.active::before,
+.project.active::after {
+  opacity: 1;
+}
+.project::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-background), transparent);
+}
+.project::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-background), transparent);
 }
 .project .card-container {
   display: flex;
