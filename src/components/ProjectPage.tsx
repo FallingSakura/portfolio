@@ -5,26 +5,22 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { useState, useRef, useEffect } from 'react'
+import { useCurrentPageStore } from '../store/useCurrentPageStore'
+import { useIsMobileStore } from '../store/useIsMobileStore'
 
 let container_width = 0
 let init = 0
 const ProjectPage = React.memo(() => {
   const [pos, setPos] = useState(0)
   const card_container = useRef<HTMLDivElement>(null)
-  const isMobile = useRef(window.innerWidth <= 768)
+  const isMobile = useIsMobileStore((state) => state.isMobile)
+  const currentPage = useCurrentPageStore((state) => state.currentPage)
+  useEffect(() => {}, [currentPage])
   useEffect(() => {
-    if (!isMobile.current && card_container.current) {
+    if (!isMobile && card_container.current) {
       container_width = card_container.current.offsetWidth
       init = container_width / 2 - 200
       setPos(init)
-    }
-    window.addEventListener('resize', () => {
-      isMobile.current = window.innerWidth <= 768
-    })
-    return () => {
-      window.removeEventListener('resize', () => {
-        isMobile.current = window.innerWidth <= 768
-      })
     }
   }, [isMobile])
   function scrollForward() {
@@ -45,7 +41,7 @@ const ProjectPage = React.memo(() => {
         className="card-container"
         ref={card_container}
         style={{
-          transform: `translateX(${isMobile.current ? 0 : pos}px)`
+          transform: `translateX(${isMobile ? 0 : pos}px)`
         }}
       >
         {projects.map((project) => (
