@@ -16,7 +16,7 @@ export const links = [
     icon: faLaptopCode
   },
   {
-    id: 'essays',
+    id: 'essay',
     title: 'Essays',
     icon: faCloud
   },
