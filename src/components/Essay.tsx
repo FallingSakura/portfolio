@@ -1,3 +1,4 @@
+import '@/styles/essay.css'
 const Essay = () => {
   return (
     <div
