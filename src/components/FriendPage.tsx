@@ -12,6 +12,7 @@ let column_width = 200
 let gap = 16
 const PADDING = 75
 const FriendPage = React.memo(() => {
+  const [isHovered, setIsHovered] = useState(false)
   const isFirstRender = useRef(true)
   const container_ref = useRef<HTMLDivElement>(null)
   const page_ref = useRef<HTMLDivElement>(null)
@@ -116,7 +117,6 @@ const FriendPage = React.memo(() => {
       container_ref.current.style.width = `${
         (column_width + gap) * columns.length - gap
       }px`
-      console.log('containerWidth', container_ref.current.style.width)
     }
   }, [columns])
   return (
@@ -133,9 +133,25 @@ const FriendPage = React.memo(() => {
         ))}
       </div>
 
-      <div className="apply">
-        <div className="apply-container">
-          <h2>Apply for a friend link?</h2>
+      <div
+        className="apply"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className={`apply-wrapper ${isHovered ? 'hovered' : ''}`}>
+          <div className="front-side">
+            <h2>Apply for a friend link?</h2>
+          </div>
+          <div className="back-side">
+            <form>
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" name="name" />
+              <label htmlFor="github">Github Name</label>
+              <input type="text" id="github" name="github" />
+              <label htmlFor="website">website</label>
+              <input type="text" id="website" name="website" />
+            </form>
+          </div>
         </div>
       </div>
     </div>
