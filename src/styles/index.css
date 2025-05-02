@@ -50,11 +50,6 @@
   --color-card-shadow: rgba(58, 56, 56, 0.9);
 }
 
-#root {
-  width: 100%;
-  min-height: 100vh;
-}
-
 a {
   color: var(--color-text);
   font-weight: 500;
