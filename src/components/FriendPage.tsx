@@ -116,6 +116,7 @@ const FriendPage = React.memo(() => {
       container_ref.current.style.width = `${
         (column_width + gap) * columns.length - gap
       }px`
+      console.log('containerWidth', container_ref.current.style.width)
     }
   }, [columns])
   return (
@@ -130,6 +131,12 @@ const FriendPage = React.memo(() => {
             key={`${friend.name}${index}`}
           />
         ))}
+      </div>
+
+      <div className="apply">
+        <div className="apply-container">
+          <h2>Apply for a friend link?</h2>
+        </div>
       </div>
     </div>
   )
