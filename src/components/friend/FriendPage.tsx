@@ -1,13 +1,13 @@
 import '@/styles/friend-page.css'
 import { useRef, useState, useEffect, useCallback } from 'react'
-import { useDebouncedResizeObserver } from '../hooks/useDeboucedResizeObserver'
-import { useToggleStore } from '../store/useToggleStore'
-import { useMobile } from '../hooks/useMobile'
-import { useIsMobileStore } from '../store/useIsMobileStore'
+import { useDebouncedResizeObserver } from '../../hooks/useDeboucedResizeObserver'
+import { useToggleStore } from '../../store/useToggleStore'
+import { useMobile } from '../../hooks/useMobile'
+import { useIsMobileStore } from '../../store/useIsMobileStore'
 import React from 'react'
 import FriendCard from './FriendCard'
 import ApplyCard from './ApplyCard'
-import { friends } from '../data/friends'
+import { friends } from '../../data/friends'
 
 let column_width = 200
 let gap = 16

@@ -1,5 +1,5 @@
 import '@/styles/friend-card.css'
-import { Friend } from '../types/friend'
+import { Friend } from '../../types/friend'
 import React from 'react'
 import { forwardRef } from 'react'
 const FriendCard = forwardRef<HTMLDivElement, Friend>((props, ref) => {
