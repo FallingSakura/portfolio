@@ -135,15 +135,11 @@ const FriendPage = React.memo(() => {
       </div>
 
       <div
-        className="apply"
+        className={`apply ${isHovered || focus !== '' ? 'hovered' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div
-          className={`apply-wrapper ${
-            isHovered || focus !== '' ? 'hovered' : ''
-          }`}
-        >
+        <div className={`apply-wrapper`}>
           <div className="front-side">
             <h2>Apply for a friend link?</h2>
           </div>
