@@ -6,14 +6,13 @@ import { useMobile } from '../hooks/useMobile'
 import { useIsMobileStore } from '../store/useIsMobileStore'
 import React from 'react'
 import FriendCard from './FriendCard'
+import ApplyCard from './ApplyCard'
 import { friends } from '../data/friends'
 
 let column_width = 200
 let gap = 16
 const PADDING = 75
 const FriendPage = React.memo(() => {
-  const [isHovered, setIsHovered] = useState(false)
-  const [focus, setFocus] = useState('')
   const isFirstRender = useRef(true)
   const container_ref = useRef<HTMLDivElement>(null)
   const page_ref = useRef<HTMLDivElement>(null)
@@ -133,84 +132,7 @@ const FriendPage = React.memo(() => {
           />
         ))}
       </div>
-
-      <div
-        className={`apply ${isHovered || focus !== '' ? 'hovered' : ''}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className={`apply-wrapper`}>
-          <div className="front-side">
-            <h2>Apply for a friend link?</h2>
-          </div>
-          <div className="back-side">
-            <form>
-              <label
-                htmlFor="name"
-                style={{
-                  color: focus === 'name' ? 'var(--color-primary)' : ''
-                }}
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Nick Name"
-                onFocus={() => {
-                  setFocus('name')
-                }}
-                onBlur={() => {
-                  setFocus('')
-                }}
-              />
-              <label
-                htmlFor="github"
-                style={{
-                  color: focus === 'github' ? 'var(--color-primary)' : ''
-                }}
-              >
-                Github
-              </label>
-              <input
-                type="text"
-                id="github"
-                name="github"
-                placeholder="Your Github Name"
-                onFocus={() => {
-                  setFocus('github')
-                }}
-                onBlur={() => {
-                  setFocus('')
-                }}
-              />
-              <label
-                htmlFor="website"
-                style={{
-                  color: focus === 'website' ? 'var(--color-primary)' : ''
-                }}
-              >
-                Website
-              </label>
-
-              <input
-                type="text"
-                id="website"
-                name="website"
-                placeholder="Your Website URL"
-                onFocus={() => {
-                  setFocus('website')
-                }}
-                onBlur={() => {
-                  setFocus('')
-                }}
-              />
-              <button>Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <ApplyCard />
     </div>
   )
 })
