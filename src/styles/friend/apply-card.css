@@ -1,6 +1,9 @@
 .apply {
   perspective: 1000px;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 360px;
   bottom: 50px;
   right: 50px;
