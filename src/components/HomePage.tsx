@@ -1,4 +1,3 @@
-import avatar from '/avatar.jpg'
 import SocialLinks from './SocialLinks'
 import React from 'react'
 import '../styles/home-page.css'
@@ -11,7 +10,10 @@ const HomePage = React.memo(() => {
           <div className="img-container">
             <div className="img">
               <a href="/">
-                <img src={avatar} alt="avatar" />
+                <img
+                  src="https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202506261445515.jpeg"
+                  alt="avatar"
+                />
               </a>
             </div>
           </div>
