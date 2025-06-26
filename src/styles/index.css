@@ -34,7 +34,7 @@
   --color-card-border: #ebebeb;
   --color-card-shadow: #d1d1d1;
 }
-[data-theme='dark'] {
+:root[data-theme='dark'] {
   /* only for the background */
   --color-background-transparent: rgba(20, 20, 20, 0.9);
 

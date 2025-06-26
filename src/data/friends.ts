@@ -15,7 +15,8 @@ export const friends: Friend[] = [
   },
   {
     name: 'FallingSakura',
-    avatar: '/avatar.jpg',
+    avatar:
+      'https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202506261445515.jpeg',
     url: 'https://fallingsakura.top',
     descr:
       'Hi, here is a test text. hahisj jhsisjx ishsx islalsp jsoagh ispahjgiosjpi iaj isji oaj.'
