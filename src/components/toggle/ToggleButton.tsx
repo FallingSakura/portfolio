@@ -7,13 +7,17 @@ const ToggleButton = React.memo(() => {
   const toggle = useToggleStore((state) => state.toggle)
   return (
     <div className="toggle-button" onClick={toggle}>
-      <span className={`toggle-bar ${togglNav ? 'bar-hidden' : 'bar1'}`}></span>
-      <span
-        className={`toggle-bar ${togglNav ? 'bar-rotate-45' : 'bar2'}`}
-      ></span>
-      <span
-        className={`toggle-bar ${togglNav ? 'bar-rotate--45' : 'bar3'}`}
-      ></span>
+      <div className="toggle-button-container">
+        <span
+          className={`toggle-bar ${togglNav ? 'bar-hidden' : 'bar1'}`}
+        ></span>
+        <span
+          className={`toggle-bar ${togglNav ? 'bar-rotate-45' : 'bar2'}`}
+        ></span>
+        <span
+          className={`toggle-bar ${togglNav ? 'bar-rotate--45' : 'bar3'}`}
+        ></span>
+      </div>
     </div>
   )
 })
