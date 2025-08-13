@@ -1,0 +1,10 @@
+build
+coverage
+node_modules
+.vscode
+.git
+.gitignore
+.prettierignore
+.prettierrc
+.prettierrc.json
+.prettierrc.json

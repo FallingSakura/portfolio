@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import '@/styles/friend/apply-card.css'
+import { useState } from "react";
+import "@/styles/friend/apply-card.css";
 const ApplyCard = () => {
-  const [isHovered, setIsHovered] = useState(false)
-  const [focus, setFocus] = useState('')
+  const [isHovered, setIsHovered] = useState(false);
+  const [focus, setFocus] = useState("");
   return (
     <div
-      className={`apply ${isHovered || focus !== '' ? 'hovered' : ''}`}
+      className={`apply ${isHovered || focus !== "" ? "hovered" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -18,7 +18,7 @@ const ApplyCard = () => {
             <label
               htmlFor="name"
               style={{
-                color: focus === 'name' ? 'var(--color-primary)' : ''
+                color: focus === "name" ? "var(--color-primary)" : "",
               }}
             >
               Name
@@ -29,16 +29,16 @@ const ApplyCard = () => {
               name="name"
               placeholder="Your Nick Name"
               onFocus={() => {
-                setFocus('name')
+                setFocus("name");
               }}
               onBlur={() => {
-                setFocus('')
+                setFocus("");
               }}
             />
             <label
               htmlFor="github"
               style={{
-                color: focus === 'github' ? 'var(--color-primary)' : ''
+                color: focus === "github" ? "var(--color-primary)" : "",
               }}
             >
               Github
@@ -49,16 +49,16 @@ const ApplyCard = () => {
               name="github"
               placeholder="Your Github Name"
               onFocus={() => {
-                setFocus('github')
+                setFocus("github");
               }}
               onBlur={() => {
-                setFocus('')
+                setFocus("");
               }}
             />
             <label
               htmlFor="website"
               style={{
-                color: focus === 'website' ? 'var(--color-primary)' : ''
+                color: focus === "website" ? "var(--color-primary)" : "",
               }}
             >
               Website
@@ -70,10 +70,10 @@ const ApplyCard = () => {
               name="website"
               placeholder="Your Website URL"
               onFocus={() => {
-                setFocus('website')
+                setFocus("website");
               }}
               onBlur={() => {
-                setFocus('')
+                setFocus("");
               }}
             />
             <button>Submit</button>
@@ -81,7 +81,7 @@ const ApplyCard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ApplyCard
+export default ApplyCard;

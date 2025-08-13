@@ -1,4 +1,4 @@
-import '@/styles/background.css'
+import "@/styles/background.css";
 
 const Background = () => {
   return (
@@ -12,7 +12,7 @@ const Background = () => {
       </div>
       <div className="blur-effect"></div>
     </div>
-  )
-}
+  );
+};
 
-export default Background
+export default Background;

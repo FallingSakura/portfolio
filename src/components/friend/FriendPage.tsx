@@ -1,77 +1,77 @@
-import '@/styles/friend/friend-page.css'
-import { useRef, useState, useEffect, useCallback } from 'react'
-import { useDebouncedResizeObserver } from '../../hooks/useDeboucedResizeObserver'
-import { useToggleStore } from '../../store/useToggleStore'
-import { useMobile } from '../../hooks/useMobile'
-import { useIsMobileStore } from '../../store/useIsMobileStore'
-import React from 'react'
-import FriendCard from './FriendCard'
-import ApplyCard from './ApplyCard'
-import { friends } from '../../data/friends'
+import "@/styles/friend/friend-page.css";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { useDebouncedResizeObserver } from "../../hooks/useDeboucedResizeObserver";
+import { useToggleStore } from "../../store/useToggleStore";
+import { useMobile } from "../../hooks/useMobile";
+import { useIsMobileStore } from "../../store/useIsMobileStore";
+import React from "react";
+import FriendCard from "./FriendCard";
+import ApplyCard from "./ApplyCard";
+import { friends } from "../../data/friends";
 
-let column_width = 200
-let gap = 16
-const PADDING = 75
+let column_width = 200;
+let gap = 16;
+const PADDING = 75;
 const FriendPage = React.memo(() => {
-  const isFirstRender = useRef(true)
-  const container_ref = useRef<HTMLDivElement>(null)
-  const page_ref = useRef<HTMLDivElement>(null)
-  const timeRef = useRef<NodeJS.Timeout | null>(null)
-  const resizeFreeze = useRef(false)
+  const isFirstRender = useRef(true);
+  const container_ref = useRef<HTMLDivElement>(null);
+  const page_ref = useRef<HTMLDivElement>(null);
+  const timeRef = useRef<NodeJS.Timeout | null>(null);
+  const resizeFreeze = useRef(false);
   const cardRefs = useRef<Array<HTMLDivElement | null>>(
-    Array(friends.length).fill(null)
-  )
-  const [columns, setColumns] = useState<number[]>([])
-  const togglNav = useToggleStore((state) => state.togglNav)
-  useMobile()
+    Array(friends.length).fill(null),
+  );
+  const [columns, setColumns] = useState<number[]>([]);
+  const togglNav = useToggleStore((state) => state.togglNav);
+  useMobile();
 
   // reset the columns to trigger the useEffect and calculate the layout
   const calculateColumns = useCallback((offset?: number) => {
     if (container_ref.current && page_ref.current) {
-      gap = 16
-      column_width = 200
-      let factor = 0.8
-      let width = page_ref.current.offsetWidth
+      gap = 16;
+      column_width = 200;
+      let factor = 0.8;
+      let width = page_ref.current.offsetWidth;
       if (offset) {
-        width += offset
+        width += offset;
       }
       if (width <= 768) {
-        gap = 8
-        column_width = 175
-        factor = 0.9
+        gap = 8;
+        column_width = 175;
+        factor = 0.9;
       }
       const columnCount = Math.max(
         1,
         Math.floor((width * factor + gap) / (column_width + gap)),
-        Math.floor((width * (factor + 0.1) + gap) / (column_width + gap))
-      )
-      setColumns(Array(columnCount).fill(PADDING))
+        Math.floor((width * (factor + 0.1) + gap) / (column_width + gap)),
+      );
+      setColumns(Array(columnCount).fill(PADDING));
     }
-  }, [])
+  }, []);
   useEffect(() => {
-    if (useIsMobileStore.getState().isMobile) return
+    if (useIsMobileStore.getState().isMobile) return;
     const freeze = () => {
       if (timeRef.current) {
-        clearTimeout(timeRef.current)
+        clearTimeout(timeRef.current);
       }
-      resizeFreeze.current = true
+      resizeFreeze.current = true;
       timeRef.current = setTimeout(() => {
-        resizeFreeze.current = false
-      }, 550)
-    }
+        resizeFreeze.current = false;
+      }, 550);
+    };
 
     if (togglNav) {
-      freeze()
-      calculateColumns(-200)
+      freeze();
+      calculateColumns(-200);
     } else if (isFirstRender.current) {
-      isFirstRender.current = false
-      return
+      isFirstRender.current = false;
+      return;
     } else {
-      freeze()
-      console.log('haha')
-      calculateColumns(200)
+      freeze();
+      console.log("haha");
+      calculateColumns(200);
     }
-  }, [togglNav, calculateColumns])
+  }, [togglNav, calculateColumns]);
   /**
    * @description:
    * 1. useDebouncedResizeObserver is a custom hook that uses the ResizeObserver API to observe the page_ref.current element.
@@ -82,43 +82,43 @@ const FriendPage = React.memo(() => {
   useDebouncedResizeObserver(calculateColumns, {
     ref: page_ref,
     delay: 300,
-    freeze: resizeFreeze
-  })
+    freeze: resizeFreeze,
+  });
   useEffect(() => {
     // second execution (after the font is loaded because the font size affects the layout)
     document.fonts.ready.then(() => {
-      calculateColumns()
-    })
-  }, [calculateColumns])
+      calculateColumns();
+    });
+  }, [calculateColumns]);
   // calculate the layout
   useEffect(() => {
-    if (columns.length === 0) return
-    console.log('recalculated.')
+    if (columns.length === 0) return;
+    console.log("recalculated.");
 
-    const columnHeights = [...columns]
+    const columnHeights = [...columns];
     cardRefs.current.forEach((cardRef) => {
       if (cardRef) {
         // The change in width will affect the height.
-        cardRef.style.position = 'absolute'
+        cardRef.style.position = "absolute";
 
-        const { offsetHeight } = cardRef
-        const column = columnHeights.indexOf(Math.min(...columnHeights))
-        const left = column * (column_width + gap)
-        const top = columnHeights[column]
-        columnHeights[column] += offsetHeight + gap
+        const { offsetHeight } = cardRef;
+        const column = columnHeights.indexOf(Math.min(...columnHeights));
+        const left = column * (column_width + gap);
+        const top = columnHeights[column];
+        columnHeights[column] += offsetHeight + gap;
 
-        cardRef.style.left = `${left}px`
-        cardRef.style.top = `${top}px`
+        cardRef.style.left = `${left}px`;
+        cardRef.style.top = `${top}px`;
       }
-    })
-    const containerHeight = Math.max(Math.max(...columnHeights), 720)
+    });
+    const containerHeight = Math.max(Math.max(...columnHeights), 720);
     if (container_ref.current) {
-      container_ref.current.style.height = `${containerHeight}px`
+      container_ref.current.style.height = `${containerHeight}px`;
       container_ref.current.style.width = `${
         (column_width + gap) * columns.length - gap
-      }px`
+      }px`;
     }
-  }, [columns])
+  }, [columns]);
   return (
     <div className="friend" ref={page_ref} id="friend">
       <div className="friend-cards-container" ref={container_ref}>
@@ -126,7 +126,7 @@ const FriendPage = React.memo(() => {
           <FriendCard
             {...friend}
             ref={(el) => {
-              cardRefs.current[index] = el
+              cardRefs.current[index] = el;
             }}
             key={`${friend.name}${index}`}
           />
@@ -134,7 +134,7 @@ const FriendPage = React.memo(() => {
       </div>
       <ApplyCard />
     </div>
-  )
-})
+  );
+});
 
-export default FriendPage
+export default FriendPage;

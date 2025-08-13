@@ -1,9 +1,9 @@
-import '@/styles/friend/friend-card.css'
-import { Friend } from '../../types/friend'
-import React from 'react'
-import { forwardRef } from 'react'
+import "@/styles/friend/friend-card.css";
+import { Friend } from "../../types/friend";
+import React from "react";
+import { forwardRef } from "react";
 const FriendCard = forwardRef<HTMLDivElement, Friend>((props, ref) => {
-  const { name, avatar, descr, url } = props
+  const { name, avatar, descr, url } = props;
   return (
     <div ref={ref} className="friend-card">
       <a href={url} target="_blank" tabIndex={-1}>
@@ -14,7 +14,7 @@ const FriendCard = forwardRef<HTMLDivElement, Friend>((props, ref) => {
         <p className="friend-descr">{descr}</p>
       </a>
     </div>
-  )
-})
+  );
+});
 
-export default React.memo(FriendCard)
+export default React.memo(FriendCard);

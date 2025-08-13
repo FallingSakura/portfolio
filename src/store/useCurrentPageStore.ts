@@ -1,9 +1,9 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 type CurrentPageStore = {
-  currentPage: number
-  setCurrentPage: (arg: number) => void
-}
+  currentPage: number;
+  setCurrentPage: (arg: number) => void;
+};
 export const useCurrentPageStore = create<CurrentPageStore>((set) => ({
   currentPage: 0,
-  setCurrentPage: (arg: number) => set({ currentPage: arg })
-}))
+  setCurrentPage: (arg: number) => set({ currentPage: arg }),
+}));

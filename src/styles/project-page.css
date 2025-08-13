@@ -9,7 +9,7 @@
 }
 .project::before,
 .project::after {
-  content: '';
+  content: "";
   height: 100%;
   width: calc((100% - 350px) / 2);
   position: absolute;

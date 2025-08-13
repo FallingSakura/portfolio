@@ -1,7 +1,7 @@
-import SocialLinks from './SocialLinks'
-import React from 'react'
-import '../styles/home-page.css'
-import ScrollToBottom from './ScrollToBottom'
+import SocialLinks from "./SocialLinks";
+import React from "react";
+import "../styles/home-page.css";
+import ScrollToBottom from "./ScrollToBottom";
 const HomePage = React.memo(() => {
   return (
     <div className="home" id="home">
@@ -28,7 +28,7 @@ const HomePage = React.memo(() => {
       </div>
       <ScrollToBottom />
     </div>
-  )
-})
+  );
+});
 
-export default HomePage
+export default HomePage;

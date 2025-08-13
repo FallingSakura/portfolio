@@ -1,11 +1,11 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
 type PauseStore = {
-  paused: boolean
-  toggle: () => void
-}
+  paused: boolean;
+  toggle: () => void;
+};
 
 export const useToggleStore = create<PauseStore>((set) => ({
   paused: false,
-  toggle: () => set((state) => ({ paused: !state.paused }))
-}))
+  toggle: () => set((state) => ({ paused: !state.paused })),
+}));

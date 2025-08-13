@@ -1,50 +1,50 @@
-import '../styles/project-page.css'
-import { projects } from '../data/projects'
-import ProjectCard from './project-card/ProjectCard'
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import { useState, useRef, useEffect } from 'react'
-import { useCurrentPageStore } from '../store/useCurrentPageStore'
-import { useIsMobileStore } from '../store/useIsMobileStore'
+import "../styles/project-page.css";
+import { projects } from "../data/projects";
+import ProjectCard from "./project-card/ProjectCard";
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { useState, useRef, useEffect } from "react";
+import { useCurrentPageStore } from "../store/useCurrentPageStore";
+import { useIsMobileStore } from "../store/useIsMobileStore";
 
-let container_width = 0
-let init = 0
+let container_width = 0;
+let init = 0;
 const ProjectPage = React.memo(() => {
-  const [pos, setPos] = useState(0)
-  const project_ref = useRef<HTMLDivElement>(null)
-  const card_container = useRef<HTMLDivElement>(null)
-  const isMobile = useIsMobileStore((state) => state.isMobile)
-  const currentPage = useCurrentPageStore((state) => state.currentPage)
+  const [pos, setPos] = useState(0);
+  const project_ref = useRef<HTMLDivElement>(null);
+  const card_container = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobileStore((state) => state.isMobile);
+  const currentPage = useCurrentPageStore((state) => state.currentPage);
   useEffect(() => {
-    console.log('currentPage', currentPage)
+    console.log("currentPage", currentPage);
     if (!isMobile && project_ref.current) {
       if (currentPage === 1) {
-        project_ref.current.classList.add('active')
+        project_ref.current.classList.add("active");
       } else {
-        project_ref.current.classList.remove('active')
+        project_ref.current.classList.remove("active");
       }
     }
-  }, [currentPage, isMobile])
+  }, [currentPage, isMobile]);
 
   useEffect(() => {
     if (!isMobile && card_container.current) {
-      container_width = card_container.current.offsetWidth
-      init = container_width / 2 - 200
-      setPos(init)
+      container_width = card_container.current.offsetWidth;
+      init = container_width / 2 - 200;
+      setPos(init);
     }
-  }, [isMobile])
+  }, [isMobile]);
   function scrollForward() {
     if (pos === init - (projects.length - 1) * 375) {
-      return
+      return;
     }
-    setPos(pos - 375)
+    setPos(pos - 375);
   }
   function scrollBack() {
     if (pos === init) {
-      return
+      return;
     }
-    setPos(pos + 375)
+    setPos(pos + 375);
   }
   return (
     <div className="project" ref={project_ref} id="projects">
@@ -52,7 +52,7 @@ const ProjectPage = React.memo(() => {
         className="card-container"
         ref={card_container}
         style={{
-          transform: `translateX(${isMobile ? 0 : pos}px)`
+          transform: `translateX(${isMobile ? 0 : pos}px)`,
         }}
       >
         {projects.map((project) => (
@@ -68,6 +68,6 @@ const ProjectPage = React.memo(() => {
         </span>
       </div>
     </div>
-  )
-})
-export default ProjectPage
+  );
+});
+export default ProjectPage;

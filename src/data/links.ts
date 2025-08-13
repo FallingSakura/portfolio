@@ -2,27 +2,27 @@ import {
   faHouse,
   faLaptopCode,
   faHands,
-  faCloud
-} from '@fortawesome/free-solid-svg-icons'
+  faCloud,
+} from "@fortawesome/free-solid-svg-icons";
 export const links = [
   {
-    id: 'home',
-    title: 'Home',
-    icon: faHouse
+    id: "home",
+    title: "Home",
+    icon: faHouse,
   },
   {
-    id: 'projects',
-    title: 'Projects',
-    icon: faLaptopCode
+    id: "projects",
+    title: "Projects",
+    icon: faLaptopCode,
   },
   {
-    id: 'essay',
-    title: 'Essays',
-    icon: faCloud
+    id: "essay",
+    title: "Essays",
+    icon: faCloud,
   },
   {
-    id: 'friend',
-    title: 'Friends',
-    icon: faHands
-  }
-]
+    id: "friend",
+    title: "Friends",
+    icon: faHands,
+  },
+];

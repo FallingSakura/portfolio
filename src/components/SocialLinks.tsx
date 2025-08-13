@@ -1,12 +1,12 @@
-import '@/styles/social-links.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import "@/styles/social-links.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBilibili,
   faTwitter,
   faGithub,
   faWeixin,
-  faQq
-} from '@fortawesome/free-brands-svg-icons'
+  faQq,
+} from "@fortawesome/free-brands-svg-icons";
 
 function SocialLinks() {
   return (
@@ -31,6 +31,6 @@ function SocialLinks() {
         </a>
       </div>
     </div>
-  )
+  );
 }
-export default SocialLinks
+export default SocialLinks;

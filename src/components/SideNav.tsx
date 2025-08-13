@@ -1,48 +1,48 @@
-import '@/styles/side-nav.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { links } from '../data/links'
-import { useRef, useEffect } from 'react'
-import { usePageObserver } from '../hooks/usePageObserver'
-import { useCurrentPageStore } from '../store/useCurrentPageStore'
-import { useToggleStore } from '../store/useToggleStore'
+import "@/styles/side-nav.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { links } from "../data/links";
+import { useRef, useEffect } from "react";
+import { usePageObserver } from "../hooks/usePageObserver";
+import { useCurrentPageStore } from "../store/useCurrentPageStore";
+import { useToggleStore } from "../store/useToggleStore";
 const SideNav = ({
-  containerRef
+  containerRef,
 }: {
-  containerRef: React.RefObject<HTMLDivElement>
+  containerRef: React.RefObject<HTMLDivElement>;
 }) => {
-  const timeRef = useRef<NodeJS.Timeout | null>(null)
-  const currentPage = useCurrentPageStore((state) => state.currentPage)
-  const setCurrentPage = useCurrentPageStore((state) => state.setCurrentPage)
-  const toggle = useToggleStore((state) => state.toggle)
+  const timeRef = useRef<NodeJS.Timeout | null>(null);
+  const currentPage = useCurrentPageStore((state) => state.currentPage);
+  const setCurrentPage = useCurrentPageStore((state) => state.setCurrentPage);
+  const toggle = useToggleStore((state) => state.toggle);
 
   /* scrollFreeze to freeze the observer */
-  const scrollFreeze = useRef(false)
-  usePageObserver(containerRef, setCurrentPage, scrollFreeze)
+  const scrollFreeze = useRef(false);
+  usePageObserver(containerRef, setCurrentPage, scrollFreeze);
   useEffect(() => {
     return () => {
       if (timeRef.current) {
-        clearTimeout(timeRef.current)
+        clearTimeout(timeRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
   function scroll(index: number) {
     const pageContainer = document.querySelector(
-      '.page-container'
-    ) as HTMLElement
-    const scrollHeight = window.innerHeight * index
+      ".page-container",
+    ) as HTMLElement;
+    const scrollHeight = window.innerHeight * index;
     if (timeRef.current) {
-      clearTimeout(timeRef.current)
+      clearTimeout(timeRef.current);
     }
-    setCurrentPage(index)
-    scrollFreeze.current = true
+    setCurrentPage(index);
+    scrollFreeze.current = true;
     // freeze observer 0.5s
     timeRef.current = setTimeout(() => {
-      scrollFreeze.current = false
-    }, 500)
+      scrollFreeze.current = false;
+    }, 500);
     pageContainer?.scrollTo({
       top: scrollHeight,
-      behavior: 'smooth'
-    })
+      behavior: "smooth",
+    });
   }
   return (
     <>
@@ -53,7 +53,7 @@ const SideNav = ({
               <li
                 key={link.id}
                 style={{
-                  transitionDelay: `${index * 0.05}s`
+                  transitionDelay: `${index * 0.05}s`,
                 }}
                 onClick={() => scroll(index)}
               >
@@ -67,7 +67,7 @@ const SideNav = ({
           <div
             className="backdrop"
             style={{
-              transform: `translate(-50%, ${currentPage * 100}%)`
+              transform: `translate(-50%, ${currentPage * 100}%)`,
             }}
           ></div>
         </div>
@@ -77,10 +77,10 @@ const SideNav = ({
         <ul>
           {links.map((link, index) => (
             <li
-              className={`${currentPage === index ? 'active' : ''}`}
+              className={`${currentPage === index ? "active" : ""}`}
               key={link.id}
               style={{
-                transitionDelay: `${index * 0.1}s`
+                transitionDelay: `${index * 0.1}s`,
               }}
             >
               <a href={`#${link.id}`} onClick={toggle}>
@@ -94,7 +94,7 @@ const SideNav = ({
         </ul>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default SideNav
+export default SideNav;

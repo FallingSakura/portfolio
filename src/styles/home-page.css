@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 .home {
   display: flex;
   width: 100%;
@@ -36,7 +36,7 @@
   height: 100%;
 }
 .img-container::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -20px;
   filter: blur(30px);
@@ -56,7 +56,7 @@
 .title h1 {
   font-size: 4rem;
   margin-left: 100px;
-  font-family: 'Pacifico';
+  font-family: "Pacifico";
 }
 .title h1 > span:not(#name) {
   font-size: 2rem;

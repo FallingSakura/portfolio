@@ -14,7 +14,7 @@
   gap: 20px;
 }
 .links::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   width: 230px;

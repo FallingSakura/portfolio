@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +34,7 @@
   --color-card-border: #ebebeb;
   --color-card-shadow: #d1d1d1;
 }
-:root[data-theme='dark'] {
+:root[data-theme="dark"] {
   /* only for the background */
   --color-background-transparent: rgba(20, 20, 20, 0.9);
 

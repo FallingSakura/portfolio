@@ -1,4 +1,4 @@
-import { Project } from "../types/project"
+import { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
@@ -10,7 +10,8 @@ export const projects: Project[] = [
   },
   {
     title: "Tech News",
-    descr: "Tech News, a website from our project team using next.js and flask api.",
+    descr:
+      "Tech News, a website from our project team using next.js and flask api.",
     url: "https://technews.fallingsakura.top",
     img: "/project-images/technews.jpeg",
     commits: 0,
@@ -23,14 +24,14 @@ export const projects: Project[] = [
     descr: "My blog using hexo redefine theme.",
     url: "https://vercel.fallingsakura.top",
     languages: ["html", "css", "javascript"],
-    img: "/project-images/hexoblog.jpeg"
+    img: "/project-images/hexoblog.jpeg",
   },
   {
     title: "Record Calendar",
     descr: "A Calendar that can record your everyday's feeling.",
     url: "https://calendar.fallingsakura.top",
     languages: ["vue", "node.js"],
-    img: "/project-images/calendar.jpeg"
+    img: "/project-images/calendar.jpeg",
   },
   /* idea: gird draggable */
-]
+];

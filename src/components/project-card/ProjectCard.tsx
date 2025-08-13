@@ -1,7 +1,7 @@
-import '@/styles/project-card.css'
-import { Project } from '../../types/project'
-import LanguageLabel from './LanguageLabel'
-import React from 'react'
+import "@/styles/project-card.css";
+import { Project } from "../../types/project";
+import LanguageLabel from "./LanguageLabel";
+import React from "react";
 const ProjectCard = React.memo(
   ({ title, descr, url, languages, img }: Project) => {
     return (
@@ -10,7 +10,7 @@ const ProjectCard = React.memo(
           <div
             className="showcase"
             style={{
-              backgroundImage: `url('${img}')`
+              backgroundImage: `url('${img}')`,
             }}
           ></div>
         )}
@@ -30,8 +30,8 @@ const ProjectCard = React.memo(
           </div>
         </a>
       </div>
-    )
-  }
-)
+    );
+  },
+);
 
-export default ProjectCard
+export default ProjectCard;
