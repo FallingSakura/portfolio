@@ -4,8 +4,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  overflow: scroll;
-  scrollbar-width: none;
+  overflow: hidden;
 }
 .friend .friend-cards-container {
   position: relative;
