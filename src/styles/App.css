@@ -19,6 +19,7 @@
   height: 100%;
   box-sizing: border-box;
   background-color: var(--color-background-translucent);
+  overscroll-behavior: contain;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
