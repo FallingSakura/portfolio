@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: "My portfolio",
     descr: "About me. \nJust for fun.",
     url: "https://fallingsakura.top",
-    languages: ["react"],
+    languages: ["react", "typescript"],
     img: "/project-images/portfolio.jpeg",
   },
   {
@@ -17,7 +17,7 @@ export const projects: Project[] = [
     commits: 0,
     stars: 0,
     forks: 0,
-    languages: ["react", "python"],
+    languages: ["next.js", "typescript", "python"],
   },
   {
     title: "Hexo Blog",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: "Naka Chat",
     descr: "Group chat with AI agents. Brianstorm, werewolf, COC, and more.",
     url: "https://naka.chat",
-    languages: ["react", "node.js"],
+    languages: ["next.js", "typescript"],
     img: "/project-images/naka-chat.jpeg",
   },
   /* idea: gird draggable */

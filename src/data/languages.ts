@@ -7,4 +7,5 @@ export const languages: Record<string, string> = {
   javascript: "eee170",
   vue: "64B687",
   "node.js": "507d40",
+  "next.js": "000000",
 };
