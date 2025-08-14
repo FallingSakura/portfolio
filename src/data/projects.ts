@@ -13,7 +13,7 @@ export const projects: Project[] = [
     descr:
       "Tech News, a website from our project team using next.js and flask api.",
     url: "https://technews.fallingsakura.top",
-    img: "/project-images/technews.jpeg",
+    img: "/project-images/tech-news.jpeg",
     commits: 0,
     stars: 0,
     forks: 0,
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     descr: "My blog using hexo redefine theme.",
     url: "https://vercel.fallingsakura.top",
     languages: ["html", "css", "javascript"],
-    img: "/project-images/hexoblog.jpeg",
+    img: "/project-images/hexo-blog.jpeg",
   },
   {
     title: "Record Calendar",
@@ -32,6 +32,13 @@ export const projects: Project[] = [
     url: "https://calendar.fallingsakura.top",
     languages: ["vue", "node.js"],
     img: "/project-images/calendar.jpeg",
+  },
+  {
+    title: "Naka Chat",
+    descr: "Group chat with AI agents. Brianstorm, werewolf, COC, and more.",
+    url: "https://naka.chat",
+    languages: ["react", "node.js"],
+    img: "/project-images/naka-chat.jpeg",
   },
   /* idea: gird draggable */
 ];
