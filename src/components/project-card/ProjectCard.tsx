@@ -1,4 +1,4 @@
-import styles from "@/styles/project-card.module.css";
+import styles from "@/styles/ProjectCard.module.css";
 import { Project } from "../../types/project";
 import LanguageLabel from "./LanguageLabel";
 import React from "react";

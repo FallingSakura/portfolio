@@ -1,4 +1,4 @@
-import styles from "@/styles/friend/friend-page.module.css";
+import styles from "@/styles/friend/FriendPage.module.css";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useDebouncedResizeObserver } from "../../hooks/useDeboucedResizeObserver";
 import { useToggleStore } from "../../store/useToggleStore";

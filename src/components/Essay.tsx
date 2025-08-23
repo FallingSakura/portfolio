@@ -1,4 +1,4 @@
-import styles from "@/styles/essay.module.css";
+import styles from "@/styles/Essay.module.css";
 import { useRef } from "react";
 const Essay = () => {
   const headerRef = useRef<HTMLDivElement>(null);

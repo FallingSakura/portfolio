@@ -1,6 +1,6 @@
 import SocialLinks from "./SocialLinks";
 import React from "react";
-import styles from "@/styles/home-page.module.css";
+import styles from "@/styles/HomePage.module.css";
 import ScrollToBottom from "./ScrollToBottom";
 const HomePage = React.memo(() => {
   return (

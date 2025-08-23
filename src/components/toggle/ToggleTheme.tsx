@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { useTheme } from "../../hooks/useTheme";
 import React from "react";
-import styles from "@/styles/toggle-theme.module.css";
+import styles from "@/styles/ToggleTheme.module.css";
 const ToggleTheme = React.memo(() => {
   const [theme, toggleTheme] = useTheme();
   return (

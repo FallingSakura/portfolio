@@ -1,5 +1,5 @@
 import { languages } from "../../data/languages";
-import styles from "@/styles/project-card.module.css";
+import styles from "@/styles/ProjectCard.module.css";
 
 function LanguageLabel({ language }: { language: string }) {
   return (

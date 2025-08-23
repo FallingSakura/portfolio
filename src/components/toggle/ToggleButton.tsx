@@ -1,4 +1,4 @@
-import styles from "@/styles/toggle-button.module.css";
+import styles from "@/styles/ToggleButton.module.css";
 import React from "react";
 import { useToggleStore } from "../../store/useToggleStore";
 

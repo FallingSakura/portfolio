@@ -1,4 +1,4 @@
-import styles from "@/styles/side-nav.module.css";
+import styles from "@/styles/SideNav.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { links } from "../data/links";
 import { useRef, useEffect } from "react";

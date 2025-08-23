@@ -1,4 +1,4 @@
-import styles from "@/styles/scroll-to-bottom.module.css";
+import styles from "@/styles/ScrollToBottom.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 function ScrollToBottom() {
