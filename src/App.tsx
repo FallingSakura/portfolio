@@ -51,7 +51,7 @@ function App() {
     <div className={`background ${togglNav ? "nav-open" : ""}`}>
       <ToggleButton />
       <ToggleTheme />
-      <Background />
+      {/* <Background /> */}
       <section ref={containerRef} className="page-container">
         <HomePage />
         <Essay />

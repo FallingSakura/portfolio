@@ -26,13 +26,14 @@
   /* other colors */
   --color-text: #1a1a1a;
   --color-background: #ffffff;
+  /* translucent mask */
   --color-background-translucent: #ffffff80;
   --color-shadow: #ee9ca755;
   --color-border: #fafafa66;
 
   --color-card: #fbfbfb9a;
   --color-card-border: #ebebeb;
-  --color-card-shadow: #d1d1d1;
+  --color-card-shadow: #d6d6d6c9;
 }
 :root[data-theme="dark"] {
   /* only for the background */
@@ -47,7 +48,7 @@
 
   --color-card: #333333b0;
   --color-card-border: #323232;
-  --color-card-shadow: rgba(58, 56, 56, 0.9);
+  --color-card-shadow: rgba(90, 90, 90, 0.75);
 }
 
 a {
