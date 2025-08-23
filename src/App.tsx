@@ -13,10 +13,23 @@ import { useToggleStore } from "./store/useToggleStore";
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const togglNav = useToggleStore((state) => state.togglNav);
+  const toggle = useToggleStore((state) => state.toggle);
+
   const handleDocumentHeight = useCallback(() => {
     const doc = document.documentElement;
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
   }, []);
+
+  // ESC key handler to close navigation
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "Escape" && togglNav) {
+        toggle();
+      }
+    },
+    [togglNav, toggle],
+  );
+
   useEffect(() => {
     window.addEventListener("resize", handleDocumentHeight);
     handleDocumentHeight();
@@ -24,6 +37,16 @@ function App() {
       window.removeEventListener("resize", handleDocumentHeight);
     };
   }, [handleDocumentHeight]);
+
+  // Add ESC key listener when navigation is open
+  useEffect(() => {
+    if (togglNav) {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+  }, [togglNav, handleKeyDown]);
   return (
     <div className={`background ${togglNav ? "nav-open" : ""}`}>
       <ToggleButton />
@@ -31,8 +54,8 @@ function App() {
       <Background />
       <section ref={containerRef} className="page-container">
         <HomePage />
-        <ProjectPage />
         <Essay />
+        <ProjectPage />
         <FriendPage />
       </section>
       <SideNav containerRef={containerRef} />

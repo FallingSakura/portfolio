@@ -9,7 +9,7 @@ const ApplyCard = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`apply-wrapper`}>
+      <div className={`apply-wrapper card`}>
         <div className="front-side">
           <h2>Apply for a friend link?</h2>
         </div>

@@ -5,7 +5,7 @@ import React from "react";
 const ProjectCard = React.memo(
   ({ title, descr, url, languages, img }: Project) => {
     return (
-      <div className="project-card">
+      <div className="project-card card">
         {img && (
           <div
             className="showcase"

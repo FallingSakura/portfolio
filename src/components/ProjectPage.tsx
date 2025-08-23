@@ -19,7 +19,7 @@ const ProjectPage = React.memo(() => {
   useEffect(() => {
     console.log("currentPage", currentPage);
     if (!isMobile && project_ref.current) {
-      if (currentPage === 1) {
+      if (currentPage === 2) {
         project_ref.current.classList.add("active");
       } else {
         project_ref.current.classList.remove("active");

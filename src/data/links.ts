@@ -11,14 +11,14 @@ export const links = [
     icon: faHouse,
   },
   {
-    id: "projects",
-    title: "Projects",
-    icon: faLaptopCode,
-  },
-  {
     id: "essay",
     title: "Essays",
     icon: faCloud,
+  },
+  {
+    id: "projects",
+    title: "Projects",
+    icon: faLaptopCode,
   },
   {
     id: "friend",
