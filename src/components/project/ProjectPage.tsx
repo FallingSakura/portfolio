@@ -1,12 +1,12 @@
-import styles from "@/styles/ProjectPage.module.css";
-import { projects } from "../data/projects";
-import ProjectCard from "./project-card/ProjectCard";
+import styles from "@/styles/project/ProjectPage.module.css";
+import { projects } from "../../data/projects";
+import ProjectCard from "./ProjectCard";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useState, useRef, useEffect } from "react";
-import { useCurrentPageStore } from "../store/useCurrentPageStore";
-import { useIsMobileStore } from "../store/useIsMobileStore";
+import { useCurrentPageStore } from "../../store/useCurrentPageStore";
+import { useIsMobileStore } from "../../store/useIsMobileStore";
 
 let container_width = 0;
 let init = 0;

@@ -3,7 +3,7 @@ import { useRef, useCallback, useEffect } from "react";
 import ToggleButton from "./components/toggle/ToggleButton";
 import ToggleTheme from "./components/toggle/ToggleTheme";
 import HomePage from "./components/HomePage";
-import ProjectPage from "./components/ProjectPage";
+import ProjectPage from "./components/project/ProjectPage";
 import Essay from "./components/Essay";
 import SideNav from "./components/SideNav";
 import FriendPage from "./components/friend/FriendPage";
@@ -53,7 +53,7 @@ function App() {
     >
       <ToggleButton />
       <ToggleTheme />
-      {/* <Background /> */}
+      <Background />
       <section ref={containerRef} className={`${styles["page-container"]}`}>
         <HomePage />
         <Essay />
