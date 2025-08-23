@@ -10,7 +10,7 @@
   transition: 0.3s;
   cursor: pointer;
 }
-.showcase {
+.project-card .showcase {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -19,7 +19,7 @@
   background: no-repeat center / cover;
   transition: 0.3s;
 }
-.showcase::before {
+.project-card .showcase::before {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -79,37 +79,37 @@
     transform 0.3s 0.1s;
   z-index: -10;
 }
-.descr {
+.project-card .descr {
   padding: 5px 20px 0;
   display: flex;
   align-items: center;
   flex-grow: 1;
 }
-.descr p {
+.project-card .descr p {
   height: 100%;
   line-height: 1.1;
   font-size: 1rem;
   white-space: pre-wrap;
 }
-.footer {
+.project-card .footer {
   margin-top: 25px;
   margin-bottom: 5px;
   padding: 0 5px;
   display: flex;
   gap: 10px;
 }
-.language-label {
+.project-card .language-label {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.language-label .label {
+.project-card .language-label .label {
   display: inline-block;
   width: 15px;
   height: 5px;
   border-radius: 999px;
 }
-.language-label .text {
+.project-card .language-label .text {
   font-size: 0.75rem;
   opacity: 0.8;
 }

@@ -17,17 +17,17 @@
   align-items: center;
 }
 
-.essay-content header {
-  padding: 20px 30px;
-  transition: 0.3s;
-}
-
 .essay-content header p {
   padding: 10px;
   word-break: break-all;
   overflow-wrap: break-word;
   white-space: normal;
   hyphens: auto;
+}
+
+.essay-content .descr {
+  padding: 20px 30px;
+  transition: 0.3s;
 }
 
 .essay-content main {
