@@ -17,17 +17,33 @@
   align-items: center;
 }
 
-.essay-content header p {
-  padding: 10px;
-  word-break: break-all;
-  overflow-wrap: break-word;
-  white-space: normal;
-  hyphens: auto;
+.essay-content header {
+  display: flex;
+  gap: 20px;
+  height: 175px;
 }
 
 .essay-content .descr {
-  padding: 20px 30px;
-  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 30px;
+  overflow: hidden;
+}
+
+.copilot-button {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.descr p {
+  position: relative;
+  padding: 10px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  hyphens: auto;
+  text-overflow: ellipsis;
 }
 
 .essay-content main {

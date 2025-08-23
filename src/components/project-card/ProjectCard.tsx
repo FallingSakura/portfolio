@@ -1,28 +1,28 @@
-import "@/styles/project-card.css";
+import styles from "@/styles/project-card.module.css";
 import { Project } from "../../types/project";
 import LanguageLabel from "./LanguageLabel";
 import React from "react";
 const ProjectCard = React.memo(
   ({ title, descr, url, languages, img }: Project) => {
     return (
-      <div className="project-card card">
+      <div className={`${styles["project-card"]} card`}>
         {img && (
           <div
-            className="showcase"
+            className={`${styles["showcase"]}`}
             style={{
               backgroundImage: `url('${img}')`,
             }}
           ></div>
         )}
         <a href={url} target="_blank" tabIndex={-1}>
-          <div className="project-container">
-            <div className="title">
+          <div className={`${styles["project-container"]}`}>
+            <div className={`${styles["title"]}`}>
               <h3>{title}</h3>
             </div>
-            <div className="descr">
+            <div className={`${styles["descr"]}`}>
               <p>{descr}</p>
             </div>
-            <div className="footer">
+            <div className={`${styles["footer"]}`}>
               {languages.map((language) => (
                 <LanguageLabel language={language} key={language} />
               ))}

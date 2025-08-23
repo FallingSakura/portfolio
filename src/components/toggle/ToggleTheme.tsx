@@ -2,18 +2,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { useTheme } from "../../hooks/useTheme";
 import React from "react";
-import "@/styles/toggle-theme.css";
+import styles from "@/styles/toggle-theme.module.css";
 const ToggleTheme = React.memo(() => {
   const [theme, toggleTheme] = useTheme();
   return (
-    <div className="toggle-theme" onClick={toggleTheme}>
+    <div className={`${styles["toggle-theme"]}`} onClick={toggleTheme}>
       <FontAwesomeIcon
-        className={`icon ${theme ? "visible" : "hidden"}`}
+        className={`${styles["icon"]} ${theme ? styles["visible"] : styles["hidden"]}`}
         icon={faSun}
         size="lg"
       />
       <FontAwesomeIcon
-        className={`icon ${theme ? "hidden" : "visible"}`}
+        className={`${styles["icon"]} ${theme ? styles["hidden"] : styles["visible"]}`}
         icon={faMoon}
         size="lg"
       />

@@ -1,14 +1,14 @@
 import { languages } from "../../data/languages";
-import "@/styles/project-card.css";
+import styles from "@/styles/project-card.module.css";
 
 function LanguageLabel({ language }: { language: string }) {
   return (
-    <div className="language-label">
+    <div className={`${styles["language-label"]}`}>
       <span
-        className="label"
+        className={`${styles["label"]}`}
         style={{ backgroundColor: `#${languages[language] || "000"}` }}
       ></span>
-      <span className="text">{language}</span>
+      <span className={`${styles["text"]}`}>{language}</span>
     </div>
   );
 }

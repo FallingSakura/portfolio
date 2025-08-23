@@ -1,19 +1,19 @@
 import { useState } from "react";
-import "@/styles/friend/apply-card.css";
+import styles from "@/styles/friend/ApplyCard.module.css";
 const ApplyCard = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [focus, setFocus] = useState("");
   return (
     <div
-      className={`apply ${isHovered || focus !== "" ? "hovered" : ""}`}
+      className={`${styles["apply"]} ${isHovered || focus !== "" ? styles["hovered"] : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`apply-wrapper card`}>
-        <div className="front-side">
+      <div className={`${styles["apply-wrapper"]} card`}>
+        <div className={`${styles["front-side"]}`}>
           <h2>Apply for a friend link?</h2>
         </div>
-        <div className="back-side">
+        <div className={`${styles["back-side"]}`}>
           <form>
             <label
               htmlFor="name"

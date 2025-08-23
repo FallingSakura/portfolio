@@ -1,10 +1,10 @@
-import "@/styles/scroll-to-bottom.css";
+import styles from "@/styles/scroll-to-bottom.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 function ScrollToBottom() {
   function scrollToBottom() {
     const pageContainer = document.querySelector(
-      ".page-container",
+      `${styles.pageContainer}`,
     ) as HTMLElement;
     const scrollHeight = pageContainer.offsetHeight;
     pageContainer?.scrollBy({
@@ -13,7 +13,11 @@ function ScrollToBottom() {
     });
   }
   return (
-    <div className="scroll-to-bottom" title="Go ahead" onClick={scrollToBottom}>
+    <div
+      className={`${styles["scroll-to-bottom"]}`}
+      title="Go ahead"
+      onClick={scrollToBottom}
+    >
       <FontAwesomeIcon icon={faAngleDown} />
     </div>
   );

@@ -1,4 +1,4 @@
-import "@/styles/friend/friend-page.css";
+import styles from "@/styles/friend/friend-page.module.css";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { useDebouncedResizeObserver } from "../../hooks/useDeboucedResizeObserver";
 import { useToggleStore } from "../../store/useToggleStore";
@@ -120,8 +120,11 @@ const FriendPage = React.memo(() => {
     }
   }, [columns]);
   return (
-    <div className="friend" ref={page_ref} id="friend">
-      <div className="friend-cards-container" ref={container_ref}>
+    <div className={`${styles["friend"]}`} ref={page_ref} id="friend">
+      <div
+        className={`${styles["friend-cards-container"]}`}
+        ref={container_ref}
+      >
         {friends.map((friend, index) => (
           <FriendCard
             {...friend}

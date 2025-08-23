@@ -1,4 +1,4 @@
-import "../styles/project-page.css";
+import styles from "@/styles/project-page.module.css";
 import { projects } from "../data/projects";
 import ProjectCard from "./project-card/ProjectCard";
 import React from "react";
@@ -20,9 +20,9 @@ const ProjectPage = React.memo(() => {
     console.log("currentPage", currentPage);
     if (!isMobile && project_ref.current) {
       if (currentPage === 2) {
-        project_ref.current.classList.add("active");
+        project_ref.current.classList.add(styles["active"]);
       } else {
-        project_ref.current.classList.remove("active");
+        project_ref.current.classList.remove(styles["active"]);
       }
     }
   }, [currentPage, isMobile]);
@@ -47,9 +47,9 @@ const ProjectPage = React.memo(() => {
     setPos(pos + 375);
   }
   return (
-    <div className="project" ref={project_ref} id="projects">
+    <div className={`${styles["project"]}`} ref={project_ref} id="projects">
       <div
-        className="card-container"
+        className={`${styles["card-container"]}`}
         ref={card_container}
         style={{
           transform: `translateX(${isMobile ? 0 : pos}px)`,
@@ -59,11 +59,19 @@ const ProjectPage = React.memo(() => {
           <ProjectCard key={project.title} {...project} />
         ))}
       </div>
-      <div className="controller">
-        <span title="Back" className="left-btn" onClick={scrollBack}>
+      <div className={`${styles["controller"]}`}>
+        <span
+          title="Back"
+          className={`${styles["left-btn"]}`}
+          onClick={scrollBack}
+        >
           <FontAwesomeIcon icon={faAngleLeft} />
         </span>
-        <span title="Forward" className="right-btn" onClick={scrollForward}>
+        <span
+          title="Forward"
+          className={`${styles["right-btn"]}`}
+          onClick={scrollForward}
+        >
           <FontAwesomeIcon icon={faAngleRight} />
         </span>
       </div>

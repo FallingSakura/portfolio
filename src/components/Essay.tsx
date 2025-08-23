@@ -1,10 +1,13 @@
-import "@/styles/essay.css";
+import styles from "@/styles/essay.module.css";
+import { useRef } from "react";
 const Essay = () => {
+  const headerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div id="essay" className="essay">
-      <div className="essay-content">
+    <div id="essay" className={`${styles["essay"]}`}>
+      <div className={`${styles["essay-content"]}`}>
         <header>
-          <div className="descr card">
+          <div ref={headerRef} className={`${styles["descr"]} card`}>
             <h2>Essay</h2>
             <p>
               I am a student of Computer Science and Engineering at the
@@ -13,10 +16,13 @@ const Essay = () => {
               consectetur adipisicing elit. Animi at consequatur ratione.
               Voluptates magnam blanditiis placeat corporis dolorem possimus
               minus, officia incidunt. Eos ad at voluptas ratione aperiam, ipsa
-              consequatur?
+              consequatur? Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Magni velit doloribus quasi, veritatis, saepe odio
+              reprehenderit sed perspiciatis modi aperiam quis suscipit, enim
+              voluptate necessitatibus est consectetur eos sunt consequatur!
             </p>
-            <div className="card copilot-button"></div>
           </div>
+          <div className={`${styles["copilot-button"]} card`}></div>
         </header>
         <main>
           <div className="card"></div>

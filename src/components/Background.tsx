@@ -1,16 +1,16 @@
-import "@/styles/background.css";
+import styles from "@/styles/background.module.css";
 
 const Background = () => {
   return (
-    <div className="background-container">
-      <div className="gradient-bg">
-        <div className="gradients-container">
-          <div className="g1"></div>
-          <div className="g2"></div>
-          <div className="g3"></div>
+    <div className={`${styles["background-container"]}`}>
+      <div className={`${styles["gradient-bg"]}`}>
+        <div className={`${styles["gradients-container"]}`}>
+          <div className={`${styles["g1"]}`}></div>
+          <div className={`${styles["g2"]}`}></div>
+          <div className={`${styles["g3"]}`}></div>
         </div>
       </div>
-      <div className="blur-effect"></div>
+      <div className={`${styles["blur-effect"]}`}></div>
     </div>
   );
 };

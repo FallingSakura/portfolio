@@ -1,4 +1,4 @@
-import "@/styles/side-nav.css";
+import styles from "@/styles/side-nav.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { links } from "../data/links";
 import { useRef, useEffect } from "react";
@@ -7,8 +7,10 @@ import { useCurrentPageStore } from "../store/useCurrentPageStore";
 import { useToggleStore } from "../store/useToggleStore";
 const SideNav = ({
   containerRef,
+  isNavOpen,
 }: {
   containerRef: React.RefObject<HTMLDivElement>;
+  isNavOpen: boolean;
 }) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null);
   const currentPage = useCurrentPageStore((state) => state.currentPage);
@@ -27,7 +29,7 @@ const SideNav = ({
   }, []);
   function scroll(index: number) {
     const pageContainer = document.querySelector(
-      ".page-container",
+      `${styles["page-container"]}`,
     ) as HTMLElement;
     const scrollHeight = window.innerHeight * index;
     if (timeRef.current) {
@@ -46,8 +48,10 @@ const SideNav = ({
   }
   return (
     <>
-      <nav className="side-nav">
-        <div className="nav-container">
+      <nav
+        className={`${styles["side-nav"]} ${isNavOpen ? styles["nav-open"] : ""}`}
+      >
+        <div className={`${styles["nav-container"]}`}>
           <ul>
             {links.map((link, index) => (
               <li
@@ -57,7 +61,7 @@ const SideNav = ({
                 }}
                 onClick={() => scroll(index)}
               >
-                <div className="item">
+                <div className={`${styles["item"]}`}>
                   {link.icon && <FontAwesomeIcon icon={link.icon} size="sm" />}
                   <span>{link.title}</span>
                 </div>
@@ -65,7 +69,7 @@ const SideNav = ({
             ))}
           </ul>
           <div
-            className="backdrop"
+            className={`${styles["backdrop"]}`}
             style={{
               transform: `translate(-50%, ${currentPage * 100}%)`,
             }}
@@ -73,11 +77,11 @@ const SideNav = ({
         </div>
       </nav>
 
-      <nav className="mobile-nav">
+      <nav className={`${styles["mobile-nav"]}`}>
         <ul>
           {links.map((link, index) => (
             <li
-              className={`${currentPage === index ? "active" : ""}`}
+              className={`${currentPage === index ? styles["active"] : ""}`}
               key={link.id}
               style={{
                 transitionDelay: `${index * 0.1}s`,
@@ -86,7 +90,7 @@ const SideNav = ({
               <a href={`#${link.id}`} onClick={toggle}>
                 <span>{link.title}</span>
               </a>
-              <div className="icon-container">
+              <div className={`${styles["icon-container"]}`}>
                 {link.icon && <FontAwesomeIcon icon={link.icon} size="lg" />}
               </div>
             </li>

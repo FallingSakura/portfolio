@@ -1,4 +1,4 @@
-import "./styles/App.css";
+import styles from "./styles/App.module.css";
 import { useRef, useCallback, useEffect } from "react";
 import ToggleButton from "./components/toggle/ToggleButton";
 import ToggleTheme from "./components/toggle/ToggleTheme";
@@ -48,17 +48,19 @@ function App() {
     }
   }, [togglNav, handleKeyDown]);
   return (
-    <div className={`background ${togglNav ? "nav-open" : ""}`}>
+    <div
+      className={`${styles["background"]} ${togglNav ? styles["nav-open"] : ""}`}
+    >
       <ToggleButton />
       <ToggleTheme />
       {/* <Background /> */}
-      <section ref={containerRef} className="page-container">
+      <section ref={containerRef} className={`${styles["page-container"]}`}>
         <HomePage />
         <Essay />
         <ProjectPage />
         <FriendPage />
       </section>
-      <SideNav containerRef={containerRef} />
+      <SideNav containerRef={containerRef} isNavOpen={togglNav} />
     </div>
   );
 }

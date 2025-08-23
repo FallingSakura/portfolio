@@ -14,7 +14,7 @@
   height: 100%;
   justify-content: center;
 }
-.nav-open .side-nav {
+.side-nav.nav-open {
   width: 200px;
 }
 .side-nav ul {
@@ -43,7 +43,7 @@
 .side-nav li:hover a {
   color: var(--color-primary);
 }
-.nav-open .side-nav li {
+.side-nav.nav-open li {
   transform: translateX(0);
 }
 .side-nav .item {
