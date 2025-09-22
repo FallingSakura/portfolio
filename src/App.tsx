@@ -8,6 +8,7 @@ import Essay from "./components/Essay";
 import SideNav from "./components/SideNav";
 import FriendPage from "./components/friend/FriendPage";
 import Background from "./components/Background";
+import Deving from "./components/Deving";
 import { useToggleStore } from "./store/useToggleStore";
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
         <FriendPage />
       </section>
       <SideNav containerRef={containerRef} isNavOpen={togglNav} />
+      <Deving />
     </div>
   );
 }

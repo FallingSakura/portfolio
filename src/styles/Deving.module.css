@@ -1,0 +1,19 @@
+.deving {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 8px 10px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.deving h1 {
+  font-size: 1rem;
+  color: var(--color-text);
+}
