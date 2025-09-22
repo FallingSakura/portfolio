@@ -1,4 +1,5 @@
 import styles from "@/styles/SideNav.module.css";
+import appStyles from "@/styles/App.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { links } from "../data/links";
 import { useRef, useEffect } from "react";
@@ -29,7 +30,7 @@ const SideNav = ({
   }, []);
   function scroll(index: number) {
     const pageContainer = document.querySelector(
-      `${styles["page-container"]}`,
+      `.${appStyles["page-container"]}`,
     ) as HTMLElement;
     const scrollHeight = window.innerHeight * index;
     if (timeRef.current) {
