@@ -11,9 +11,18 @@
   top: 10px;
   right: 10px;
   z-index: 1000;
+  /* animation: breathe 5s ease infinite; */
 }
 
 .deving h1 {
   font-size: 1rem;
   color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .deving {
+    right: 50%;
+    transform: translateX(50%);
+    top: 20px;
+  }
 }
