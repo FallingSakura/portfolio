@@ -1,10 +1,11 @@
 import styles from "@/styles/ScrollToBottom.module.css";
+import appStyles from "@/styles/App.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 function ScrollToBottom() {
   function scrollToBottom() {
     const pageContainer = document.querySelector(
-      `${styles.pageContainer}`,
+      `.${appStyles["page-container"]}`,
     ) as HTMLElement;
     const scrollHeight = pageContainer.offsetHeight;
     pageContainer?.scrollBy({
