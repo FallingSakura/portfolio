@@ -114,7 +114,7 @@
   pointer-events: none;
   z-index: 5;
 }
-.nav-open .mobile-nav {
+.nav-open.mobile-nav {
   pointer-events: all;
   background-color: var(--color-background-translucent);
   transform: translateY(0);
@@ -154,7 +154,7 @@
   border-radius: 5px;
   background-color: var(--color-primary);
 }
-.nav-open .mobile-nav li {
+.nav-open.mobile-nav li {
   transform: translateY(0);
 }
 .mobile-nav a {

@@ -1,5 +1,5 @@
 import styles from "@/styles/SideNav.module.css";
-import appStyles from "@/styles/App.module.css";
+import appStyles from "../styles/App.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { links } from "../data/links";
 import { useRef, useEffect } from "react";
@@ -78,7 +78,9 @@ const SideNav = ({
         </div>
       </nav>
 
-      <nav className={`${styles["mobile-nav"]}`}>
+      <nav
+        className={`${styles["mobile-nav"]} ${isNavOpen ? styles["nav-open"] : ""}`}
+      >
         <ul>
           {links.map((link, index) => (
             <li
