@@ -38,11 +38,11 @@
   scroll-snap-align: center;
 }
 
-.nav-open .page-container {
+:global(.nav-open) .page-container {
   transform: scale(98%);
   border-radius: 20px;
   box-shadow: 0 0 5px var(--color-shadow);
-  /* border: 1px solid var(--color-shadow); */
+  border: 1px solid var(--color-shadow);
 }
 
 @media (min-width: 1024.1px) {

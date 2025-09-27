@@ -1,4 +1,4 @@
-import styles from "@/styles/friend/FriendCard.module.css";
+import styles from "@/styles/components/friend/FriendCard.module.css";
 import { Friend } from "../../types/friend";
 import React from "react";
 import { forwardRef } from "react";

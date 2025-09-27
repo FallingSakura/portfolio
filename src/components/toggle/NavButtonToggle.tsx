@@ -1,8 +1,8 @@
-import styles from "@/styles/ToggleButton.module.css";
+import styles from "@/styles/components/toggle/NavButtonToggle.module.css";
 import React from "react";
 import { useToggleStore } from "../../store/useToggleStore";
 
-const ToggleButton = React.memo(() => {
+const NavButtonToggle = React.memo(() => {
   const togglNav = useToggleStore((state) => state.togglNav);
   const toggle = useToggleStore((state) => state.toggle);
   return (
@@ -22,4 +22,4 @@ const ToggleButton = React.memo(() => {
   );
 });
 
-export default ToggleButton;
+export default NavButtonToggle;

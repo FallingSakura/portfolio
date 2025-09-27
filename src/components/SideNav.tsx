@@ -1,4 +1,4 @@
-import styles from "@/styles/SideNav.module.css";
+import styles from "@/styles/components/SideNav.module.css";
 import appStyles from "../styles/App.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { links } from "../data/links";
@@ -8,10 +8,8 @@ import { useCurrentPageStore } from "../store/useCurrentPageStore";
 import { useToggleStore } from "../store/useToggleStore";
 const SideNav = ({
   containerRef,
-  isNavOpen,
 }: {
   containerRef: React.RefObject<HTMLDivElement>;
-  isNavOpen: boolean;
 }) => {
   const timeRef = useRef<NodeJS.Timeout | null>(null);
   const currentPage = useCurrentPageStore((state) => state.currentPage);
@@ -49,9 +47,7 @@ const SideNav = ({
   }
   return (
     <>
-      <nav
-        className={`${styles["side-nav"]} ${isNavOpen ? styles["nav-open"] : ""}`}
-      >
+      <nav className={`${styles["side-nav"]}`}>
         <div className={`${styles["nav-container"]}`}>
           <ul>
             {links.map((link, index) => (
@@ -78,9 +74,7 @@ const SideNav = ({
         </div>
       </nav>
 
-      <nav
-        className={`${styles["mobile-nav"]} ${isNavOpen ? styles["nav-open"] : ""}`}
-      >
+      <nav className={`${styles["mobile-nav"]}`}>
         <ul>
           {links.map((link, index) => (
             <li

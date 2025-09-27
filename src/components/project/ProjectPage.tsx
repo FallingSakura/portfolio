@@ -1,4 +1,4 @@
-import styles from "@/styles/project/ProjectPage.module.css";
+import styles from "@/styles/components/project/ProjectPage.module.css";
 import { projects } from "../../data/projects";
 import ProjectCard from "./ProjectCard";
 import React from "react";

@@ -1,7 +1,7 @@
 import styles from "./styles/App.module.css";
 import { useRef, useCallback, useEffect } from "react";
-import ToggleButton from "./components/toggle/ToggleButton";
-import ToggleTheme from "./components/toggle/ToggleTheme";
+import NavButtonToggle from "./components/toggle/NavButtonToggle";
+import ThemeToggle from "./components/toggle/ThemeToggle";
 import HomePage from "./components/HomePage";
 import ProjectPage from "./components/project/ProjectPage";
 import Essay from "./components/Essay";
@@ -49,11 +49,9 @@ function App() {
     }
   }, [togglNav, handleKeyDown]);
   return (
-    <div
-      className={`${styles["background"]} ${togglNav ? styles["nav-open"] : ""}`}
-    >
-      <ToggleButton />
-      <ToggleTheme />
+    <div className={`${styles["background"]} ${togglNav ? "nav-open" : ""}`}>
+      <NavButtonToggle />
+      <ThemeToggle />
       <Background />
       <section ref={containerRef} className={`${styles["page-container"]}`}>
         <HomePage />
@@ -61,7 +59,7 @@ function App() {
         <ProjectPage />
         <FriendPage />
       </section>
-      <SideNav containerRef={containerRef} isNavOpen={togglNav} />
+      <SideNav containerRef={containerRef} />
       <Deving />
     </div>
   );

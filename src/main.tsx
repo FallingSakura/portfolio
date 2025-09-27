@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./styles/index.css";
+import "./styles/globals/card.css";
 import App from "./App.tsx";
 import { Profiler } from "react";
 

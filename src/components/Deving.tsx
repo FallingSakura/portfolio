@@ -1,4 +1,4 @@
-import styles from "@/styles/Deving.module.css";
+import styles from "@/styles/components/Deving.module.css";
 const Deving = () => {
   return (
     <div className={`${styles.deving} card`}>

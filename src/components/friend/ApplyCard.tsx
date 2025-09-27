@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "@/styles/friend/ApplyCard.module.css";
+import styles from "@/styles/components/friend/ApplyCard.module.css";
 const ApplyCard = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [focus, setFocus] = useState("");
