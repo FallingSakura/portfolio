@@ -9,23 +9,26 @@ const ThemeToggle = React.memo(() => {
   return (
     <div
       className={`${styles["theme-toggle"]}`}
-      onClick={toggleTheme}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <div className={`${styles["theme-toggle-panel"]}`}></div>
-      <div className={`${styles["theme-toggle-container"]}`}>
-        <div className={`${styles["light-dark-container"]}`}>
-          <FontAwesomeIcon
-            className={`${styles["icon"]} ${theme ? styles["visible"] : styles["hidden"]}`}
-            icon={faSun}
-            size="lg"
-          />
-          <FontAwesomeIcon
-            className={`${styles["icon"]} ${theme ? styles["hidden"] : styles["visible"]}`}
-            icon={faMoon}
-            size="lg"
-          />
+      <div className={`${styles["theme-toggle-panel"]} card`}>
+        <div className={`${styles["theme-toggle-container"]}`}>
+          <div
+            className={`${styles["light-dark-container"]}`}
+            onClick={toggleTheme}
+          >
+            <FontAwesomeIcon
+              className={`${styles["icon"]} ${theme ? styles["visible"] : styles["hidden"]}`}
+              icon={faSun}
+              size="lg"
+            />
+            <FontAwesomeIcon
+              className={`${styles["icon"]} ${theme ? styles["hidden"] : styles["visible"]}`}
+              icon={faMoon}
+              size="lg"
+            />
+          </div>
         </div>
       </div>
     </div>
