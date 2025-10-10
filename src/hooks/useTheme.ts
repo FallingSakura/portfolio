@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { themes } from "../store/useThemeStore";
+import { useThemeStore } from "../store/useThemeStore";
+
 export const useTheme = () => {
-  const [theme, setTheme] = useState("A");
-  const toggleTheme = (theme: string) => {
-    setTheme(theme);
-    localStorage.setItem("theme", theme);
-  };
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
-      setTheme(savedTheme);
+      toggleTheme(savedTheme as themes);
     }
-  }, []);
+  }, [toggleTheme]);
   return [theme, toggleTheme] as const;
 };

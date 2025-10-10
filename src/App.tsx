@@ -10,11 +10,13 @@ import FriendPage from "./components/friend/FriendPage";
 import Background from "./components/Background";
 import Deving from "./components/Deving";
 import { useToggleStore } from "./store/useToggleStore";
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
   const containerRef = useRef<HTMLDivElement>(null);
   const togglNav = useToggleStore((state) => state.togglNav);
   const toggle = useToggleStore((state) => state.toggle);
+  const [theme] = useTheme();
 
   const handleDocumentHeight = useCallback(() => {
     const doc = document.documentElement;
@@ -52,7 +54,7 @@ function App() {
     <div className={`${styles["background"]} ${togglNav ? "nav-open" : ""}`}>
       <NavButtonToggle />
       <ThemeToggle />
-      <Background />
+      <Background theme={theme} />
       <section ref={containerRef} className={`${styles["page-container"]}`}>
         <HomePage />
         <Essay />

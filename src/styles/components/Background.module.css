@@ -103,3 +103,16 @@
   backdrop-filter: blur(80px);
   -webkit-backdrop-filter: blur(80px);
 }
+
+.default-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: var(--color-background);
+}
+
+.transparent-bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}

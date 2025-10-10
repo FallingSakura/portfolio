@@ -7,24 +7,24 @@ import { useEffect, useState } from "react";
 // if the theme is not saved and the system theme is changed, use the system theme
 // true-dark false-light
 export const useLightDark = () => {
-  const [theme, setTheme] = useState(false);
-  const toggleTheme = () => {
-    const newTheme = !theme;
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme ? "dark" : "light");
+  const [themeMode, setThemeMode] = useState(false);
+  const toggleThemeMode = (mode?: boolean) => {
+    const newTheme = mode !== undefined ? mode : !themeMode;
+    setThemeMode(newTheme);
+    localStorage.setItem("themeMode", newTheme ? "dark" : "light");
   };
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("themeMode");
 
     if (savedTheme) {
-      setTheme(savedTheme === "dark");
+      setThemeMode(savedTheme === "dark");
     } else {
-      setTheme(prefersDarkScheme.matches);
+      setThemeMode(prefersDarkScheme.matches);
     }
 
     const themeChangeListener = (e: MediaQueryListEvent) => {
-      setTheme(e.matches);
+      setThemeMode(e.matches);
     };
 
     prefersDarkScheme.addEventListener("change", themeChangeListener);
@@ -32,14 +32,14 @@ export const useLightDark = () => {
     return () => {
       prefersDarkScheme.removeEventListener("change", themeChangeListener);
     };
-  }, [setTheme]);
+  }, [setThemeMode]);
   useEffect(() => {
-    if (theme) {
+    if (themeMode) {
       /* documentElement = <html><html/> */
       document.documentElement.setAttribute("data-theme", "dark");
     } else {
       document.documentElement.setAttribute("data-theme", "light");
     }
-  }, [theme]);
-  return [theme, toggleTheme] as const;
+  }, [themeMode]);
+  return [themeMode, toggleThemeMode] as const;
 };

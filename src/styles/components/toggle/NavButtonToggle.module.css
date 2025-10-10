@@ -22,10 +22,13 @@
   justify-content: center;
 }
 
-.nav-open .toggle-button-container {
+:global(.nav-open) .toggle-button-container {
   border-radius: 15px;
-  box-shadow: 0 0 5px var(--color-shadow);
   background-color: var(--color-background-translucent);
+}
+
+:global(.nav-open) .toggle-button-container:hover {
+  box-shadow: 0 0 var(--blur-radius-card) var(--color-shadow);
 }
 
 .toggle-bar {

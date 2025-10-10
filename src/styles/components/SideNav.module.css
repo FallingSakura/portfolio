@@ -56,7 +56,6 @@
 }
 .backdrop {
   width: calc(99% - 10px);
-  /* width: 150%; */
   height: 40px;
   background-color: var(--color-background-translucent);
   position: absolute;
@@ -68,7 +67,6 @@
     transform 0.3s,
     background 0.3s;
   border-radius: 10px;
-  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.4);
   opacity: 0;
 }
 :global(.nav-open) .backdrop {
