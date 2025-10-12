@@ -9,8 +9,12 @@ import FriendCard from "./FriendCard";
 import ApplyCard from "./ApplyCard";
 import { friends } from "../../data/friends";
 
-let column_width = 200;
-let gap = 16;
+const COLUMN_WIDTH = 200;
+const GAP = 16;
+const MOBILE_COLUMN_WIDTH = 175;
+const MOBILE_GAP = 8;
+const FACTOR = 0.8;
+const MOBILE_FACTOR = 0.9;
 const PADDING = 75;
 const FriendPage = React.memo(() => {
   const isFirstRender = useRef(true);
@@ -21,6 +25,7 @@ const FriendPage = React.memo(() => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>(
     Array(friends.length).fill(null),
   );
+  // record the height of each column
   const [columns, setColumns] = useState<number[]>([]);
   const togglNav = useToggleStore((state) => state.togglNav);
   useMobile();
@@ -28,17 +33,17 @@ const FriendPage = React.memo(() => {
   // reset the columns to trigger the useEffect and calculate the layout
   const calculateColumns = useCallback((offset?: number) => {
     if (container_ref.current && page_ref.current) {
-      gap = 16;
-      column_width = 200;
-      let factor = 0.8;
+      let gap = GAP;
+      let column_width = COLUMN_WIDTH;
+      let factor = FACTOR;
       let width = page_ref.current.offsetWidth;
       if (offset) {
         width += offset;
       }
       if (width <= 768) {
-        gap = 8;
-        column_width = 175;
-        factor = 0.9;
+        gap = MOBILE_GAP;
+        column_width = MOBILE_COLUMN_WIDTH;
+        factor = MOBILE_FACTOR;
       }
       const columnCount = Math.max(
         1,
@@ -100,12 +105,13 @@ const FriendPage = React.memo(() => {
       if (cardRef) {
         // The change in width will affect the height.
         cardRef.style.position = "absolute";
+        cardRef.style.width = `${COLUMN_WIDTH}px`;
 
         const { offsetHeight } = cardRef;
         const column = columnHeights.indexOf(Math.min(...columnHeights));
-        const left = column * (column_width + gap);
+        const left = column * (COLUMN_WIDTH + GAP);
         const top = columnHeights[column];
-        columnHeights[column] += offsetHeight + gap;
+        columnHeights[column] += offsetHeight + GAP;
 
         cardRef.style.left = `${left}px`;
         cardRef.style.top = `${top}px`;
@@ -115,7 +121,7 @@ const FriendPage = React.memo(() => {
     if (container_ref.current) {
       container_ref.current.style.height = `${containerHeight}px`;
       container_ref.current.style.width = `${
-        (column_width + gap) * columns.length - gap
+        (COLUMN_WIDTH + GAP) * columns.length - GAP
       }px`;
     }
   }, [columns]);
