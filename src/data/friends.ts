@@ -14,13 +14,11 @@ export const friends: Friend[] = [
     descr: "Remember to stay engaged with your life and enjoy every moment.",
   },
   {
-    name: "FallingSakura",
-    avatar:
-      "https://falling-sakura1-1316699389.cos.ap-nanjing.myqcloud.com/image/202506261445515.jpeg",
-    url: "https://fallingsakura.top",
-    descr:
-      "Hi, here is a test text. hahisj jhsisjx ishsx islalsp jsoagh ispahjgiosjpi iaj isji oaj.",
-  },
+    name: "Zirkeln",
+    avatar: "https://zrn.net/wp-content/uploads/2025/07/seia_avatar.jpg",
+    url: "https://zrn.net",
+    descr: "Zirkeln 的多元兴趣的乐园",
+  }
   // {
   //   name: 'FallingSakura',
   //   avatar: '/avatar.jpg',
