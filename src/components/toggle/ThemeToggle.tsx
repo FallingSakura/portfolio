@@ -2,10 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPalette, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { useLightDark } from "../../hooks/useLightDark";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import styles from "@/styles/components/toggle/ThemeToggle.module.css";
 import { themes } from "../../store/useThemeStore";
 import { useTheme } from "../../hooks/useTheme";
+import BackgroundOption from "./BackgroundOption";
+
 const ThemeToggle = React.memo(() => {
   const [theme, toggleTheme] = useTheme();
   const [themeMode, toggleThemeMode] = useLightDark();
@@ -17,6 +19,21 @@ const ThemeToggle = React.memo(() => {
     Default: "black",
     Transparent: "transparent",
   };
+  const handleWindowBlur = useCallback(() => {
+    if (isBackgroundActive) {
+      setIsBackgroundActive(false);
+    }
+  }, [isBackgroundActive]);
+  useEffect(() => {
+    if (isBackgroundActive) {
+      window.addEventListener("blur", handleWindowBlur);
+    } else {
+      window.removeEventListener("blur", handleWindowBlur);
+    }
+    return () => {
+      window.removeEventListener("blur", handleWindowBlur);
+    };
+  }, [handleWindowBlur, isBackgroundActive]);
   const themeComponents = [
     <div
       className={`${styles["light-dark"]}`}
@@ -51,24 +68,11 @@ const ThemeToggle = React.memo(() => {
         }}
       ></div>
       {isBackgroundActive && (
-        <div className={styles["background-options"]}>
-          <div
-            className={styles["background-option"]}
-            onClick={() => toggleTheme("Gradient")}
-          >
-            Gradient
-          </div>
-          <div
-            className={styles["background-option"]}
-            onClick={() => toggleTheme("Default")}
-          >
-            Default
-          </div>
-          <div
-            className={styles["background-option"]}
-            onClick={() => toggleTheme("Transparent")}
-          >
-            Transparent
+        <div className={styles["background-options-container"]}>
+          <div className={`${styles["background-options"]} card`}>
+            <BackgroundOption theme="Gradient" toggleTheme={toggleTheme} />
+            <BackgroundOption theme="Default" toggleTheme={toggleTheme} />
+            <BackgroundOption theme="Transparent" toggleTheme={toggleTheme} />
           </div>
         </div>
       )}

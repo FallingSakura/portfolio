@@ -72,29 +72,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+}
+.background-options-container {
+  position: absolute;
+  padding: 5px;
+  left: 50px;
+}
+.background-options {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  user-select: none;
+  padding: 15px;
+  border-radius: 20px;
+  z-index: -1;
+}
+.background-option {
+  transition: color 0.2s;
+}
+.background-option:hover {
+  color: var(--color-primary);
 }
 .current-background {
   width: 15px;
   height: 15px;
   border-radius: 3px;
   border: 1px solid var(--color-primary);
-}
-.background-options {
-  position: absolute;
-  justify-content: center;
-  bottom: -60px;
-  left: 5px;
-  width: 200px;
-  height: 175px;
-  font-size: 1rem;
-  user-select: none;
-  z-index: -1;
-  padding-top: 50px;
-}
-.background-option {
-  width: 100%;
-  height: 25px;
-  margin-left: 50px;
 }
 .icon {
   position: absolute;
