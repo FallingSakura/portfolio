@@ -6,6 +6,16 @@
     0.3s,
     left 0.5s,
     top 0.5s;
+  overflow: hidden;
+}
+.mask {
+  position: absolute;
+  z-index: -1;
+  top: -100%;
+  left: -50%;
+  width: 200%;
+  height: 150%;
+  background: var(--color-friend-mask);
 }
 
 .friend-name {
@@ -19,6 +29,7 @@
 }
 
 .friend-avatar {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: center;

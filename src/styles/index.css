@@ -36,6 +36,9 @@
   --color-card-shadow: #d6d6d6c9;
 
   --blur-radius: 5px;
+
+  /* friend mask */
+  --color-friend-mask: #d7d7d7;
 }
 :root[data-theme="dark"] {
   /* only for the background */
@@ -53,6 +56,9 @@
   --color-card-shadow: rgba(0, 0, 0, 0.55);
 
   --blur-radius-card: 5px;
+
+  /* friend mask */
+  --color-friend-mask: #3c3c3c;
 }
 
 a {

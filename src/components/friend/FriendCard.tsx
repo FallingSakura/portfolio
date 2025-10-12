@@ -8,6 +8,7 @@ const FriendCard = forwardRef<HTMLDivElement, Friend>((props, ref) => {
     <div ref={ref} className={`${styles["friend-card"]} card`}>
       <a href={url} target="_blank" tabIndex={-1}>
         <div className={`${styles["friend-avatar"]}`}>
+          <div className={styles.mask}></div>
           <img src={avatar} alt={`${name}'s avatar`} />
         </div>
         <h2 className={`${styles["friend-name"]}`}>{name}</h2>
