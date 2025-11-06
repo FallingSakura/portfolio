@@ -2,10 +2,10 @@ import styles from "../styles/components/Background.module.css";
 import React from "react";
 import { themes } from "../store/useThemeStore";
 
-const _gradientOrigins = ["g1", "g2", "g3"] as const;
+const gradientOrigins = ["g1", "g2", "g3"] as const;
 
 const Background: React.FC<{ theme: themes }> = ({ theme }) => {
-  const gradientList = _gradientOrigins.slice(0, 3);
+  const gradientList = gradientOrigins.slice(0, 3);
   switch (theme) {
     case "Gradient":
       return (

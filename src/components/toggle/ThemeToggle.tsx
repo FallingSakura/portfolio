@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPalette, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { useLightDark } from "../../hooks/useLightDark";
 import React, { useRef, useState, useEffect, useCallback } from "react";
@@ -85,19 +85,12 @@ const ThemeToggle = React.memo(() => {
           className={`${styles["drop-down"]}`}
           onClick={() => setIsActive((prev) => !prev)}
         >
-          {isActive ? (
             <FontAwesomeIcon
               className={styles["icon"]}
-              icon={faChevronDown}
+              style={{ transform: isActive ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
+              icon={faChevronUp}
               size="sm"
             />
-          ) : (
-            <FontAwesomeIcon
-              className={styles["icon"]}
-              icon={faPalette}
-              size="sm"
-            />
-          )}
         </div>
         {themeComponents.map((component, index) => (
           <div
